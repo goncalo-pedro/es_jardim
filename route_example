@@ -1,0 +1,53 @@
+Route::get('/2', function () {
+    return view('index');
+});
+
+Route::get('549321054/login', function (){
+    return view('auth.login');
+
+})->name("549321054/login");
+
+Route::get('/', function (\App\Models\ProjetoHandler $projetoHandler, \App\Models\DetalhesHandler $detalhesHandler){
+    return view('index2',
+        [
+            "projetos_selected" => $projetoHandler->getSelectedProject(),
+            "midias" => $detalhesHandler->getMidias()
+        ]
+    );
+});
+
+Route::get('/about', function (\App\Models\DetalhesHandler $detalhesHandler){
+    return view('about',
+        [
+            "about" => $detalhesHandler->getAbout(),
+            "midias" => $detalhesHandler->getMidias()
+        ]);
+});
+
+Route::get('/contactos', function (\App\Models\DetalhesHandler $detalhesHandler){
+    return view('contactos',
+        [
+            "contactos" => $detalhesHandler->getContactos(),
+            "midias" => $detalhesHandler->getMidias()
+        ]);
+});
+
+Route::resource('portfolio',App\Http\Controllers\PortfolioController::class);
+
+Auth::routes();
+
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/contactos/editar',  [App\Http\Controllers\ContactosController::class, 'contactosEditar'])->name('contactos');
+    Route::post('/contactos/criar',  [App\Http\Controllers\ContactosController::class, 'criar'])->name('contactos/criar');
+    Route::post('/contactos/edicao',  [App\Http\Controllers\ContactosController::class, 'editar'])->name('contactos/editar');
+    Route::get('/about/editar',  [App\Http\Controllers\AboutController::class, 'aboutEditar'])->name('about');
+    Route::post('/about/criar',  [App\Http\Controllers\AboutController::class, 'criar'])->name('about/criar');
+    Route::post('/about/edicao',  [App\Http\Controllers\AboutController::class, 'editar'])->name('about/editar');
+    Route::get('/midias/editar',  [App\Http\Controllers\MidiasController::class, 'midiasEditar'])->name('midias');
+    Route::post('/midias/criar',  [App\Http\Controllers\MidiasController::class, 'criar'])->name('midias/criar');
+    Route::post('/midias/edicao',  [App\Http\Controllers\MidiasController::class, 'editar'])->name('midias/editar');
+    Route::resource('projeto', App\Http\Controllers\ProjetoController::class);
+});
