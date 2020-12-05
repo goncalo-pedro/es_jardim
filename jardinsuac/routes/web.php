@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('teste');
+    return view('home');
 });
 
+Route::get('/import', function () {
+    return view('import');
+});
 
 Route::post('importExcel', 'TesteController@testes');
 
