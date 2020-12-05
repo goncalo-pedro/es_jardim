@@ -13,7 +13,7 @@ class CreateExcelFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('ExcelFile', function (Blueprint $table) {
+        Schema::create('Excel_File', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateExcelFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ExcelFile');
+        Schema::dropIfExists('Excel_File');
     }
 }

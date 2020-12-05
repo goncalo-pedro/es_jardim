@@ -16,11 +16,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/import', function () {
-    return view('import');
-});
-
-Route::post('importExcel', 'TesteController@testes');
+Route::get('/import_excel', 'App\Http\Controllers\ImportExcelController@index');
+Route::post('/import_excel/import', 'App\Http\Controllers\ImportExcelController@import');
 
 
 

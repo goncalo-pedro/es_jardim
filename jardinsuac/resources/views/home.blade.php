@@ -16,10 +16,10 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="resources/images/jardim1.jpg">
+                <img alt="jardim1" src="resources/images/jardim1.jpg">
             </div>
             <div class="carousel-item">
-                <img src="resources/images/jardim2.jpg">
+                <img alt="jardim2" src="resources/images/jardim2.jpg">
             </div>
         </div>
 
