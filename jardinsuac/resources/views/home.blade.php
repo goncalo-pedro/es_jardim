@@ -2,34 +2,21 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="resources/css/style.css"/>
+    <link rel="stylesheet" href="{{asset("style.css")}}">
 
-    <div id="demo" class="carousel slide" data-ride="carousel">
-
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-
-        <!-- The slideshow -->
+    <div id="carousel-container" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img alt="jardim1" src="resources/images/jardim1.jpg">
+                <img class="d-block w-100" src="{{asset('images/jardim1.jpg')}}" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img alt="jardim2" src="resources/images/jardim2.jpg">
+                <img class="d-block w-100" src="{{asset('images/jardim2.jpg')}}" alt="Second slide">
             </div>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
     </div>
 
 @endsection

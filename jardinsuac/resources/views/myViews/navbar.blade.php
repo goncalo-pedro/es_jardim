@@ -11,7 +11,7 @@
                         Import/Export
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/import">Importar ficheiro</a>
+                        <a class="dropdown-item" href="/import_excel">Importar ficheiro</a>
                         <a class="dropdown-item"  href="/export">Exportar ficheiro</a>
                     </div>
                 </li>
