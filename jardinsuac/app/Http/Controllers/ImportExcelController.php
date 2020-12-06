@@ -5,43 +5,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Maatwebsite\Excel\Excel;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
+use App\Imports\UsersImport;
 
 class ImportExcelController extends Controller
 {
     function index() {
-        $data = DB::table('Excel_File')->orderBy('id', 'DESC')
+        $rows = DB::table('Excel_File')->orderBy('id', 'ASC')
             ->get();
 
-        return view('import_excel', compact('data'));
+        return view('import_excel', compact('rows'));
     }
 
-
-    function import(Request $request) {
-        $this->validate($request, [
-            'select_file' => 'required|mimes:xls,xlsx'
-        ]);
-
-        $path = $request->file('select_file')->getRealPath();
-        $data = Excel::load($path)->get();
-
-        if($data->count() > 0) {
-            foreach($data->toArray() as $key => $value) {
-                foreach($value as $row) {
-                    $insert_data[] = array(
-                        'CustomerName' => $row['customer_name'],
-                        'Gender' => $row['gender'],
-                        'Address' => $row['address'],
-                        'City' => $row['city']
-                    );
-                }
-            }
-
-            if(!empty($insert_data)) {
-                DB::table('tbl_customer')->insert($insert_data);
-            }
-        }
-        return back()->with('success', 'Excel Data Imported successfully.');
+    function import(Request $request){
+        $file = $request->file('select_file')->getRealPath();
+        Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
+        return $this->index(); // Return serve p apresentar imediatamente no browser o q está na BD.
     }
 }
+
+

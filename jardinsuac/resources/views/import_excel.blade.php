@@ -9,26 +9,9 @@
 <body>
     <div class="container">
         <br />
-
         <h3 align="center">Importar Ficheiro Excel</h3>
         <br />
-        @if(count($errors) > 0)
-            <div class="alert alert-danger">
-                Upload Validation Error<br><br>
-                <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
 
-        @if($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong>{{ $message }}</strong>
-            </div>
-        @endif
         <form action="{{ url('/import_excel/import') }}" enctype="multipart/form-data" method="post">
             {{ csrf_field() }}
             <div class="form-group">
@@ -69,7 +52,7 @@
                             <th>Address</th>
                             <th>City</th>
                         </tr>
-                        @foreach($data as $row)
+                        @foreach($rows as $row)
                         <tr>
                             <td>{{ $row->CustomerName }}</td>
                             <td>{{ $row->Gender }}</td>

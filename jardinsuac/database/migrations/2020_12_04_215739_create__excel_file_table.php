@@ -15,6 +15,10 @@ class CreateExcelFileTable extends Migration
     {
         Schema::create('Excel_File', function (Blueprint $table) {
             $table->id();
+            $table->string('CustomerName');
+            $table->string('Gender');
+            $table->string('Address');
+            $table->string('City');
             $table->timestamps();
         });
     }
