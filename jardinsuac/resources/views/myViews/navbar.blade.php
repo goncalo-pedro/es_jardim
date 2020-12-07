@@ -8,11 +8,11 @@
                 </li>
                 <li class="nav-item dropdown navDropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Import/Export
+                        Importar/Download
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/import_excel">Importar ficheiro</a>
-                        <a class="dropdown-item"  href="/export">Exportar ficheiro</a>
+                        <a class="dropdown-item" href="/import_excel">Importar Excel</a>
+                        <a class="dropdown-item"  href="/export">Download Excel</a>
                     </div>
                 </li>
             </ul>

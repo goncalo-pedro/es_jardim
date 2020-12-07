@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
-
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 use App\Imports\UsersImport;
 
-class ImportExcelController extends Controller
+class ExcelController extends Controller
 {
     function index() {
         $rows = DB::table('Excel_File')->orderBy('id', 'ASC')
@@ -22,6 +22,11 @@ class ImportExcelController extends Controller
         $file = $request->file('select_file')->getRealPath();
         Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
         return $this->index(); // Return serve p apresentar imediatamente no browser o q está na BD.
+    }
+
+    public function export()
+    {
+        return Excel::download(new UsersExport, 'user_file.xlsx');
     }
 }
 

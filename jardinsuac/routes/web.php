@@ -16,9 +16,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/import_excel', 'App\Http\Controllers\ImportExcelController@index');
-Route::post('/import_excel/import', 'App\Http\Controllers\ImportExcelController@import');
-
+Route::get('/import_excel', 'App\Http\Controllers\ExcelController@index');
+Route::post('/import_excel/import', 'App\Http\Controllers\ExcelController@import');
+Route::get('/export_excel', 'App\Http\Controllers\ExcelController@export');
+Route::get('/export', function () {
+    return view('export_excel');
+});
 
 
 
