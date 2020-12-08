@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="/">Jardins UAC</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
