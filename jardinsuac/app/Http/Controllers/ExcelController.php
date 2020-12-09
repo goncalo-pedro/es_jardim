@@ -19,9 +19,17 @@ class ExcelController extends Controller
     }
 
     function import(Request $request){
-        $file = $request->file('select_file')->getRealPath();
-        Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
-        return $this->index(); // Return serve p apresentar imediatamente no browser o q está na BD.
+        if ($request->hasFile('select_file'))
+        {
+            $file = $request->file('select_file')->getRealPath();
+            Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
+            return $this->index(); // Return serve p apresentar imediatamente no browser o q está na BD.
+        }
+        else
+        {
+            dd('Sem ficheiro!');
+        }
+
     }
 
     public function export()
