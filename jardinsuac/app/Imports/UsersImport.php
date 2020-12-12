@@ -5,6 +5,7 @@ namespace App\Imports;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\ToCollection;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
 
 class UsersImport implements ToCollection
 {
@@ -17,15 +18,13 @@ class UsersImport implements ToCollection
 
         foreach ($rows_no_header as $row)
         {
-
-            if($row->filter()->isNotEmpty()) // Saltar linhas completamente vazias.
+            if($row->filter()->isNotEmpty())
             {
                 $goodDate = '';
                 if($row[10] != null)
                 {
                      $badDate = $row[10];
-                     $aux = strtotime($badDate);
-                     $goodDate = date('d/m/Y', $aux);
+                     $goodDate = Date::excelToDateTimeObject($badDate);
                 }
 
                 DB::table('InventarioConteudosTaxa')->insert([
@@ -42,6 +41,8 @@ class UsersImport implements ToCollection
                     'LastUpdated' => $goodDate
                 ]);
             }
+
+            else { break; } // Parar ciclo após chegar à ultima linha.
         }
     }
 }

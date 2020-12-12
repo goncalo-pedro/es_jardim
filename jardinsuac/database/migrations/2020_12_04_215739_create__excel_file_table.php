@@ -25,7 +25,7 @@ class CreateExcelFileTable extends Migration
             $table->String('ConservationStatus')->nullable();
             $table->String('StatusAzores')->nullable();
             $table->String('ShortDescription' )->nullable();
-            $table->Date('LastUpdated');
+            $table->DateTime('LastUpdated');
         });
     }
 
