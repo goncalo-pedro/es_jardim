@@ -13,13 +13,19 @@ class CreateExcelFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('Excel_File', function (Blueprint $table) {
+        Schema::create('InventarioConteudosTaxa', function (Blueprint $table) {
             $table->id();
-            $table->string('CustomerName');
-            $table->string('Gender');
-            $table->string('Address');
-            $table->string('City');
-            $table->timestamps();
+            $table->Integer('NumControlo');
+            $table->String('Group')->nullable();
+            $table->String('Division')->nullable();
+            $table->String('Family')->nullable();
+            $table->String('ScientificName')->nullable();
+            $table->String('CommonName')->nullable();
+            $table->String('NativeDistribution')->nullable();
+            $table->String('ConservationStatus')->nullable();
+            $table->String('StatusAzores')->nullable();
+            $table->String('ShortDescription' )->nullable();
+            $table->Date('LastUpdated');
         });
     }
 
@@ -30,6 +36,6 @@ class CreateExcelFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Excel_File');
+        Schema::dropIfExists('InventarioConteudosTaxa');
     }
 }

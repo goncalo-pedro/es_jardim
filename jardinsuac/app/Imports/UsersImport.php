@@ -13,15 +13,26 @@ class UsersImport implements ToCollection
      */
     public function collection(Collection $rows)
     {
-        $rows_no_header = $rows->slice(1);
+        $rows_no_header = $rows->slice(4);
+
         foreach ($rows_no_header as $row)
         {
-            DB::table('Excel_File')->insert([
-                'CustomerName' => $row[0],
-                'Gender' => $row[1],
-                'Address' => $row[2],
-                'City' => $row[3]
-            ]);
+            if($row->filter()->isNotEmpty()) // Saltar linhas completamente vazias.
+            {
+                DB::table('InventarioConteudosTaxa')->insert([
+                    'NumControlo' => $row[0],
+                    'Group' => $row[1],
+                    'Division' => $row[2],
+                    'Family' => $row[3],
+                    'ScientificName' => $row[4],
+                    'CommonName' => $row[5],
+                    'NativeDistribution' => $row[6],
+                    'ConservationStatus' => $row[7],
+                    'StatusAzores' => $row[8],
+                    'ShortDescription' => $row[9],
+                    'LastUpdated' => $row[10]
+                ]);
+            }
         }
     }
 }

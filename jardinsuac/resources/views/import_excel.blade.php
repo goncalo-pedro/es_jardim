@@ -24,23 +24,37 @@
     <br/>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Customer Data</h3>
+            <h3 class="panel-title">Inventário de Conteúdos Taxa</h3>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="table-import">
                     <tr>
-                        <th>Customer Name</th>
-                        <th>Gender</th>
-                        <th>Address</th>
-                        <th>City</th>
+                        <th>NumControlo</th>
+                        <th>Group</th>
+                        <th>Division</th>
+                        <th>Family</th>
+                        <th>ScientificName</th>
+                        <th>CommonName</th>
+                        <th>NativeDistribution</th>
+                        <th>ConservationStatus</th>
+                        <th>StatusAzores</th>
+                        <th>ShortDescription</th>
+                        <th>LastUpdated</th>
                     </tr>
                     @foreach($rows as $row)
                     <tr>
-                        <td>{{ $row->CustomerName }}</td>
-                        <td>{{ $row->Gender }}</td>
-                        <td>{{ $row->Address }}</td>
-                        <td>{{ $row->City }}</td>
+                        <td>{{ $row->NumControlo }}</td>
+                        <td>{{ $row->Group }}</td>
+                        <td>{{ $row->Division }}</td>
+                        <td>{{ $row->Family }}</td>
+                        <td>{{ $row->ScientificName }}</td>
+                        <td>{{ $row->CommonName }}</td>
+                        <td>{{ $row->NativeDistribution }}</td>
+                        <td>{{ $row->ConservationStatus }}</td>
+                        <td>{{ $row->StatusAzores }}</td>
+                        <td>{{ $row->ShortDescription }}</td>
+                        <td>{{ $row->LastUpdated }}</td>
                     </tr>
                     @endforeach
                 </table>

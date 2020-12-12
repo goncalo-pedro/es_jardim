@@ -12,13 +12,14 @@ use App\Imports\UsersImport;
 class ExcelController extends Controller
 {
     function index() {
-        $rows = DB::table('Excel_File')->orderBy('id', 'ASC')
+        $rows = DB::table('InventarioConteudosTaxa')->orderBy('id', 'ASC')
             ->get();
 
         return view('import_excel', compact('rows'));
     }
 
     function import(Request $request){
+        ini_set('memory_limit', '512M'); // Aumenta capacidade de memória do servidor para 512MB.
         if ($request->hasFile('select_file'))
         {
             $file = $request->file('select_file')->getRealPath();
