@@ -17,8 +17,17 @@ class UsersImport implements ToCollection
 
         foreach ($rows_no_header as $row)
         {
+
             if($row->filter()->isNotEmpty()) // Saltar linhas completamente vazias.
             {
+                $goodDate = '';
+                if($row[10] != null)
+                {
+                     $badDate = $row[10];
+                     $aux = strtotime($badDate);
+                     $goodDate = date('d/m/Y', $aux);
+                }
+
                 DB::table('InventarioConteudosTaxa')->insert([
                     'NumControlo' => $row[0],
                     'Group' => $row[1],
@@ -30,7 +39,7 @@ class UsersImport implements ToCollection
                     'ConservationStatus' => $row[7],
                     'StatusAzores' => $row[8],
                     'ShortDescription' => $row[9],
-                    'LastUpdated' => $row[10]
+                    'LastUpdated' => $goodDate
                 ]);
             }
         }
