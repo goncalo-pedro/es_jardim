@@ -3,11 +3,21 @@
 @section('content')
 <div class="container-import">
     <br/>
-    <h3 align="center">Importar Ficheiro Excel</h3>
+    <h3 style='text-align: center'>Importar Ficheiro Excel</h3>
     <br/>
 
     <form action="{{ url('/import_excel/import') }}" enctype="multipart/form-data" method="post" id="form-import">
         {{ csrf_field() }}
+        @if($errors->any())
+            <ul>
+                @foreach($errors->all() as $error)
+                <li style="color: red">
+                    {{ $error }}
+                </li>
+                @endforeach
+            </ul>
+        @endif
+
         <section class="section-preview">
             <div  class="input-group my-3">
                 <div class="input-group-prepend">
@@ -62,3 +72,4 @@
         </div>
     </div>
 </div>
+@endsection

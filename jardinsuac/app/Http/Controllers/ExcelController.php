@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Exceptions\FileException;
 use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -19,17 +20,23 @@ class ExcelController extends Controller
     }
 
     function import(Request $request){
-        ini_set('memory_limit', '512M'); // Aumenta capacidade de memória do servidor para 512MB.
-        if ($request->hasFile('select_file'))
-        {
-            $file = $request->file('select_file')->getRealPath();
-            Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
-            return $this->index(); // Return serve p apresentar imediatamente no browser o q está na BD.
-        }
-        else
-        {
-            dd('Sem ficheiro!');
-        }
+            try
+            {
+                ini_set('memory_limit', '512M'); // Aumenta capacidade de memória do servidor para 512MB.
+                if ($request->hasFile('select_file'))
+                {
+                    $file = $request->file('select_file')->getRealPath();
+                    Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
+                    return redirect('/import_excel'); // Return serve p apresentar imediatamente no browser o q está na BD.
+                }
+                else
+                {
+                    throw new FileException('sem ficheiro!');
+                }
+            }
+            catch (FileException $e) {
+                return redirect('/import_excel')->withInput()->withErrors(['fileError' => $e->getMessage()]);
+            }
 
     }
 
