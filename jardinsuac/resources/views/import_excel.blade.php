@@ -46,11 +46,6 @@
                         <th>Family</th>
                         <th>ScientificName</th>
                         <th>CommonName</th>
-                        <th>NativeDistribution</th>
-                        <th>ConservationStatus</th>
-                        <th>StatusAzores</th>
-                        <th>ShortDescription</th>
-                        <th>LastUpdated</th>
                     </tr>
                     @foreach($rows as $row)
                     <tr>
@@ -60,11 +55,9 @@
                         <td>{{ $row->Family }}</td>
                         <td>{{ $row->ScientificName }}</td>
                         <td>{{ $row->CommonName }}</td>
-                        <td>{{ $row->NativeDistribution }}</td>
-                        <td>{{ $row->ConservationStatus }}</td>
-                        <td>{{ $row->StatusAzores }}</td>
-                        <td>{{ $row->ShortDescription }}</td>
-                        <td>{{ $row->LastUpdated }}</td>
+                        <td>
+                            <a href="/perfil_taxa/{{$row->id}}">Perfil</a>
+                        </td>
                     </tr>
                     @endforeach
                 </table>

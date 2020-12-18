@@ -44,6 +44,13 @@ class ExcelController extends Controller
     {
         return Excel::download(new UsersExport, 'user_file.xlsx');
     }
+
+    function perfilCompleto($id)
+    {
+        $row = DB::table('InventarioConteudosTaxa')->where('id', $id);
+
+        return view('perfil_taxa', compact('row'));
+    }
 }
 
 
