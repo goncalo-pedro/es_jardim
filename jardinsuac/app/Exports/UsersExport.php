@@ -12,8 +12,26 @@ class UsersExport implements FromCollection
     */
     public function collection()
     {
-
-        $table_content = DB::table('InventarioConteudosTaxa')->get();
+        $table_content = DB::table('InventarioConteudosTaxa')->select(['NumControlo', 'Group', 'Division', 'Family','ScientificName',
+            'CommonName',  'NativeDistribution', 'ConservationStatus',
+            'StatusAzores', 'ShortDescription', 'LastUpdated',
+            'Scientific_name_Reference',  'Scientific_name_Link',  'Common_name_Reference',  'Common_name_Link',
+            'Native_distribution_Reference',  'Native_distribution_Link', 'Conservation_status_Reference',
+            'Conservation_status_Link',  'Status_at_Azores_References',
+            'Status_at_Azores_Link',  'Grupo',  'Nome_comum',  'Nome_comum_Referência',
+             'Nome_comum_Link',
+             'Região_geográfica_de_origem',  'Estado_de_conservação',
+             'Estatuto_na_Região_Açores',  'Breve_descrição',
+             'Genus',  'Growth_habit_USDA_codes_and_definitions',  'Foliar_retention',
+             'Sexual_system',  'Nativity_status_to_Azores',  'Status_of_exotic_species_at_Azores',
+             'Native_distribution_geographical_area',  'Cosmopolitan_distribution',
+             'Europe',  'Mediterranean_islands',  'Atlantic_islands_including West_Indies',
+             'Africa',  'Indian_Ocean _islands',  'Asia',  'Oceania',
+             'Pacific_islands', 'North _America',  'Central_America',
+             'South_America',  'Plant_origin',  'Life_cycle_span',
+             'Name_category',  'Name_status_The Plant List_2013',
+             'Link 1',  'Link 2',  'Link 3',  'Link 4',  'Link 5'])
+            ->get();
 
         // Criar labels no excel.
         $array = ['A1' => 'NumControlo', 'A2'=> 'Group', 'A3' => 'Division', 'A4' => 'Family', 'A5' => 'ScientificName',
