@@ -22,7 +22,7 @@ Route::get('/export_excel', 'App\Http\Controllers\ExcelController@export');
 Route::get('/export', function () {
     return view('export_excel');
 });
-Route::get('/perfil_taxa/{id}', 'App\Http\Controllers\ExcelController@perfilCompleto');
+Route::post('/perfil_taxa/{id}', 'App\Http\Controllers\ExcelController@perfilCompleto');
 
 
 

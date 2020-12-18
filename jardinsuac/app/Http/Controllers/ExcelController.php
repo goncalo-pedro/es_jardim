@@ -47,7 +47,7 @@ class ExcelController extends Controller
 
     function perfilCompleto($id)
     {
-        $row = DB::table('InventarioConteudosTaxa')->where('id', $id);
+        $row = DB::table('InventarioConteudosTaxa')->where('id', $id)->first();
 
         return view('perfil_taxa', compact('row'));
     }

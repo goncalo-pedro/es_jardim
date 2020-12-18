@@ -6,6 +6,7 @@
     <h3 style='text-align: center'>Importar Ficheiro Excel</h3>
     <br/>
 
+
     <form action="{{ url('/import_excel/import') }}" enctype="multipart/form-data" method="post" id="form-import">
         {{ csrf_field() }}
         @if($errors->any())
@@ -30,6 +31,7 @@
             </div>
         </section>
     </form>
+
 
     <br/>
     <div class="panel panel-default">
@@ -56,7 +58,10 @@
                         <td>{{ $row->ScientificName }}</td>
                         <td>{{ $row->CommonName }}</td>
                         <td>
-                            <a href="/perfil_taxa/{{$row->id}}">Perfil</a>
+                            <form action='{{ url("/perfil_taxa/{$row->id}") }}' enctype="multipart/form-data" method="post">
+                            {{ csrf_field() }}
+                            <button type="submit">Perfil</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

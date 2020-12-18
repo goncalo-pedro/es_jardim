@@ -67,24 +67,24 @@ class UsersImport implements ToCollection
                     'Cosmopolitan_distribution'=> $row[37],
                     'Europe'=> $row[38],
                     'Mediterranean_islands'=> $row[38],
-                    'Atlantic_islands_including West_Indies'=> $row[40],
+                    'Atlantic_islands_including_West_Indies'=> $row[40],
                     'Africa'=> $row[41],
-                    'Indian_Ocean _islands'=> $row[42],
+                    'Indian_Ocean_islands'=> $row[42],
                     'Asia'=> $row[43],
                     'Oceania'=> $row[44],
                     'Pacific_islands'=> $row[45],
-                    'North _America'=> $row[46],
+                    'North_America'=> $row[46],
                     'Central_America'=> $row[47],
                     'South_America'=> $row[48],
                     'Plant_origin'=> $row[49],
                     'Life_cycle_span'=> $row[50],
                     'Name_category'=> $row[51],
-                    'Name_status_The Plant List_2013'=> $row[52],
-                    'Link 1'=> $row[54],
-                    'Link 2'=> $row[55],
-                    'Link 3'=> $row[56],
-                    'Link 4'=> $row[57],
-                    'Link 5'=> $row[58]
+                    'Name_status_The_Plant_List_2013'=> $row[52],
+                    'Link_1'=> $row[54],
+                    'Link_2'=> $row[55],
+                    'Link_3'=> $row[56],
+                    'Link_4'=> $row[57],
+                    'Link_5'=> $row[58]
                 ]);
             }
 

@@ -25,12 +25,12 @@ class UsersExport implements FromCollection
              'Genus',  'Growth_habit_USDA_codes_and_definitions',  'Foliar_retention',
              'Sexual_system',  'Nativity_status_to_Azores',  'Status_of_exotic_species_at_Azores',
              'Native_distribution_geographical_area',  'Cosmopolitan_distribution',
-             'Europe',  'Mediterranean_islands',  'Atlantic_islands_including West_Indies',
-             'Africa',  'Indian_Ocean _islands',  'Asia',  'Oceania',
-             'Pacific_islands', 'North _America',  'Central_America',
+             'Europe',  'Mediterranean_islands',  'Atlantic_islands_including_West_Indies',
+             'Africa',  'Indian_Ocean_islands',  'Asia',  'Oceania',
+             'Pacific_islands', 'North_America',  'Central_America',
              'South_America',  'Plant_origin',  'Life_cycle_span',
-             'Name_category',  'Name_status_The Plant List_2013',
-             'Link 1',  'Link 2',  'Link 3',  'Link 4',  'Link 5'])
+             'Name_category',  'Name_status_The_Plant_List_2013',
+             'Link_1',  'Link_2',  'Link_3',  'Link_4',  'Link_5'])
             ->get();
 
         // Criar labels no excel.

@@ -54,24 +54,24 @@ class CreateExcelFileTable extends Migration
             $table->Integer('Cosmopolitan_distribution')->nullable();
             $table->Integer('Europe')->nullable();
             $table->Integer('Mediterranean_islands')->nullable();
-            $table->Integer('Atlantic_islands_including West_Indies')->nullable();
+            $table->Integer('Atlantic_islands_including_West_Indies')->nullable();
             $table->Integer('Africa')->nullable();
-            $table->Integer('Indian_Ocean _islands')->nullable();
+            $table->Integer('Indian_Ocean_islands')->nullable();
             $table->Integer('Asia')->nullable();
             $table->Integer('Oceania')->nullable();
             $table->Integer('Pacific_islands')->nullable();
-            $table->Integer('North _America')->nullable();
+            $table->Integer('North_America')->nullable();
             $table->Integer('Central_America')->nullable();
             $table->Integer('South_America')->nullable();
             $table->String(  'Plant_origin')->nullable();
             $table->String(  'Life_cycle_span')->nullable();
             $table->String( 'Name_category')->nullable();
-            $table->String( 'Name_status_The Plant List_2013')->nullable();
-            $table->String( 'Link 1')->nullable();
-            $table->String(  'Link 2')->nullable();
-            $table->String(  'Link 3')->nullable();
-            $table->String( 'Link 4')->nullable();
-            $table->String(  'Link 5')->nullable();
+            $table->String( 'Name_status_The_Plant_List_2013')->nullable();
+            $table->String( 'Link_1')->nullable();
+            $table->String(  'Link_2')->nullable();
+            $table->String(  'Link_3')->nullable();
+            $table->String( 'Link_4')->nullable();
+            $table->String(  'Link_5')->nullable();
         });
     }
 
