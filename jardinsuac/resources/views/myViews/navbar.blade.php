@@ -11,11 +11,15 @@
                         Importar/Download
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/import_excel">Importar Excel</a>
-                        <a class="dropdown-item"  href="/export">Download Excel</a>
+                        <a class="dropdown-item" href="/excel">Importar Excel</a>
+                        <a class="dropdown-item"  href="/export/">Download Excel</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/taxa">Taxas Listagem</a>
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>

@@ -15,7 +15,6 @@ class ExcelController extends Controller
     function index() {
         $rows = DB::table('InventarioConteudosTaxa')->orderBy('id', 'ASC')
             ->get();
-
         return view('import_excel', compact('rows'));
     }
 
@@ -37,7 +36,6 @@ class ExcelController extends Controller
             catch (FileException $e) {
                 return redirect('/import_excel')->withInput()->withErrors(['fileError' => $e->getMessage()]);
             }
-
     }
 
     public function export()
@@ -45,7 +43,7 @@ class ExcelController extends Controller
         return Excel::download(new UsersExport, 'user_file.xlsx');
     }
 
-    function perfilCompleto($id)
+    function show($id)
     {
         $row = DB::table('InventarioConteudosTaxa')->where('id', $id)->first();
 

@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\TaxaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,19 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {return view('home');});
 
+Route::resource("excel",ExcelController::class);
+Route::resource("taxa",TaxaController::class);
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/import_excel', 'App\Http\Controllers\ExcelController@index');
 Route::post('/import_excel/import', 'App\Http\Controllers\ExcelController@import');
 Route::get('/export_excel', 'App\Http\Controllers\ExcelController@export');
-Route::get('/export', function () {
-    return view('export_excel');
-});
-Route::post('/perfil_taxa/{id}', 'App\Http\Controllers\ExcelController@perfilCompleto');
+Route::get('/export', function () {return view('export_excel');});
+
 
 
 

@@ -12,7 +12,7 @@
     <title>Jardins UAC</title>
 </head>
 <body>
-    @include('myViews.header')
+    @include('myViews/navbar')
     @yield('content')
 
 <style>

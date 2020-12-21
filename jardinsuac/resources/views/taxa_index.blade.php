@@ -1,73 +1,28 @@
 @extends('master')
 
 @section('content')
-<div class="container-import">
-    <br/>
-    <h3 style='text-align: center'>Importar Ficheiro Excel</h3>
-    <br/>
-
-
-    <form action="{{ url('/import_excel/import') }}" enctype="multipart/form-data" method="post" id="form-import">
-        {{ csrf_field() }}
-        @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                <li style="color: red">
-                    {{ $error }}
-                </li>
-                @endforeach
-            </ul>
-        @endif
-
-        <section class="section-preview">
-            <div  class="input-group my-3">
-                <div class="input-group-prepend">
-                    <input type="submit" class="button" name="upload" value="Upload"/>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align: center">TAXAS DE PORTE</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="max-width: 60%; position: absolute; right:5%">
+    @foreach($taxas as $taxa)
+            <div class="col">
+            <div class="card" style="max-width: 500px;">
+                <div class="card-img-top">
+                    <img class="card-img" src="https://www.ofitexto.com.br/wp-content/uploads/2019/11/images-3.jpg" alt="Suresh Dasari Card">
                 </div>
-                <div class="custom-file">
-                    <input type="file" name="select_file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Selecionar ficheiro</label>
+
+                <div class="card-body" style="display:flex; flex-direction:column">
+                    <h5 class="card-title">{{$taxa->CommonName}}</h5>
+                    <h6 class="card-title">{{$taxa->ScientificName}}</h6>
+                    <a style="margin-top: auto;" href="#" class="btn btn-primary align-self-end">Saber Mais</a>
                 </div>
             </div>
-        </section>
-    </form>
-
-
-    <br/>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Inventário de Conteúdos Taxa</h3>
-        </div>
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped" id="table-import">
-                    <tr>
-                        <th>NumControlo</th>
-                        <th>Group</th>
-                        <th>Division</th>
-                        <th>Family</th>
-                        <th>ScientificName</th>
-                        <th>CommonName</th>
-                    </tr>
-                    @foreach($rows as $row)
-                    <tr>
-                        <td>{{ $row->NumControlo }}</td>
-                        <td>{{ $row->Group }}</td>
-                        <td>{{ $row->Division }}</td>
-                        <td>{{ $row->Family }}</td>
-                        <td>{{ $row->ScientificName }}</td>
-                        <td>{{ $row->CommonName }}</td>
-                        <td>
-                            <form action='{{ url("/excels/{$row->id}") }}' enctype="multipart/form-data" method="get">
-                            {{ csrf_field() }}
-                            <button type="submit">Perfil</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </table>
             </div>
-        </div>
+            <br>
+    @endforeach
     </div>
-</div>
 @endsection
+
