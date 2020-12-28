@@ -7,7 +7,7 @@
     <br/>
 
 
-    <form action="{{ url('/import_excel/import') }}" enctype="multipart/form-data" method="post" id="form-import">
+    <form action="{{ route('admin.importar') }}" enctype="multipart/form-data" method="post" id="form-import">
         {{ csrf_field() }}
         @if($errors->any())
             <ul>

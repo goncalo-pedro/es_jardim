@@ -18,20 +18,20 @@ Route::get('/', function () {
     return view("home");
 });
 
-Route::get('549321054/register', function (){
-    return view('auth.register');
-})->name("549321054/register");
-
 Route::get('549321054/login', function (){
     return view('auth.login');
 })->name("549321054/login");
 
+Route::resource("taxa",TaxaController::class);
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/home', function () {return view('admin.home');})->name("home");
-    Route::post('/import_excel/import', [App\Http\Controllers\ExcelController::class, 'import'])->name('excel.import');
-    Route::get('/export_excel', [App\Http\Controllers\ExcelController::class, 'export'])->name('excel.export');
-    Route::get('/export', [App\Http\Controllers\ExcelController::class, 'export'])->name('excel.export');
+    Route::get('/criar_user', function () {return view('admin.criar_users');})->name("criar_user");
+    Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('listar_users');
+    Route::get('/import_excel', [App\Http\Controllers\ExcelController::class, 'index'])->name('admin.importar_ficheiro');
+    Route::post('/import_excel/import', [App\Http\Controllers\ExcelController::class, 'import'])->name('admin.importar');
+    Route::get('/export_excel', [App\Http\Controllers\ExcelController::class, 'showExport'])->name('excel.export_file');
+    Route::post('/export', [App\Http\Controllers\ExcelController::class, 'export'])->name('excel.export');
     Route::resource("excel",ExcelController::class);
-    Route::resource("taxa",TaxaController::class);
 });
 

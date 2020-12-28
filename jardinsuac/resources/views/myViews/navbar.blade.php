@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="/">Jardins UAC</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -11,12 +11,21 @@
                         Importar/Download
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/excel">Importar Excel</a>
-                        <a class="dropdown-item"  href="/export/">Download Excel</a>
+                        <a class="dropdown-item" href="{{ route("admin.importar_ficheiro") }}">Importar Excel</a>
+                        <a class="dropdown-item"  href="{{ route("excel.export_file") }}">Download Excel</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown navDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administradores
+                    </a>
+                    <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ route("criar_user") }}">Criar Administrador</a>
+                        <a class="dropdown-item"  href="{{ route("listar_users") }}">Gerir Administradores</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="list-group-item list-group-item-action bg-light" href="{{ route('logout') }}"
+                    <a class="list-group-item list-group-item-action" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}

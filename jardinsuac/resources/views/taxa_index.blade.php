@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('master')
 
 @section('content')
     <br>
@@ -28,7 +28,7 @@
         <div class="card mb-3" style="max-width: 540px; margin: 5px">
             <div class="row g-0">
                     <div class="card-body">
-                        <h5 class="card-title">{{$taxa->CommonName}}</h5>
+                        <h5 class="card-title">{{$taxa->Nome_comum_Referência}}</h5>
                         <h6 class="card-subtitle">{{$taxa->ScientificName}}</h6>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <button type="button" class="btn" >Saber Mais</button>

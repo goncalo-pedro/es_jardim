@@ -12,10 +12,9 @@ use App\Imports\UsersImport;
 class TaxaController extends Controller
 {
     function index() {
-        $taxas = DB::table('InventarioConteudosTaxa')->orderBy('id', 'ASC')
-            ->get();
+        $taxas = DB::table('InventarioConteudosTaxa')->get();
 
-        return view ('taxa_index',compact('taxas'));
+        return view ('taxa_index', compact('taxas'));
     }
 
     function show($id)

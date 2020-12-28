@@ -7,7 +7,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/taxa">Taxas Listagem</a>
+                    <a class="nav-link" href="{{ route("taxa.index") }}">Taxas Listagem</a>
                 </li>
             </ul>
         </div>

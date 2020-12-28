@@ -15,7 +15,7 @@ class ExcelController extends Controller
     function index() {
         $rows = DB::table('InventarioConteudosTaxa')->orderBy('id', 'ASC')
             ->get();
-        return view('import_excel', compact('rows'));
+        return view('admin.import_excel', compact('rows'));
     }
 
     function import(Request $request){
@@ -26,7 +26,7 @@ class ExcelController extends Controller
                 {
                     $file = $request->file('select_file')->getRealPath();
                     Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
-                    return redirect('/import_excel'); // Return serve p apresentar imediatamente no browser o q está na BD.
+                    return redirect('admin/import_excel'); // Return serve p apresentar imediatamente no browser o q está na BD.
                 }
                 else
                 {
@@ -34,7 +34,7 @@ class ExcelController extends Controller
                 }
             }
             catch (FileException $e) {
-                return redirect('/import_excel')->withInput()->withErrors(['fileError' => $e->getMessage()]);
+                return redirect('admin/import_excel')->withInput()->withErrors(['fileError' => $e->getMessage()]);
             }
     }
 
@@ -43,14 +43,14 @@ class ExcelController extends Controller
     }
 
     public function showExport() {
-        return view('export_excel');
+        return view('admin.export_excel');
     }
 
     function show($id)
     {
         $row = DB::table('InventarioConteudosTaxa')->where('id', $id)->first();
 
-        return view('perfil_taxa', compact('row'));
+        return view('admin.perfil_taxa', compact('row'));
     }
 }
 
