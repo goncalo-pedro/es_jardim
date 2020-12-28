@@ -2,8 +2,6 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="{{asset("style.css")}}">
-
     <div id="carousel-container" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
