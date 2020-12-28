@@ -19,7 +19,17 @@
     body{
         background-color: #FAFAFA;
     }
+    .navbar{
+        background-color: #102146;
+    }
+    .btn{
+        border-color: #102146;
+    }
 
+    .btn:hover{
+        background-color: #102146;
+        color:white;
+    }
     #button-download{
         background-color: DodgerBlue;
         border: none;
@@ -64,6 +74,7 @@
         width:100%;
         max-height: 200px;
     }
+
 </style>
 </body>
 </html>
