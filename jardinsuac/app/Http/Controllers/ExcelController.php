@@ -38,9 +38,12 @@ class ExcelController extends Controller
             }
     }
 
-    public function export()
-    {
+    public function export() {
         return Excel::download(new UsersExport, 'user_file.xlsx');
+    }
+
+    public function showExport() {
+        return view('export_excel');
     }
 
     function show($id)

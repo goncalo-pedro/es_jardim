@@ -12,21 +12,33 @@ use App\Http\Controllers\TaxaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {return view('home');});
-
-Route::resource("excel",ExcelController::class);
-Route::resource("taxa",TaxaController::class);
-
-Route::post('/import_excel/import', 'App\Http\Controllers\ExcelController@import');
-Route::get('/export_excel', 'App\Http\Controllers\ExcelController@export');
-Route::get('/export', function () {return view('export_excel');});
 
 
-
-
-
+Route::get('/', function () {
+    return view("welcome");
+});
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+
+Route::get('549321054/register', function (){
+    return view('auth.register');
+})->name("549321054/register");
+
+Route::get('549321054/login', function (){
+    return view('auth.login');
+})->name("549321054/login");
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('/home', function () {return view('admin.home');})->name("home");
+    Route::post('/import_excel/import', [App\Http\Controllers\ExcelController::class, 'import'])->name('excel.import');
+    Route::get('/export_excel', [App\Http\Controllers\ExcelController::class, 'export'])->name('excel.export');
+    Route::get('/export', [App\Http\Controllers\ExcelController::class, 'export'])->name('excel.export');
+    Route::resource("excel",ExcelController::class);
+    Route::resource("taxa",TaxaController::class);
+});
+
