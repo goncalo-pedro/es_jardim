@@ -1,8 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" id="navbar">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #071d49" id="navbar">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <a class="navbar-brand" href="/">Jardins UAC</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                 </li>
@@ -11,6 +14,5 @@
                 </li>
             </ul>
         </div>
-
     </div>
 </nav>
