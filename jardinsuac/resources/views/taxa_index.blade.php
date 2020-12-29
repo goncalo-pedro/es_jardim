@@ -22,7 +22,6 @@
         </div>
     </div>
 
-
     <div id="listTaxas" class="row row-cols-1 row-cols-md-3 g-4 " style="max-width: 80%; position: relative; float:right;">
     @foreach($taxas as $taxa)
         <div class="card mb-3" style="max-width: 540px; margin: 5px">

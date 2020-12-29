@@ -38,12 +38,12 @@ class CreateTaxasTable extends Migration
             $table->String('Status_at_Azores_Link')->nullable();
             $table->String('Grupo')->nullable();
             $table->String('Nome_comum')->nullable();
-            $table->String('Nome_comum_Referência')->nullable();
+            $table->String('Nome_comum_Referencia')->nullable();
             $table->String('Nome_comum_Link')->nullable();
-            $table->String('Região_geográfica_de_origem')->nullable();
-            $table->String('Estado_de_conservação')->nullable();
-            $table->String('Estatuto_na_Região_Açores')->nullable();
-            $table->String('Breve_descrição')->nullable();
+            $table->String('Regiao_geografica_de_origem')->nullable();
+            $table->String('Estado_de_conservacao')->nullable();
+            $table->String('Estatuto_na_Regiao_Acores')->nullable();
+            $table->String('Breve_descricao')->nullable();
             $table->String('Genus')->nullable();
             $table->String('Growth_habit_USDA_codes_and_definitions' )->nullable();
             $table->String('Foliar_retention')->nullable();
