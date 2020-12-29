@@ -37,6 +37,7 @@ class TaxasPorte extends Migration
         foreach ($taxas_porte as $taxa) {
             $t = new Taxa;
 
+
             $t->NumControlo = $taxa["NumControlo"];
             $t->Group =  $taxa["Group"];
             $t->Division =  $taxa["Group"];
