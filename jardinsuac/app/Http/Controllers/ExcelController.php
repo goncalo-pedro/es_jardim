@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\FileException;
 use App\Exports\UsersExport;
+use App\Models\Taxa;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
@@ -12,10 +13,8 @@ use App\Imports\UsersImport;
 
 class ExcelController extends Controller
 {
-    function index() {
-        $rows = DB::table('InventarioConteudosTaxa')->orderBy('id', 'ASC')
-            ->get();
-        return view('admin.import_excel', compact('rows'));
+    function index(Taxa $taxa) {
+
     }
 
     function import(Request $request){
@@ -48,9 +47,7 @@ class ExcelController extends Controller
 
     function show($id)
     {
-        $row = DB::table('InventarioConteudosTaxa')->where('id', $id)->first();
 
-        return view('admin.perfil_taxa', compact('row'));
     }
 }
 

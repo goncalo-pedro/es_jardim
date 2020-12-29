@@ -12,7 +12,7 @@ class UsersExport implements FromCollection
     */
     public function collection()
     {
-        $table_content = DB::table('InventarioConteudosTaxa')->select(['NumControlo', 'Group', 'Division', 'Family','ScientificName',
+        $table_content = DB::table('taxas')->select(['NumControlo', 'Group', 'Division', 'Family','ScientificName',
             'CommonName',  'NativeDistribution', 'ConservationStatus',
             'StatusAzores', 'ShortDescription', 'LastUpdated',
             'Scientific_name_Reference',  'Scientific_name_Link',  'Common_name_Reference',  'Common_name_Link',

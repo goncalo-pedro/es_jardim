@@ -20,14 +20,7 @@ class UsersImport implements ToCollection
         {
             if($row->filter()->isNotEmpty())
             {
-                $goodDate = '';
-                if($row[10] != null)
-                {
-                     $badDate = $row[10];
-                     $goodDate = Date::excelToDateTimeObject($badDate);
-                }
-                // Inserir na BD a informação.
-                DB::table('InventarioConteudosTaxa')->insert([
+                DB::table('taxas')->insert([
                     'NumControlo' => $row[0],
                     'Group' => $row[1],
                     'Division' => $row[2],
@@ -38,7 +31,7 @@ class UsersImport implements ToCollection
                     'ConservationStatus' => $row[7],
                     'StatusAzores' => $row[8],
                     'ShortDescription' => $row[9],
-                    'LastUpdated' => $goodDate,
+                    'LastUpdated' => Date::excelToDateTimeObject($row[10]),
                     'Scientific_name_Reference' => $row[11],
                     'Scientific_name_Link'=> $row[12],
                     'Common_name_Reference'=> $row[13],

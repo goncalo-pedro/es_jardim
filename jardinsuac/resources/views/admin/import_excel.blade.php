@@ -58,9 +58,10 @@
                         <td>{{ $row->ScientificName }}</td>
                         <td>{{ $row->CommonName }}</td>
                         <td>
-                            <form action='{{ url("/excels/{$row->id}") }}' enctype="multipart/form-data" method="get">
-                            {{ csrf_field() }}
-                            <button type="submit">Perfil</button>
+                            <form action='{{ route("taxas.show", $row->id) }}' enctype="multipart/form-data" method="post">
+                                {{ csrf_field() }}
+                                @method('GET')
+                                <button type="submit">Perfil</button>
                             </form>
                         </td>
                     </tr>

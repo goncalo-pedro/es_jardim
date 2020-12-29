@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExcelFileTable extends Migration
+class CreateTaxasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateExcelFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('InventarioConteudosTaxa', function (Blueprint $table) {
+        Schema::create('taxas', function (Blueprint $table) {
             $table->id();
             $table->Integer('NumControlo')->nullable();
             $table->String('Group')->nullable();
@@ -51,18 +51,18 @@ class CreateExcelFileTable extends Migration
             $table->String('Nativity_status_to_Azores')->nullable();
             $table->String('Status_of_exotic_species_at_Azores')->nullable();
             $table->String('Native_distribution_geographical_area')->nullable();
-            $table->Integer('Cosmopolitan_distribution')->nullable();
-            $table->Integer('Europe')->nullable();
-            $table->Integer('Mediterranean_islands')->nullable();
-            $table->Integer('Atlantic_islands_including_West_Indies')->nullable();
-            $table->Integer('Africa')->nullable();
-            $table->Integer('Indian_Ocean_islands')->nullable();
-            $table->Integer('Asia')->nullable();
-            $table->Integer('Oceania')->nullable();
-            $table->Integer('Pacific_islands')->nullable();
-            $table->Integer('North_America')->nullable();
-            $table->Integer('Central_America')->nullable();
-            $table->Integer('South_America')->nullable();
+            $table->String('Cosmopolitan_distribution')->nullable();
+            $table->boolean('Europe')->nullable();
+            $table->boolean('Mediterranean_islands')->nullable();
+            $table->boolean('Atlantic_islands_including_West_Indies')->nullable();
+            $table->boolean('Africa')->nullable();
+            $table->boolean('Indian_Ocean_islands')->nullable();
+            $table->boolean('Asia')->nullable();
+            $table->boolean('Oceania')->nullable();
+            $table->boolean('Pacific_islands')->nullable();
+            $table->boolean('North_America')->nullable();
+            $table->boolean('Central_America')->nullable();
+            $table->boolean('South_America')->nullable();
             $table->String(  'Plant_origin')->nullable();
             $table->String(  'Life_cycle_span')->nullable();
             $table->String( 'Name_category')->nullable();
@@ -72,6 +72,7 @@ class CreateExcelFileTable extends Migration
             $table->String(  'Link_3')->nullable();
             $table->String( 'Link_4')->nullable();
             $table->String(  'Link_5')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -82,6 +83,6 @@ class CreateExcelFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('InventarioConteudosTaxa');
+        Schema::dropIfExists('taxas');
     }
 }

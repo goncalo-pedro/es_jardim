@@ -11,7 +11,7 @@
                         Importar/Download
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route("admin.importar_ficheiro") }}">Importar Excel</a>
+                        <a class="dropdown-item" href="{{ route("taxas.index") }}">Importar Excel</a>
                         <a class="dropdown-item"  href="{{ route("excel.export_file") }}">Download Excel</a>
                     </div>
                 </li>
