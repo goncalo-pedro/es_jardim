@@ -48,5 +48,110 @@
                 </div>
             @endforeach
         </div>
-        @endsection
+
     </div>
+
+    <script>
+        var el = document.getElementById("botoes1");
+        var valueIlha = document.getElementById("divIlha").childNodes[1]
+        var valueTipo = document.getElementById("divTipo").childNodes[1]
+        var valueExtensao = document.getElementById("divExtensao").childNodes[1]
+        var valueDificuldade = document.getElementById("divGrau-dificuldade").childNodes[1]
+        var valueNome = document.getElementById("divNome").childNodes[1]
+
+
+        el.addEventListener('click', event => {
+            if(event.target.id === "pesquisa"){
+                var list = []
+                var list2 = []
+                let notblank = 0
+                if(valueIlha.value !== "") {
+                    notblank++;
+                }
+                if(valueTipo.value !== "") {
+                    notblank++;
+                }
+                if(valueExtensao.value !== "") {
+                    notblank++;
+                }
+                if(valueDificuldade.value !== "") {
+                    notblank++;
+                }
+                if(valueNome.value !== "") {
+                    notblank++;
+                }
+
+                for(let i = 0;i<trilhos.length;i++){
+                    console.log(notblank)
+                    if(valueIlha.value !== ""){
+                        if(valueIlha.value === trilhos[i].ilha){
+                            list.push([trilhos[i],i])
+                        }
+                    }
+                    if(valueTipo.value !== ""){
+                        if(valueTipo.value === trilhos[i].tipo){
+                            list.push([trilhos[i],i])
+                        }
+                    }
+                    if(valueDificuldade.value !== ""){
+                        if(valueDificuldade.value === trilhos[i].dificuldade){
+                            list.push([trilhos[i],i])
+                        }
+                    }
+                    if(valueExtensao.value !== ""){
+                        if(parseInt(valueExtensao.value) === trilhos[i].comprimento){
+                            list.push([trilhos[i],i])
+                        }
+                    }
+                    if(valueNome.value !== ""){
+                        if(valueNome.value === trilhos[i].nome){
+                            list.push([trilhos[i],i])
+                        }
+                    }
+                }
+
+                for(let i =0;i<list.length;i++){
+                    let count = 0
+                    for(let j = 0;j<list.length;j++)
+                        if(list[i][0].nome === list[j][0].nome)
+                            count++
+
+                    if(count === notblank){
+                        let exists = false;
+                        for(let z = 0; z < list2.length; z++)
+                            if(list[i][0].nome === list2[z][0].nome)
+                                exists = true;
+                        if(!exists)
+                            list2.push(list[i])
+                    }
+                }
+                montarTrilhos(list2)
+            }
+        })
+
+
+        });
+
+        /**
+         * Preenche uma casa o tabuleiro
+         * @param {Array} lista Lista que recebe o objeto e o i
+         * pode ser {number}, {nomeDoObjeto}
+         */
+        function montarTrilhos(lista) {
+            let resultados = document.getElementById("resultados");
+
+            while(resultados.hasChildNodes())
+                resultados.removeChild(resultados.childNodes[0])
+
+            for(let i = 0; i < lista.length; i++) {
+                let nomeTrilho = document.createElement("button");
+                nomeTrilho.innerHTML = lista[i][0].nome;
+                nomeTrilho.addEventListener("click", function () {
+                    inicio(lista[i][1])
+                });
+                nomeTrilho.className = "aceder-perfil";
+                resultados.appendChild(nomeTrilho);
+            }
+        }
+    </script>
+@endsection
