@@ -13,10 +13,6 @@ use App\Imports\UsersImport;
 
 class ExcelController extends Controller
 {
-    function index(Taxa $taxa) {
-
-    }
-
     function import(Request $request){
             try
             {
@@ -25,7 +21,7 @@ class ExcelController extends Controller
                 {
                     $file = $request->file('select_file')->getRealPath();
                     Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
-                    return redirect('admin/import_excel'); // Return serve p apresentar imediatamente no browser o q está na BD.
+                    return redirect('admin/taxas'); // Return serve p apresentar imediatamente no browser o q está na BD.
                 }
                 else
                 {
@@ -33,7 +29,7 @@ class ExcelController extends Controller
                 }
             }
             catch (FileException $e) {
-                return redirect('admin/import_excel')->withInput()->withErrors(['fileError' => $e->getMessage()]);
+                return redirect('admin/taxas')->withInput()->withErrors(['fileError' => $e->getMessage()]);
             }
     }
 
@@ -45,10 +41,6 @@ class ExcelController extends Controller
         return view('admin.export_excel');
     }
 
-    function show($id)
-    {
-
-    }
 }
 
 

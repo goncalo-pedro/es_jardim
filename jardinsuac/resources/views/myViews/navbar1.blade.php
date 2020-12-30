@@ -5,6 +5,8 @@
         </button>
         <a class="navbar-brand" href="/">Jardins UAC</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
@@ -13,6 +15,8 @@
                     <a class="nav-link" href="{{ route("taxa.index") }}">Taxas Listagem</a>
                 </li>
             </ul>
+
+
         </div>
     </div>
 </nav>

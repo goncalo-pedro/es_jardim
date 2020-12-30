@@ -24,3 +24,8 @@ new Vue({
             },
         }),
 }).$mount(app);
+
+
+function news(){
+    console.log(458974321)
+}

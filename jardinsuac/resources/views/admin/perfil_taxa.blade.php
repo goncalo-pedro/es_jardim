@@ -93,12 +93,12 @@
                     <th>{{$row->Status_at_Azores_Link}}</th>
                     <th>{{$row->Grupo}}</th>
                     <th>{{$row->Nome_comum}}</th>
-                    <th>{{$row->Nome_comum_Referência}}</th>
+                    <th>{{$row->Nome_comum_Referencia}}</th>
                     <th>{{$row->Nome_comum_Link}}</th>
-                    <th>{{$row->Região_geográfica_de_origem}}</th>
-                    <th>{{$row->Estado_de_conservação}}</th>
-                    <th>{{$row->Estatuto_na_Região_Açores}}</th>
-                    <th>{{$row->Breve_descrição}}</th>
+                    <th>{{$row->Regiao_geografica_de_origem}}</th>
+                    <th>{{$row->Estado_de_conservacao}}</th>
+                    <th>{{$row->Estatuto_na_Regiao_Acores}}</th>
+                    <th>{{$row->Breve_descricao}}</th>
                     <th>{{$row->Genus}}</th>
                     <th>{{$row->Growth_habit_USDA_codes_and_definitions}}</th>
                     <th>{{$row->Foliar_retention}}</th>

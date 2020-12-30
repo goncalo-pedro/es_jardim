@@ -23,6 +23,19 @@ class TaxaController extends Controller
         return view ('taxa_index',
             [
                 "taxas" => $taxa->getTaxas(),
+                "paramlista" => array(array("genus1","genus2","genus3"),
+                                        array("USDA1","USDA2","USDA3"),
+                                        array("FOLIAR RETENCION1","FOLIAR RETENCION","FOLIAR RETENCION3"),
+                                        array("Sexual System1","Sexual System2","Sexual System3"),
+                                        array("Nativitystatustoazores1","Nativitystatustoazores2","Nativitystatustoazores3"),
+                    array("USDA1","USDA2","USDA3"),
+                    array("FOLIAR RETENCION1","FOLIAR RETENCION","FOLIAR RETENCION3"),
+                    array("Sexual System1","Sexual System2","Sexual System3"),
+                    array("Nativitystatustoazores1","Nativitystatustoazores2","Nativitystatustoazores3"),
+                    array("USDA1","USDA2","USDA3"),
+                    array("FOLIAR RETENCION1","FOLIAR RETENCION","FOLIAR RETENCION3"),
+                    array("Sexual System1","Sexual System2","Sexual System3"),
+                    )
             ]
         );
     }
