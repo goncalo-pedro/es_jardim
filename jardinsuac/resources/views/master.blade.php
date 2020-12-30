@@ -69,6 +69,10 @@
 
     #navbar{
         box-shadow: 2px 2px 20px rgba(0,0,0,0.30);
+        background-color: #071d49;
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
 
     #carousel-container{
