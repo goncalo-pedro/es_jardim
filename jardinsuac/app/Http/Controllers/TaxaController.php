@@ -29,6 +29,12 @@ class TaxaController extends Controller
                     "Foliar" => $taxa->getFoliar(),
                     "Sexual" => $taxa->getSexual(),
                     "Nativity" => $taxa->getNativity(),
+                    "Exotic species" => $taxa->getExoticSpecies(),
+                    "Native Area" => $taxa->getNativeArea(),
+                    "Plant Origin" => $taxa->getPlantOrigin(),
+                    "Life Cycle" => $taxa->getLifeCycle(),
+                    "Name Category" => $taxa->getNameCategory(),
+                    "Status The Plant List" => $taxa->getStatusPlantList(),
                 ),
             ]
         );
