@@ -1,44 +1,54 @@
 @extends('master')
 
 @section('content')
+
     <div class="container">
+        <div class="row">
+            <h1>Taxas de Porte</h1>
+        </div>
         <div class="row justify-content-between">
             <div class="col-md-3">
-                <div class="position-fixed">
-                    <h4>FILTROS</h4>
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        @foreach(array_keys($paramLista) as $key)
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-heading{{str_replace(' ', '', $key)}}">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{str_replace(' ', '', $key)}}" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        {{$key}}
-                                    </button>
-                                </h2>
-                                <div id="flush-collapse{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{str_replace(' ', '', $key)}}" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        @foreach($paramLista[$key] as $param)
-                                            @if($param != null)
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="{{str_replace(' ', '', $param)}}" onclick="renderTaxas()">
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        {{$param}}
-                                                    </label>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Filtros
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    @foreach(array_keys($paramLista) as $key)
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-heading{{str_replace(' ', '', $key)}}">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{str_replace(' ', '', $key)}}" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                    {{$key}}
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapse{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{str_replace(' ', '', $key)}}" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    @foreach($paramLista[$key] as $param)
+                                                        @if($param != null)
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="{{str_replace(' ', '', $key)}}{{str_replace(' ', '', $param)}}">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    {{$param}}
+                                                                </label>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
                                                 </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
-                </div>
             </div>
 
+            </div>
             <div class="col-md-8">
-                <div class="row">
-                    <h1>Taxas de Porte</h1>
-                </div>
-
                 <div id="listTaxas" class="row row-cols-1 row-cols-md-1">
                     @foreach($taxas as $taxa)
                         <div class="col">

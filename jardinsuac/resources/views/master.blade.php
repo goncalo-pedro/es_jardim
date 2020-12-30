@@ -72,7 +72,7 @@
         background-color: #071d49;
         position: sticky;
         top: 0;
-        z-index: 2;
+        z-index: 200;
     }
 
     #carousel-container{
