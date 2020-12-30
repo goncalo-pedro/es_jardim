@@ -66,14 +66,6 @@ class Taxa extends Model
         );
     }
 
-    public function getNativeArea()
-    {
-        return $this->arrayFiltros(
-            DB::table('taxas')->select("Native_distribution_geographical_area")->distinct()->get()->toArray(),
-            "Native_distribution_geographical_area"
-        );
-    }
-
     public function getPlantOrigin()
     {
         return $this->arrayFiltros(
@@ -112,6 +104,55 @@ class Taxa extends Model
         foreach($valoresColuna as $valor)
             $valoresDistintos[] = $valor->$nomeColuna;
         return $valoresDistintos;
+    }
+
+    public function filtrosCompostos ($cd, $eu, $mi, $aiwi, $af, $ioi, $as, $oc, $pi, $na, $ca, $sa)
+    {
+        $valoresDistintos = array();
+        if($cd != null)
+            $valoresDistintos[] = "Cosmopolitan";
+        if($eu != null)
+            $valoresDistintos[] = "Europe";
+        if($mi != null)
+            $valoresDistintos[] = "Mediterranean";
+        if($aiwi != null)
+            $valoresDistintos[] = "Atlantic Islands including West indies";
+        if($af != null)
+            $valoresDistintos[] = "Africa";
+        if($ioi != null)
+            $valoresDistintos[] = "Indian Ocean Islands";
+        if($as != null)
+            $valoresDistintos[] = "Asia";
+        if($oc != null)
+            $valoresDistintos[] = "Oceania";
+        if($pi != null)
+            $valoresDistintos[] = "Pacific Islands";
+        if($na != null)
+            $valoresDistintos[] = "North America";
+        if($ca != null)
+            $valoresDistintos[] = "Central America";
+        if($sa != null)
+            $valoresDistintos[] = "South America";
+
+        return $valoresDistintos;
+    }
+
+    public function getNativeArea()
+    {
+        return $this->filtrosCompostos(
+            DB::table('taxas')->where("Cosmopolitan_distribution", "=", "1")->first(),
+            DB::table('taxas')->where("Europe", "=", "1")->first(),
+            DB::table('taxas')->where("Mediterranean_islands", "=", "1")->first(),
+            DB::table('taxas')->where("Atlantic_islands_including_West_Indies", "=", "1")->first(),
+            DB::table('taxas')->where("Africa", "=", "1")->first(),
+            DB::table('taxas')->where("Indian_Ocean_islands", "=", "1")->first(),
+            DB::table('taxas')->where("Asia", "=", "1")->first(),
+            DB::table('taxas')->where("Oceania", "=", "1")->first(),
+            DB::table('taxas')->where("Pacific_islands", "=", "1")->first(),
+            DB::table('taxas')->where("North_America", "=", "1")->first(),
+            DB::table('taxas')->where("Central_America", "=", "1")->first(),
+            DB::table('taxas')->where("South_America", "=", "1")->first()
+        );
     }
 
 }
