@@ -24,11 +24,11 @@ class TaxaController extends Controller
             [
                 "taxas" => $taxa->getTaxas(),
                 "paramLista" => array(
-                    "genus" => $taxa->getGenus(),
-                    "usda" => $taxa->getUSDA(),
-                    "foliar" => $taxa->getFoliar(),
-                    "sexual" => $taxa->getSexual(),
-                    "nativity" => $taxa->getNativity(),
+                    "Genus" => $taxa->getGenus(),
+                    "USDA" => $taxa->getUSDA(),
+                    "Foliar" => $taxa->getFoliar(),
+                    "Sexual" => $taxa->getSexual(),
+                    "Nativity" => $taxa->getNativity(),
                 ),
             ]
         );

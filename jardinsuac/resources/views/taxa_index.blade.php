@@ -18,12 +18,14 @@
                         <div id="flush-collapse{{str_replace(' ', '', $key)}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{str_replace(' ', '', $key)}}" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 @foreach($paramLista[$key] as $param)
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            {{$param}}
-                                        </label>
-                                    </div>
+                                    @if($param != null)
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{$param}}
+                                            </label>
+                                        </div>
+                                    @endif
                                 @endforeach
                             </div>
                         </div>
