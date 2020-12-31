@@ -67,9 +67,9 @@ class TaxaController extends Controller
      * @param Taxa $taxa
      * @return Response
      */
-    public function show(Taxa $taxa)
+    public function show($id)
     {
-        //
+        return view('taxa_show',['taxa'=>Taxa::where('id', $id)->firstOrFail()]);
     }
 
     /**

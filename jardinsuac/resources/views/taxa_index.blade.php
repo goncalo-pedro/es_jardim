@@ -58,7 +58,7 @@
                                         <h5 class="card-title">{{$taxa->Nome_comum}}</h5>
                                         <h6 class="card-subtitle">{{$taxa->ScientificName}}</h6>
                                         <p class="card-text">{{$taxa->Breve_descricao}}</p>
-                                        <button type="button" class="btn" >Saber Mais</button>
+                                        <button type="button" class="btn" onclick="location.href='/taxa/{{$taxa->id}}'" >Saber Mais</button>
                                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
