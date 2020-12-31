@@ -30,7 +30,7 @@
                                                     @foreach($paramLista[$key] as $param)
                                                         @if($param != null)
                                                             <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" value="" id="{{str_replace(' ', '', $key)}}{{str_replace(' ', '', $param)}}">
+                                                                <input class="form-check-input" type="checkbox" value="" id="{{str_replace(' ', '', $param)}}" onclick="renderTaxas()">
                                                                 <label class="form-check-label" for="flexCheckDefault">
                                                                     {{$param}}
                                                                 </label>
