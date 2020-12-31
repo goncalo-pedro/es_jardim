@@ -65,11 +65,30 @@ class TaxaController extends Controller
      * Display the specified resource.
      *
      * @param Taxa $taxa
-     * @return Response
+     * @return Factory|View
      */
     public function show($id)
     {
-        return view('taxa_show',['taxa'=>Taxa::where('id', $id)->firstOrFail()]);
+        $taxa = Taxa::where('id', $id)->firstOrFail();
+        return view('taxa_show',['taxa'=>$taxa,
+                                      'caracteristicas'=> array(
+                                          "Grupo" => $taxa->Grupo,
+                                          "Região Geográfica de Origem" => $taxa->Regiao_geografica_de_origem,
+                                          "Estado de Conservação" => $taxa->Estado_de_conservacao,
+                                          "Estado na Região Açores" => $taxa->Estatuto_na_Regiao_Acores,
+                                          "Genus" => $taxa->Genus,
+                                          "Growth Habit USDA Codes and Definitions" => $taxa->Growth_habit_USDA_codes_and_definitions,
+                                          "Foliar Retention" => $taxa->Foliar_retention,
+                                          "Sexual_system" => $taxa->Sexual_system,
+                                          "Nativity Status to Azores" => $taxa->Nativity_status_to_Azores,
+                                          "Status of Exotic Species at Azores" => $taxa->Status_of_exotic_species_at_Azores,
+                                          "Native Distribution Geographical Area" => $taxa->Native_distribution_geographical_area,
+                                          "Life Cycle Span" => $taxa->Life_cycle_span,
+                                          "Name Category" => $taxa->Name_category,
+                                          "Name Status The Plant List 2013" => $taxa->Name_status_The_Plant_List_2013
+                                      )
+        ]
+        );
     }
 
     /**
