@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminTaxaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\TaxaController;
+use App\Http\Controllers\Dashboard;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,9 @@ Route::get('549321054/register', function (){
 Route::resource("taxa",TaxaController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-    Route::get('/home', function () {return view('admin.home');})->name("home");
+    #Route::get('/home', function () {return view('admin.home');})->name("home");
+    Route::get('/home', [AdminTaxaController::class,'home']);
+
     Route::get('/criar_user', function () {return view('admin.criar_users');})->name("criar_user");
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('listar_users');
     Route::post('/import_excel/import', [App\Http\Controllers\ExcelController::class, 'import'])->name('admin.importar');
