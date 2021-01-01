@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\User;
 
 class AdminTaxaController extends Controller
 {
@@ -19,11 +20,7 @@ class AdminTaxaController extends Controller
      */
     public function index(Taxa $taxa)
     {
-        return view('admin.import_excel',
-            [
-                "rows" => $taxa->getTaxas()
-            ]
-        );
+        return view('admin.import_excel', ["rows" => $taxa->getTaxas()]);
     }
 
     /**
@@ -35,11 +32,10 @@ class AdminTaxaController extends Controller
      */
     public function show(int $id)
     {
-        return view('admin.perfil_taxa',
-            [
-                "row" => (new Taxa)->getTaxa($id)
-            ]
-        );
+        return view('admin.perfil_taxa', ["row" => (new Taxa)->getTaxa($id)]);
     }
-
+    public function home(Taxa $taxa)
+    {
+        return view('admin.home', ["rows" => $taxa->getTaxas(), 'admins' => User::all()]);
+    }
 }

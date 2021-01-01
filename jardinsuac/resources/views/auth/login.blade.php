@@ -1,9 +1,11 @@
+@extends('master')
+
+@section('content')
+
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
+        <x-slot name="logo"></x-slot>
+        <h1 style="text-align: center">Login</h1>
         <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -46,3 +48,4 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+@endsection

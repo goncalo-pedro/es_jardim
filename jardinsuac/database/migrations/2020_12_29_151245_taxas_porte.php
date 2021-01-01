@@ -98,6 +98,7 @@ class TaxasPorte extends Migration
 
             $t->save();
         }
+
     }
 
     /**

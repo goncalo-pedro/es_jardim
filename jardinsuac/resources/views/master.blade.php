@@ -242,6 +242,17 @@
         font-size: 18px;
         font-weight: 300;
     }
+
+
+    .showBox{
+        border-radius:5px;
+        box-shadow: 0px 0px 15px lightgrey;
+        padding: 10px;
+        margin-left:5%;
+        margin-right: 5%;
+    }
+
+
 </style>
 </body>
 </html>

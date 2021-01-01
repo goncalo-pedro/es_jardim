@@ -5,7 +5,6 @@
     <br/>
     <h3 align="center">Download Ficheiro Excel</h3>
     <br/>
-
     <form action="{{ route('excel.export') }}" enctype="multipart/form-data" method="get" id="form-export">
         {{ csrf_field() }}
         <div class="form-group">
