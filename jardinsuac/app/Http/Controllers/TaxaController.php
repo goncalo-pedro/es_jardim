@@ -79,7 +79,7 @@ class TaxaController extends Controller
                                           "Genus" => $taxa->Genus,
                                           "Growth Habit USDA Codes and Definitions" => $taxa->Growth_habit_USDA_codes_and_definitions,
                                           "Foliar Retention" => $taxa->Foliar_retention,
-                                          "Sexual_system" => $taxa->Sexual_system,
+                                          "Sexual System" => $taxa->Sexual_system,
                                           "Nativity Status to Azores" => $taxa->Nativity_status_to_Azores,
                                           "Status of Exotic Species at Azores" => $taxa->Status_of_exotic_species_at_Azores,
                                           "Native Distribution Geographical Area" => $taxa->Native_distribution_geographical_area,

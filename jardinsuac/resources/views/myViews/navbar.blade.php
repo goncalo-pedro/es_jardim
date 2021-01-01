@@ -4,21 +4,26 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="/">Jardins UAC</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
+
+
+        <div class="collapse navbar-collapse w-100 order-1 dual-collapse2 order-md-0" id="navbarTogglerDemo01" >
+            <div class="navbar-nav mr-auto">
+
+                <div id="Home" class="nav-item " style="">
                     <a class="nav-link" href="{{ route("admin.home") }}">Home</a>
-                </li>
-                <li class="nav-item dropdown">
+                </div>
+
+                <div id="Taxas" class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Taxas de porte
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route("taxas.index") }}">Listar Taxas de Porte</a>
                     </div>
-                </li>
+                </div>
+
                 @if($user->admin_master == 1)
-                    <li class="nav-item dropdown">
+                    <div class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Administradores
                         </a>
@@ -26,9 +31,15 @@
                             <a class="dropdown-item" href="{{ route("criar_user") }}">Criar Administrador</a>
                             <a class="dropdown-item"  href="{{ route("listar_users") }}">Gerir Administradores</a>
                         </div>
-                    </li>
+                    </div>
                 @endif
-                <li class="nav-item dropdown">
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse w-100 order-3 dual-collapse2 justify-content-md-end" id="navbarTogglerDemo01">
+            <div class="navbar-nav ml-auto">
+
+                <div id="dropPerfil" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ $user->name }}
                     </a>
@@ -36,18 +47,17 @@
                         <a class="dropdown-item" href="{{ route('admin.perfil') }}">Perfil</a>
                         <a class="list-group-item list-group-item-action" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                                                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
+     </div>
 
-    </div>
 </nav>
 

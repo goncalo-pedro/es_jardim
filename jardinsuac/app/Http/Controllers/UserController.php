@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Fortify\PasswordValidationRules;
+use App\Exceptions\EmailException;
 use App\Models\User;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -14,12 +16,14 @@ use Laravel\Fortify\Rules\Password;
 
 class UserController extends Controller
 {
-    const user = 'user';
+
+    use PasswordValidationRules;
+
     const email = 'u_email';
     const name = 'u_name';
-    const c_password = 'c_password';
-    const n_password = 'n_password';
-    const vn_password = 'vn_password';
+    const c_password = 'current_password';
+    const n_password = 'password';
+    const vn_password = 'password_confirmation';
 
 
     public function index () {
@@ -45,6 +49,7 @@ class UserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function alterarPass(Request $request) {
+
         try {
             $this->validate(request(), [
                     self::c_password => ['required', 'string'],
@@ -52,11 +57,12 @@ class UserController extends Controller
                 ]
             );
 
-            if (! Hash::check(request(self::n_password), request(self::user)->password)) {
-                return redirect('admin/perfil')->withInput()->withErrors(['password' => 'A password atual não é válida.']);
+
+            if (! Hash::check(request(self::c_password), Auth::user()->password)) {
+                return redirect('admin/perfil')->withInput()->withErrors(['password' => 'A password atual inválida.']);
             }
 
-            request(self::user)->setPassword(request(self::n_password));
+            Auth::user()->setPassword(request(self::n_password));
             return redirect('admin/perfil')->withInput()->withErrors(['alteracaoConcluida' => 'A password foi alterada com sucesso']);
         } catch (ValidationException $e) {
             return redirect('admin/perfil')->withInput()->withErrors(['passwordIncorreta' => $e->getMessage()]);
@@ -64,34 +70,31 @@ class UserController extends Controller
 
     }
 
-    protected function passwordRules()
-    {
-        return ['required', 'string', new Password, 'confirmed'];
-    }
 
     /**
      * @param Request $request
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function alterarDados(Request $request) {
-        dd(request(self::email));
-        /*
+    public function alterarDados(Request $request, User $user) {
         try {
             $this->validate(request(), [
-                    'name' => ['required', 'string', 'max:255'],
-                    'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore(request(self::user)->id)],
-                    'photo' => ['nullable', 'image', 'max:1024'],
+                    request('name') => ['required', 'string', 'max:255'],
+                    request('email') => ['required', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user()->id)],
+                    request('photo') => ['nullable', 'image', 'max:1024'],
                 ]
             );
 
-            if ($request['email'] !== request(self::user)->getEmail()) {
-                request(self::user)->updateEmail(request(self::email));
+            if (request(self::email) != Auth::user()->getEmail()) {
+                if(Auth::user())
+                    Auth::user()->updateEmail(request(self::email));
             } else {
-                request(self::user)->updateName(request(self::name));
+                Auth::user()->updateName(request(self::name));
             }
-            return redirect('admin/perfil')->withInput()->withErrors(['alteracaoConcluida' => 'A password foi alterada com sucesso']);
+            return redirect('admin/perfil')->withInput()->withErrors(['alteracaoConcluida' => 'Os dados foram alterados com sucesso']);
         } catch (ValidationException $e) {
             return redirect('admin/perfil')->withInput()->withErrors(['dadosIncorretos' => $e->getMessage()]);
-        }*/
+        } catch (EmailException $e) {
+            return redirect('admin/perfil')->withInput()->withErrors(['emailExistente' => $e->getMessage()]);
+        }
     }
 }

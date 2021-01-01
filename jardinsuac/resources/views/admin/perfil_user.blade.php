@@ -1,6 +1,17 @@
 @extends('admin.master')
 
 @section('content')
+    <div id="errors">
+        @if($errors->any())
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li style="color: red">
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
     <form action="{{ route('admin.alterarDados') }}" enctype="multipart/form-data" method="post">
         {{ csrf_field() }}
         <div>
@@ -19,22 +30,22 @@
         </div>
         <button type="submit">Alterar Dados</button>
     </form>
+
     <form action="{{ route('admin.alterarPassword') }}" enctype="multipart/form-data" method="post">
+        {{ csrf_field() }}
         <div>
             <h1> Mudar Password</h1>
             <div>
-                <label for="c_password">Current Password:</label><input type="password" id="c_password" name="c_password">
+                <label for="current_password">Current Password:</label><input type="password" id="current_password" name="current_password">
             </div>
             <div>
-                <label for="n_password">Nova Password:</label><input type="password" id="n_password" name="n_password">
+                <label for="password">Nova Password:</label><input type="password" id="password" name="password">
             </div>
             <div>
-                <label for="vn_password">Verificar nova Password:</label><input type="password" id="vn_password" name="vn_password">
+                <label for="password_confirmation">Verificar nova Password:</label><input type="password" id="password_confirmation" name="password_confirmation">
             </div>
         </div>
         <button type="submit">Alterar Password</button>
-        <input type="hidden" value="{{ $user->id }}" id="user" name="user">
-
     </form>
 
 

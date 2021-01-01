@@ -24,7 +24,8 @@ class AdminTaxaController extends Controller
         return view('admin.import_excel',
             [
                 "rows" => $taxa->getTaxas(),
-                'master' => Auth::user()->getAdminMaster()
+                'master' => Auth::user()->getAdminMaster(),
+                'user' => Auth::user(),
             ]
         );
     }
@@ -40,7 +41,8 @@ class AdminTaxaController extends Controller
     {
         return view('admin.perfil_taxa', [
             "row" => (new Taxa)->getTaxa($id),
-            'master' => Auth::user()->getAdminMaster()
+            'master' => Auth::user()->getAdminMaster(),
+            'user' => Auth::user(),
         ]);
     }
     public function home(Taxa $taxa)

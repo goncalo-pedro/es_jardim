@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Exceptions\EmailException;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -70,14 +71,24 @@ class User extends Authenticatable
     {
         return $this->email;
     }
+
+    /**
+     * @param $email
+     * @throws EmailException
+     */
     public function updateEmail($email)
     {
+        $u_email = User::where('email', $email)->first();
+        if($u_email != null)
+            throw new EmailException("Email já existente.");
         $this->email = $email;
+        $this->save();
     }
 
     public function updateName ($name)
     {
         $this->name = $name;
+        $this->save();
     }
 
     public function setPassword($password)

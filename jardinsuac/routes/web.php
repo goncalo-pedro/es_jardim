@@ -33,12 +33,12 @@ Route::get('549321054/register', function (){
 Route::resource("taxa",TaxaController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-    #Route::get('/home', function () {return view('admin.home');})->name("home");
     Route::get('/home', [AdminTaxaController::class,'home'])->name("admin.home");
     Route::get('/perfil', [App\Http\Controllers\UserController::class, 'perfil'])->name('admin.perfil');
     Route::get('/criar_user', function () {return view('admin.criar_users',[
         'user' => Auth::user()
     ]);})->name("criar_user");
+
     Route::post('/perfil/alterarDados', [App\Http\Controllers\UserController::class, 'alterarDados'])->name('admin.alterarDados');
     Route::post('/perfil/alterarPassword', [App\Http\Controllers\UserController::class, 'alterarPass'])->name('admin.alterarPassword');
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('listar_users');
@@ -49,4 +49,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource("taxas", AdminTaxaController::class);
     Route::resource("excel",ExcelController::class);
 });
-
