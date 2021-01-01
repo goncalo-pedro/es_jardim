@@ -1,8 +1,48 @@
 <template>
     <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white border-b border-gray-100">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #071d49" id="navbar">
             <!-- Primary Navigation Menu -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <inertia-link class="navbar-brand" :href="route('admin.home')">
+                    Jardins UAc
+                </inertia-link>
+                <a  href="/">Jardins UAC</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <inertia-link :href="route('dashboard')">
+                                <jet-application-mark class="block h-9 w-auto" />
+                            </inertia-link>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Taxas de porte
+                            </a>
+                            <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('taxas.index') }}">Listar Taxas de Porte</a>
+                            </div>
+                        </li>
+                        <li>
+                            <jet-dropdown align="right" width="48">
+                                <template #content>
+                                    <jet-dropdown-link :href="route('profile.show')">
+                                        Profile
+                                    </jet-dropdown-link>
+
+                                    <div class="border-t border-gray-100"></div>
+
+                                    <!-- Authentication -->
+                                    <form @submit.prevent="logout">
+                                        <jet-dropdown-link as="button">
+                                            Logout
+                                        </jet-dropdown-link>
+                                    </form>
+                                </template>
+                            </jet-dropdown>
+                        </li>
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <!-- Logo -->
@@ -23,83 +63,7 @@
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
                         <div class="ml-3 relative">
-                            <jet-dropdown align="right" width="48">
-                                <template #trigger>
-                                    <button v-if="$page.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                        <img class="h-8 w-8 rounded-full object-cover" :src="$page.user.profile_photo_url" :alt="$page.user.name" />
-                                    </button>
 
-                                    <button v-else class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                        <div>{{ $page.user.name }}</div>
-
-                                        <div class="ml-1">
-                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </template>
-
-                                <template #content>
-                                    <!-- Account Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        Manage Account
-                                    </div>
-
-                                    <jet-dropdown-link :href="route('profile.show')">
-                                        Profile
-                                    </jet-dropdown-link>
-
-                                    <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.jetstream.hasApiFeatures">
-                                        API Tokens
-                                    </jet-dropdown-link>
-
-                                    <div class="border-t border-gray-100"></div>
-
-                                    <!-- Team Management -->
-                                    <template v-if="$page.jetstream.hasTeamFeatures">
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Team
-                                        </div>
-
-                                        <!-- Team Settings -->
-                                        <jet-dropdown-link :href="route('teams.show', $page.user.current_team)">
-                                            Team Settings
-                                        </jet-dropdown-link>
-
-                                        <jet-dropdown-link :href="route('teams.create')" v-if="$page.jetstream.canCreateTeams">
-                                            Create New Team
-                                        </jet-dropdown-link>
-
-                                        <div class="border-t border-gray-100"></div>
-
-                                        <!-- Team Switcher -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Switch Teams
-                                        </div>
-
-                                        <template v-for="team in $page.user.all_teams">
-                                            <form @submit.prevent="switchToTeam(team)" :key="team.id">
-                                                <jet-dropdown-link as="button">
-                                                    <div class="flex items-center">
-                                                        <svg v-if="team.id == $page.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                                        <div>{{ team.name }}</div>
-                                                    </div>
-                                                </jet-dropdown-link>
-                                            </form>
-                                        </template>
-
-                                        <div class="border-t border-gray-100"></div>
-                                    </template>
-
-                                    <!-- Authentication -->
-                                    <form @submit.prevent="logout">
-                                        <jet-dropdown-link as="button">
-                                            Logout
-                                        </jet-dropdown-link>
-                                    </form>
-                                </template>
-                            </jet-dropdown>
                         </div>
                     </div>
 

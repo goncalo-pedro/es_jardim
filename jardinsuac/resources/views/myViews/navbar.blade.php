@@ -33,7 +33,7 @@
                         {{ $user->name }}
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">{{ $user->name }}</a>
+                        <a class="dropdown-item" href="{{ route('admin.perfil') }}">Perfil</a>
                         <a class="list-group-item list-group-item-action" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
