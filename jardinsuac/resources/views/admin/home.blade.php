@@ -9,9 +9,36 @@
                     GERIR BASE DE DADOS
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Importe e exporte ficheiro excel</p>
-                    <a  href="{{ route("taxas.index")}}" class="btn">Importar Base de Dados</a>
-                    <a  href="{{ route("excel.export_file")}}" class="btn">Exportar Base de Dados</a>
+                    <div id="errors">
+                        @if($errors->any())
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li style="color: red">
+                                        {{ $error }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                    <div class="custom-file">
+                        <h4>Importar Base de Dados<br><small style="font-size: 13px;">Na importação da base de dados vai ser necessário um ficheiro com a extensão .xlsx.</small></h4>
+                        <form action="{{ route('admin.importar') }}" enctype="multipart/form-data" method="post">
+                            {{ csrf_field() }}
+
+                                <input type="file" name="select_file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01"></label>
+                                <button type="submit" class="btn">Importar Base de Dados </button>
+                        </form>
+                    </div>
+                    <hr>
+                    <div>
+                        <h4>Exportar Base de Dados<br><small style="font-size: 13px;">Na exportação do ficheiro vai ser gerado um ficheiro com a extensão .xlsx.</small></h4>
+
+                        <form action="{{ route('excel.export') }}" enctype="multipart/form-data" method="post" id="form-export">
+                            {{ csrf_field() }}
+                            <button  type="submit" class="btn">Exportar Base de Dados</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,13 +80,6 @@
                                     <td>{{ $row->Family }}</td>
                                     <td>{{ $row->ScientificName }}</td>
                                     <td>{{ $row->CommonName }}</td>
-                                    <td>
-                                        <form action='{{ route("taxas.show", $row->id) }}' enctype="multipart/form-data" method="post">
-                                            {{ csrf_field() }}
-                                            @method('GET')
-                                            <button type="submit">Perfil</button>
-                                        </form>
-                                    </td>
                                 </tr>
                             @endforeach
                         </table>
@@ -93,3 +113,9 @@
     </div>
 
 @endsection
+        <script>
+            import Button from "@/Jetstream/Button";
+            export default {
+                components: {Button}
+            }
+        </script>

@@ -1,39 +1,7 @@
 @extends('admin.master')
 
 @section('content')
-<div class="container-import">
-    <br/>
-    <h3 style='text-align: center'>Importar Ficheiro Excel</h3>
-    <br/>
-
-
-    <form action="{{ route('admin.importar') }}" enctype="multipart/form-data" method="post" id="form-import">
-        {{ csrf_field() }}
-        @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                <li style="color: red">
-                    {{ $error }}
-                </li>
-                @endforeach
-            </ul>
-        @endif
-
-        <section class="section-preview">
-            <div  class="input-group my-3">
-                <div class="input-group-prepend">
-                    <input type="submit" class="button" name="upload" value="Upload"/>
-                </div>
-                <div class="custom-file">
-                    <input type="file" name="select_file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Selecionar ficheiro</label>
-                </div>
-            </div>
-        </section>
-    </form>
-
-
-    <br/>
+    <br><br>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Inventário de Conteúdos Taxa</h3>
@@ -61,7 +29,7 @@
                             <form action='{{ route("taxas.show", $row->id) }}' enctype="multipart/form-data" method="post">
                                 {{ csrf_field() }}
                                 @method('GET')
-                                <button type="submit">Perfil</button>
+                                <button type="submit" class="btn">Perfil</button>
                             </form>
                         </td>
                     </tr>
@@ -70,5 +38,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

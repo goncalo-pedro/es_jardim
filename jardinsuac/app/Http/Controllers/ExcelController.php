@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 
 use App\Exceptions\FileException;
+use App\Exceptions\WrongFileException;
 use App\Exports\UsersExport;
 use App\Models\Taxa;
+use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
@@ -13,15 +15,22 @@ use App\Imports\UsersImport;
 
 class ExcelController extends Controller
 {
+
     function import(Request $request){
             try
             {
+                request () ->validate(
+                    [
+                        'select_file' => 'mimes:xlsx'
+                    ]
+                );
+
                 ini_set('memory_limit', '512M'); // Aumenta capacidade de memória do servidor para 512MB.
                 if ($request->hasFile('select_file'))
                 {
                     $file = $request->file('select_file')->getRealPath();
                     Excel::import(new UsersImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
-                    return redirect('admin/taxas'); // Return serve p apresentar imediatamente no browser o q está na BD.
+                    return redirect('admin/home'); // Return serve p apresentar imediatamente no browser o q está na BD.
                 }
                 else
                 {
@@ -29,7 +38,11 @@ class ExcelController extends Controller
                 }
             }
             catch (FileException $e) {
-                return redirect('admin/taxas')->withInput()->withErrors(['fileError' => $e->getMessage()]);
+                return redirect('admin/home')->withInput()->withErrors(['fileError' => $e->getMessage()]);
+            }
+
+            catch (WrongFileException $e) {
+                return redirect('admin/home')->withInput()->withErrors(['wrongFileError' => $e->getMessage()]);
             }
     }
 

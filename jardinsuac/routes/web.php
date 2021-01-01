@@ -33,7 +33,7 @@ Route::resource("taxa",TaxaController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     #Route::get('/home', function () {return view('admin.home');})->name("home");
-    Route::get('/home', [AdminTaxaController::class,'home']);
+    Route::get('/home', [AdminTaxaController::class,'home'])->name("admin.home");
 
     Route::get('/criar_user', function () {return view('admin.criar_users');})->name("criar_user");
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('listar_users');

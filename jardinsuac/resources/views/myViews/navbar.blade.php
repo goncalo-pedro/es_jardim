@@ -7,15 +7,14 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="{{ route("admin.home") }}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Importar/Download
+                        Taxas de porte
                     </a>
                     <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route("taxas.index") }}">Importar Excel</a>
-                        <a class="dropdown-item"  href="{{ route("excel.export_file") }}">Download Excel</a>
+                        <a class="dropdown-item" href="{{ route("taxas.index") }}">Listar Taxas de Porte</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

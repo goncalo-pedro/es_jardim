@@ -20,7 +20,11 @@ class AdminTaxaController extends Controller
      */
     public function index(Taxa $taxa)
     {
-        return view('admin.import_excel', ["rows" => $taxa->getTaxas()]);
+        return view('admin.import_excel',
+            [
+                "rows" => $taxa->getTaxas()
+            ]
+        );
     }
 
     /**
@@ -36,6 +40,10 @@ class AdminTaxaController extends Controller
     }
     public function home(Taxa $taxa)
     {
-        return view('admin.home', ["rows" => $taxa->getTaxas(), 'admins' => User::all()]);
+        return view('admin.home',
+            [
+                "rows" => $taxa->getTaxas(),
+                'admins' => User::all()
+            ]);
     }
 }
