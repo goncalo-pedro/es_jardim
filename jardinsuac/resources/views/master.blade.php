@@ -252,7 +252,11 @@
         margin-right: 5%;
     }
 
-
+    @media only screen and (max-width: 768px) {
+        #colMine{
+            width:700px;
+        }
+    }
 </style>
 </body>
 </html>

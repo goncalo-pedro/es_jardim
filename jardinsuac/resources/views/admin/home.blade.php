@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
                 <div class="card-header">
-                    GERIR BASE DE DADOS
+                    Gerir Base de Dados
                 </div>
                 <div class="card-body">
                     <div id="errors">
@@ -39,33 +39,9 @@
                             <button  type="submit" class="btn">Exportar Base de Dados</button>
                         </form>
                     </div>
-                </div>
-            </div>
-        </div>
-        @if($user->admin_master == 1)
-            <div class="col-md-4">
-                <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
-                    <div class="card-header">
-                        Gerir Administradores
-                    </div>
-                    <div class="card-body">
-                        <a  href="{{ route("criar_user") }}" class="btn">Resgistar novo Administrador</a>
-                    </div>
-                </div>
-            </div>
-        @endif
-    </div>
-
-    <div class="row" style="margin: 10px">
-        <div class="col-md-8">
-
-            <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
-                <div class="card-header">
-                    Inventário de Conteúdos Taxa
-                </div>
-                <div class="card-body">
+                    <hr>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped" id="table-import">
+                        <table class="table table-hover table-sm" id="table-import">
                             <tr>
                                 <th>NumControlo</th>
                                 <th>Group</th>
@@ -86,17 +62,22 @@
                             @endforeach
                         </table>
                     </div>
+
+
+
+
+
                 </div>
             </div>
-
         </div>
         @if($user->admin_master == 1)
             <div class="col-md-4">
                 <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
                     <div class="card-header">
-                        Lista de Administradores
+                        Gerir Administradores
                     </div>
                     <div class="card-body">
+                        <a  href="{{ route("criar_user") }}" class="btn">Resgistar novo Administrador</a>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped" id="table-import">
                                 <tr>
@@ -115,8 +96,8 @@
                 </div>
             </div>
         @endif
-
     </div>
+
 @endsection
         <script>
             import Button from "@/Jetstream/Button";
