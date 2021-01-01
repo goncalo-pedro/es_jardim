@@ -169,39 +169,42 @@
             taxas = JSON.parse(JSON.stringify(taxas));
 
             for(const taxa of taxas) {
-                for(const checked of listaCheckeds ) {
-                    if(checked[0] !== 'Geographical') {
-                        if(checked[1] === "Undercultivation") {
-                            checked[1] = "Under cultivation";
-                        }
-                        if(taxa[checked[0]] === checked[1] && alreadyShow[taxa['id'] - 1] === 0) {
-                            alreadyShow[taxa['id'] - 1] = 1;
-                            createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
-                        }
-                    }else {
-                        if(checked[1] === "Mediterranean")
-                            checked[1] = "Mediterranean_islands";
-                        else if(checked[1] === "AtlanticIslandsincludingWestindies")
-                            checked[1] = "Atlantic_islands_including_West_Indies";
-                        else if(checked[1] === "IndianOceanIslands")
-                            checked[1] = "Indian_Ocean_islands";
-                        else if(checked[1] === "Cosmopolitan")
-                            checked[1] = "Cosmopolitan_distribution";
-                        else if(checked[1] === "PacificIslands")
-                            checked[1] = "Pacific_islands";
-                        else if(checked[1] === "NorthAmerica")
-                            checked[1] = "North_America";
-                        else if(checked[1] === "CentralAmerica")
-                            checked[1] = "Central_America";
-                        else if(checked[1] === "SouthAmerica")
-                            checked[1] = "South_America";
+                if(listaCheckeds.length > 0)
+                    for(const checked of listaCheckeds ) {
+                        if(checked[0] !== 'Geographical') {
+                            if(checked[1] === "Undercultivation") {
+                                checked[1] = "Under cultivation";
+                            }
+                            if(taxa[checked[0]] === checked[1] && alreadyShow[taxa['id'] - 1] === 0) {
+                                alreadyShow[taxa['id'] - 1] = 1;
+                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
+                            }
+                        }else {
+                            if(checked[1] === "Mediterranean")
+                                checked[1] = "Mediterranean_islands";
+                            else if(checked[1] === "AtlanticIslandsincludingWestindies")
+                                checked[1] = "Atlantic_islands_including_West_Indies";
+                            else if(checked[1] === "IndianOceanIslands")
+                                checked[1] = "Indian_Ocean_islands";
+                            else if(checked[1] === "Cosmopolitan")
+                                checked[1] = "Cosmopolitan_distribution";
+                            else if(checked[1] === "PacificIslands")
+                                checked[1] = "Pacific_islands";
+                            else if(checked[1] === "NorthAmerica")
+                                checked[1] = "North_America";
+                            else if(checked[1] === "CentralAmerica")
+                                checked[1] = "Central_America";
+                            else if(checked[1] === "SouthAmerica")
+                                checked[1] = "South_America";
 
-                        if(taxa[checked[1]] && alreadyShow[taxa['id'] - 1] === 0) {
-                            alreadyShow[taxa['id'] - 1] = 1;
-                            createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
+                            if(taxa[checked[1]] && alreadyShow[taxa['id'] - 1] === 0) {
+                                alreadyShow[taxa['id'] - 1] = 1;
+                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
+                            }
                         }
                     }
-                }
+                else
+                    createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
             }
         }
 
