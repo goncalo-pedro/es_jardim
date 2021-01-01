@@ -42,16 +42,18 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
-                <div class="card-header">
-                    Gerir Administradores
-                </div>
-                <div class="card-body">
-                    <a  href="{{ route("criar_user") }}" class="btn">Resgistar novo Administrador</a>
+        @if($user->admin_master == 1)
+            <div class="col-md-4">
+                <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
+                    <div class="card-header">
+                        Gerir Administradores
+                    </div>
+                    <div class="card-body">
+                        <a  href="{{ route("criar_user") }}" class="btn">Resgistar novo Administrador</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 
     <div class="row" style="margin: 10px">
@@ -88,30 +90,33 @@
             </div>
 
         </div>
-        <div class="col-md-4">
-            <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
-                <div class="card-header">
-                    Lista de Administradores
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped" id="table-import">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Email</th>
-                            </tr>
-                            @foreach($admins as $admin)
+        @if($user->admin_master == 1)
+            <div class="col-md-4">
+                <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
+                    <div class="card-header">
+                        Lista de Administradores
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped" id="table-import">
                                 <tr>
-                                    <td>{{ $admin->name }}</td>
-                                    <td>{{ $admin->email }}</td>
+                                    <th>Nome</th>
+                                    <th>Email</th>
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($admins as $admin)
+                                    <tr>
+                                        <td>{{ $admin->name }}</td>
+                                        <td>{{ $admin->email }}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        @endif
 
+    </div>
 @endsection
         <script>
             import Button from "@/Jetstream/Button";

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminTaxaController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\TaxaController;
@@ -35,7 +36,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     #Route::get('/home', function () {return view('admin.home');})->name("home");
     Route::get('/home', [AdminTaxaController::class,'home'])->name("admin.home");
 
-    Route::get('/criar_user', function () {return view('admin.criar_users');})->name("criar_user");
+    Route::get('/criar_user', function () {return view('admin.criar_users',[
+        'user' => Auth::user()
+    ]);})->name("criar_user");
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('listar_users');
     Route::post('/import_excel/import', [App\Http\Controllers\ExcelController::class, 'import'])->name('admin.importar');
     Route::get('/export_excel', [App\Http\Controllers\ExcelController::class, 'showExport'])->name('excel.export_file');

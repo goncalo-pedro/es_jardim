@@ -9,6 +9,7 @@ use App\Exports\UsersExport;
 use App\Models\Taxa;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 use App\Imports\UsersImport;
@@ -51,9 +52,10 @@ class ExcelController extends Controller
     }
 
     public function showExport() {
-        return view('admin.export_excel');
+        return view('admin.export_excel', [
+            'user' => Auth::user()
+        ]);
     }
-
 }
 
 
