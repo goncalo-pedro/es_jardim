@@ -30,9 +30,10 @@
                                                     @foreach($paramLista[$key] as $param)
                                                         @if($param != null)
                                                             <div class="form-check">
+                                                                <p></p>
                                                                 <input class="form-check-input" type="checkbox" value="" id="{{str_replace(' ', '', $param)}}" onclick="renderTaxas()">
                                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                                    {{$param}}
+                                                                    {{str_replace(' ', '', $param)}}
                                                                 </label>
                                                             </div>
                                                         @endif
@@ -75,65 +76,68 @@
 
         var listaTaxas = document.getElementById("listTaxas");
 
-        var listaChecks = {
-            'Genus' : [
-                'Annona',
-                'Araucaria',
-                'Archontophoenix',
-                'Bambusa',
-                'Brachychiton',
-                'Buxus',
-                'Callistemon',
-                'Carya',
-                'Castanospermum'
-            ],
-            'Growth_habit_USDA_codes_and_definitions': [
-                'Tree',
-                'Graminoid',
-                'Shrub'
-            ],
-            'Foliar_retention': [
-                'Semi-deciduous',
-                'Evergreen',
-                'Deciduous'
-            ],
-            'Sexual_system' : [
-                'Hermaphrodite',
-                'Monoecious'
-            ],
-            'Nativity_status_to_Azores': [
-                'Exotic'
-            ],
-            'Status_of_exotic_species_at_Azores': [
-                'Undercultivation'
-            ],
-            'Geographical': [
-                "Europe",
-                "Mediterranean",
-                "Africa",
-                "Asia",
-                "Oceania",
-                "PacificIslands",
-                "NorthAmerica",
-                "SouthAmerica",
-            ],
-            'Plant_origin' : [
-                "Natural",
-            ],
-            'Life_cycle_span': [
-                "Perennial",
-            ],
-            'Name_category': [
-                "Species",
-            ],
-            'Name_status_The_Plant_List_2013': [
-                "Accepted"
-            ]
-        }
+        var listaChecks = @json($paramLista);
+        listaChecks = JSON.parse(JSON.stringify(listaChecks));
+
+            /*{
+                'Genus' : [
+                    'Annona',
+                    'Araucaria',
+                    'Archontophoenix',
+                    'Bambusa',
+                    'Brachychiton',
+                    'Buxus',
+                    'Callistemon',
+                    'Carya',
+                    'Castanospermum'
+                ],
+                'Growth_habit_USDA_codes_and_definitions': [
+                    'Tree',
+                    'Graminoid',
+                    'Shrub'
+                ],
+                'Foliar_retention': [
+                    'Semi-deciduous',
+                    'Evergreen',
+                    'Deciduous'
+                ],
+                'Sexual_system' : [
+                    'Hermaphrodite',
+                    'Monoecious'
+                ],
+                'Nativity_status_to_Azores': [
+                    'Exotic'
+                ],
+                'Status_of_exotic_species_at_Azores': [
+                    'Undercultivation'
+                ],
+                'Geographical': [
+                    "Europe",
+                    "Mediterranean",
+                    "Africa",
+                    "Asia",
+                    "Oceania",
+                    "PacificIslands",
+                    "NorthAmerica",
+                    "SouthAmerica",
+                ],
+                'Plant_origin' : [
+                    "Natural",
+                ],
+                'Life_cycle_span': [
+                    "Perennial",
+                ],
+                'Name_category': [
+                    "Species",
+                ],
+                'Name_status_The_Plant_List_2013': [
+                    "Accepted"
+                ]
+            }*/
 
         console.log(listaChecks);
         /*
-            var teste = @json($paramLista);
+            var teste =
 
 
             teste =
@@ -158,23 +162,41 @@
             let listaCheckeds = []
             for(const key in listaChecks) {
                 console.log(key);
-                for(const check of listaChecks[key]) {
+                for(let check of listaChecks[key]) {
+                    if(check === "Atlantic Islands including West indies")
+                        check = "AtlanticIslandsincludingWestindies";
+                    else if(check === "Indian Ocean Islands")
+                        check = "IndianOceanIslands";
+                    else if(check === "Pacific Islands")
+                        check = "PacificIslands";
+                    else if(check === "North America")
+                        check = "NorthAmerica";
+                    else if(check === "Central America")
+                        check = "CentralAmerica";
+                    else if(check === "South America")
+                        check = "SouthAmerica";
+                    else if(check === "Under cultivation")
+                        check = "Undercultivation"
+
                     let objCheck = document.getElementById(check);
                     if(objCheck.checked)
                         listaCheckeds.push([key, check])
                 }
             }
-
+            console.log(listaCheckeds)
             var taxas = @json($taxas);
             taxas = JSON.parse(JSON.stringify(taxas));
 
             for(const taxa of taxas) {
                 if(listaCheckeds.length > 0)
                     for(const checked of listaCheckeds ) {
-                        if(checked[0] !== 'Geographical') {
+                        if(checked[0] !== 'Native Distribution Geographical Area') {
+
                             if(checked[1] === "Undercultivation") {
                                 checked[1] = "Under cultivation";
                             }
+
+                            checked[0] = checked[0].replace(/\s/g, '_');
                             if(taxa[checked[0]] === checked[1] && alreadyShow[taxa['id'] - 1] === 0) {
                                 alreadyShow[taxa['id'] - 1] = 1;
                                 createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
@@ -196,7 +218,7 @@
                                 checked[1] = "Central_America";
                             else if(checked[1] === "SouthAmerica")
                                 checked[1] = "South_America";
-
+                            console.log(taxa[checked[1]])
                             if(taxa[checked[1]] && alreadyShow[taxa['id'] - 1] === 0) {
                                 alreadyShow[taxa['id'] - 1] = 1;
                                 createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])

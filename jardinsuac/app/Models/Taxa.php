@@ -21,7 +21,7 @@ class Taxa extends Model
     public function getGenus()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Genus")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Genus")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Genus"
         );
     }
@@ -29,7 +29,7 @@ class Taxa extends Model
     public function getUSDA()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Growth_habit_USDA_codes_and_definitions")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Growth_habit_USDA_codes_and_definitions")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Growth_habit_USDA_codes_and_definitions"
         );
     }
@@ -37,7 +37,7 @@ class Taxa extends Model
     public function getFoliar()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Foliar_retention")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Foliar_retention")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Foliar_retention"
         );
     }
@@ -45,7 +45,7 @@ class Taxa extends Model
     public function getSexual()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Sexual_system")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Sexual_system")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Sexual_system"
         );
     }
@@ -53,7 +53,7 @@ class Taxa extends Model
     public function getNativity()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Nativity_status_to_Azores")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Nativity_status_to_Azores")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Nativity_status_to_Azores"
         );
     }
@@ -61,7 +61,7 @@ class Taxa extends Model
     public function getExoticSpecies()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Status_of_exotic_species_at_Azores")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Status_of_exotic_species_at_Azores")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Status_of_exotic_species_at_Azores"
         );
     }
@@ -69,7 +69,7 @@ class Taxa extends Model
     public function getPlantOrigin()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Plant_origin")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Plant_origin")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Plant_origin"
         );
     }
@@ -77,7 +77,7 @@ class Taxa extends Model
     public function getLifeCycle()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Life_cycle_span")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Life_cycle_span")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Life_cycle_span"
         );
     }
@@ -85,7 +85,7 @@ class Taxa extends Model
     public function getNameCategory()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Name_category")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Name_category")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Name_category"
         );
     }
@@ -93,7 +93,7 @@ class Taxa extends Model
     public function getStatusPlantList()
     {
         return $this->arrayFiltros(
-            DB::table('taxas')->select("Name_status_The_Plant_List_2013")->distinct()->get()->toArray(),
+            DB::table('taxas')->select("Name_status_The_Plant_List_2013")->whereNotNull("Genus")->distinct()->get()->toArray(),
             "Name_status_The_Plant_List_2013"
         );
     }
