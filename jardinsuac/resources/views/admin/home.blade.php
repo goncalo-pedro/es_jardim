@@ -77,7 +77,7 @@
                         Gerir Administradores
                     </div>
                     <div class="card-body">
-                        <a  href="{{ route("criar_user") }}" class="btn">Resgistar novo Administrador</a>
+                        <a  href="{{ route("administradores.create") }}" class="btn">Resgistar novo Administrador</a>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped" id="table-import">
                                 <tr>

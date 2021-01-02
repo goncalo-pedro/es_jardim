@@ -9,11 +9,11 @@
         <label> Nível de acesso:
             <select id="n_acesso" name="n_acesso">
                 @if($administrador->admin_master == 1)
-                    <option value="0">0</option>
-                    <option value="1" selected>1</option>
+                    <option value="0">Baixo Nível</option>
+                    <option value="1" selected>Alto Nível</option>
                 @else
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
+                    <option value="0" selected>Baixo Nível</option>
+                    <option value="1">Alto Nível</option>
                 @endif
 
             </select>

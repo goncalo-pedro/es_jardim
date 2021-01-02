@@ -104,4 +104,15 @@ class User extends Authenticatable
 
         $u->save();
     }
+
+    public function createUser($name, $email, $password)
+    {
+        $this->name = $name;
+        $this->email = $email;
+        $this->password = Hash::make($password);
+        $this->admin_master = 0;
+
+        $this->save();
+
+    }
 }

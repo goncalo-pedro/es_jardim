@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Fortify\PasswordValidationRules;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -11,10 +12,20 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class AdministradoresController extends Controller
 {
+
+    use PasswordValidationRules;
+
     const n_acesso = "n_acesso";
+    const name = "name";
+    const email = "email";
+    const password = "password";
+    const password_confirmation = "password_confirmation";
 
     /**
      * Display a listing of the resource.
@@ -34,22 +45,41 @@ class AdministradoresController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function create()
     {
-        //
+        return view('admin.criar_users',
+            [
+                'user' => Auth::user(),
+            ]
+        );
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->validate(request(), [
+                    self::name => ['required', 'string', 'max:255'],
+                    self::email => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                    self::password => $this->passwordRules(),
+                ]
+            );
+
+            $u = new User();
+
+            $u->createUser(request(self::name), request(self::email), request(self::password));
+            return redirect("admin/administradores")->withErrors(["userCriado" => "User criado com sucesso!"]);
+        } catch (\Dotenv\Exception\ValidationException $e) {
+            return redirect("admin/administradores/create")->withInput()->withErrors(["userCreateError" => $e->getMessage()]);
+        }
     }
 
     /**

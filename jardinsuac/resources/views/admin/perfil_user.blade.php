@@ -1,21 +1,21 @@
 @extends('admin.master')
 
 @section('content')
-    <div id="errors">
-        @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li style="color: red">
-                        {{ $error }}
-                    </li>
-                @endforeach
-            </ul>
-        @endif
-    </div>
     <form action="{{ route('admin.alterarDados') }}" enctype="multipart/form-data" method="post">
         {{ csrf_field() }}
         <div>
             <h1> Dados Utilizador</h1>
+            <div id="errors">
+                @if($errors->any())
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li style="color: red">
+                                {{ $error }}
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
             <div>
                 <label for="u_name">Nome</label><input type="text" id="u_name" name="u_name" value="{{ $user->name }}">
             </div>
