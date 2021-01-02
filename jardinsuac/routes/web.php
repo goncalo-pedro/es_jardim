@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/criar_user', function () {return view('admin.criar_users',[
         'user' => Auth::user()
     ]);})->name("criar_user");
-
+    Route::post('users/{{id}}', [App\Http\Controllers\UserController::class, 'consultarUser'])->name('admin.consultarUser');
     Route::post('/perfil/alterarDados', [App\Http\Controllers\UserController::class, 'alterarDados'])->name('admin.alterarDados');
     Route::post('/perfil/alterarPassword', [App\Http\Controllers\UserController::class, 'alterarPass'])->name('admin.alterarPassword');
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('listar_users');
@@ -48,4 +48,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::resource("taxas", AdminTaxaController::class);
     Route::resource("excel",ExcelController::class);
+    Route::resource('administradores', \App\Http\Controllers\AdministradoresController::class);
 });

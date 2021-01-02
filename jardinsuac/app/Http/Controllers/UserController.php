@@ -23,18 +23,6 @@ class UserController extends Controller
     const name = 'u_name';
     const c_password = 'current_password';
     const n_password = 'password';
-    const vn_password = 'password_confirmation';
-
-
-    public function index () {
-        return view('admin.listar_users',
-            [
-                'users' => User::all(),
-                'user' => Auth::user()
-            ]
-        );
-
-    }
 
     public function perfil() {
         return view ('admin.perfil_user',
@@ -43,6 +31,7 @@ class UserController extends Controller
             ]
         );
     }
+
 
     /**
      * @param Request $request
@@ -56,7 +45,6 @@ class UserController extends Controller
                     self::n_password => $this->passwordRules(),
                 ]
             );
-
 
             if (! Hash::check(request(self::c_password), Auth::user()->password)) {
                 return redirect('admin/perfil')->withInput()->withErrors(['password' => 'A password atual inválida.']);

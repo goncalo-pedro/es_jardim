@@ -29,7 +29,7 @@
                         </a>
                         <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{{ route("criar_user") }}">Criar Administrador</a>
-                            <a class="dropdown-item"  href="{{ route("listar_users") }}">Gerir Administradores</a>
+                            <a class="dropdown-item"  href="{{ route("administradores.index") }}">Gerir Administradores</a>
                         </div>
                     </div>
                 @endif

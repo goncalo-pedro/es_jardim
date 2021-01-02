@@ -96,4 +96,12 @@ class User extends Authenticatable
         $this->password = Hash::make($password);
         $this->save();
     }
+
+    public function alterarNivel ($id, $nivel)
+    {
+        $u = User::where('id', $id)->first();
+        $u->admin_master = $nivel;
+
+        $u->save();
+    }
 }
