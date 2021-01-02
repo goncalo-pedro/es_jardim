@@ -29,11 +29,11 @@ class TaxaController extends Controller
                     "Foliar retention" => $taxa->getFoliar(),
                     "Sexual system" => $taxa->getSexual(),
                     "Nativity status to Azores" => $taxa->getNativity(),
-                    "Status of exotic species At Azores" => $taxa->getExoticSpecies(),
+                    "Status of exotic species at Azores" => $taxa->getExoticSpecies(),
                     "Native Distribution Geographical Area" => $taxa->getNativeArea(),
                     "Plant origin" => $taxa->getPlantOrigin(),
                     "Life cycle span" => $taxa->getLifeCycle(),
-                    "Name Category" => $taxa->getNameCategory(),
+                    "Name category" => $taxa->getNameCategory(),
                     "Name status The Plant List 2013" => $taxa->getStatusPlantList(),
                 ),
             ]

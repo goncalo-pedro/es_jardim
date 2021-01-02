@@ -196,6 +196,7 @@
                             if(checked[1] === "Undercultivation") {
                                 checked[1] = "Under cultivation";
                             }
+                            console.log(taxa)
 
                             checked[0] = checked[0].replace(/\s/g, '_');
                             if(taxa[checked[0]] === checked[1] && alreadyShow[taxa['id'] - 1] === 0) {
