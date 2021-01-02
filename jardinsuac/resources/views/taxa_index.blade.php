@@ -59,6 +59,7 @@
                                         <h5 class="card-title">{{$taxa->Nome_comum}}</h5>
                                         <h6 class="card-subtitle">{{$taxa->ScientificName}}</h6>
                                         <p class="card-text">{{$taxa->Breve_descricao}}</p>
+
                                         <button type="button" class="btn" onclick="location.href='/taxa/{{$taxa->id}}'" >Saber Mais</button>
                                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                     </div>
@@ -199,7 +200,7 @@
                             checked[0] = checked[0].replace(/\s/g, '_');
                             if(taxa[checked[0]] === checked[1] && alreadyShow[taxa['id'] - 1] === 0) {
                                 alreadyShow[taxa['id'] - 1] = 1;
-                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
+                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
                             }
                         }else {
                             if(checked[1] === "Mediterranean")
@@ -221,18 +222,37 @@
                             console.log(taxa[checked[1]])
                             if(taxa[checked[1]] && alreadyShow[taxa['id'] - 1] === 0) {
                                 alreadyShow[taxa['id'] - 1] = 1;
-                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
+                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
                             }
                         }
                     }
                 else
-                    createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'])
+                    createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
             }
         }
 
-        function createCardTaxa(nomeComum, scientificName, breveDescricao) {
-            let coluna = createEl("div", "col");
+        function createCardTaxa(nomeComum, scientificName, breveDescricao, id) {
+            let coluna = createEl("div", ["col"]);
 
+            let form = createEl("form", ["a"]);
+            form.action = "taxa/"+id;
+            form.method = "post";
+            form.method.enctype = "multipart/form-data";
+
+
+            let methodGet = createEl("input", ["a"]);
+            methodGet.type="hidden";
+            methodGet.name="_method";
+            methodGet.value="GET";
+
+            let inputCSRF = createEl("input", ["a"]);
+
+            inputCSRF.type="hidden";
+            inputCSRF.name = "_token";
+            inputCSRF.value = "f4IKeatgFnPbrTHr9xoJnnnQr0WiOQYjCjwVW2JQ";
+
+            form.appendChild(inputCSRF);
+            form.appendChild(methodGet);
 
             let cartao = createEl("div", ["card", "mb-3"]);
 
@@ -248,7 +268,6 @@
 
             let textCard = createEl("p", ["card-text"]);
             textCard.innerHTML = breveDescricao;
-
             let botaoSaberMais = createEl("button", ["btn"]);
             botaoSaberMais.innerHTML = "Saber Mais";
 
@@ -266,13 +285,16 @@
 
             linha.appendChild(bodyCard);
             cartao.appendChild(linha);
-            coluna.appendChild(cartao);
+            form.append(cartao);
+            coluna.appendChild(form);
+
 
             document.getElementById("listTaxas").appendChild(coluna);
         }
 
         function createEl (element, className) {
             let elemento = document.createElement(element);
+            console.log(className)
             for(const classe of className)
                 elemento.classList.add(classe)
             return elemento;
