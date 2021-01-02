@@ -6,132 +6,59 @@
         <h3 class="panel-title">Inventário de Conteúdos Taxa</h3>
     </div>
     <div class="panel-body">
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped" id="table-import">
-                <tr>
-                    <th>NumControlo</th>
-                    <th>Group</th>
-                    <th>Division</th>
-                    <th>Family</th>
-                    <th>ScientificName</th>
-                    <th>CommonName</th>
-                    <th>NativeDistribution</th>
-                    <th>ConservationStatus</th>
-                    <th>StatusAzores</th>
-                    <th>ShortDescription</th>
-                    <th>LastUpdated</th>
-                    <th>Scientific_name_Reference</th>
-                    <th>Scientific_name_Link</th>
-                    <th>Common_name_Reference</th>
-                    <th>Common_name_Link</th>
-                    <th>Native_distribution_Reference</th>
-                    <th>Native_distribution_Link</th>
-                    <th>Conservation_status_Reference</th>
-                    <th>Conservation_status_Link</th>
-                    <th>Status_at_Azores_References</th>
-                    <th>Status_at_Azores_Link</th>
-                    <th>Grupo</th>
-                    <th>Nome_comum</th>
-                    <th>Nome_comum_Referência</th>
-                    <th>Nome_comum_Link</th>
-                    <th>Região_geográfica_de_origem</th>
-                    <th>Estado_de_conservação</th>
-                    <th>Estatuto_na_Região_Açores</th>
-                    <th>Breve_descrição</th>
-                    <th>Genus</th>
-                    <th>Growth_habit_USDA_codes_and_definitions</th>
-                    <th>Foliar_retention</th>
-                    <th>Sexual_system</th>
-                    <th>Nativity_status_to_Azores</th>
-                    <th>Status_of_exotic_species_at_Azores</th>
-                    <th>Native_distribution_geographical_area</th>
-                    <th>Cosmopolitan_distribution</th>
-                    <th>Europe</th>
-                    <th>Mediterranean_islands</th>
-                    <th>Atlantic_islands_including West_Indies</th>
-                    <th>Africa</th>
-                    <th>Indian_Ocean _islands</th>
-                    <th>Asia</th>
-                    <th>Oceania</th>
-                    <th>Pacific_islands</th>
-                    <th>North _America</th>
-                    <th>Central_America</th>
-                    <th>South_America</th>
-                    <th>Plant_origin</th>
-                    <th>Life_cycle_span</th>
-                    <th>Name_category</th>
-                    <th>Name_status_The Plant List_2013</th>
-                    <th>Link 1</th>
-                    <th>Link 2</th>
-                    <th>Link 3</th>
-                    <th>Link 4</th>
-                    <th>Link 5</th>
-                </tr>
+        <div>
+            <h3>Ficha de Exemplar (Inglês)</h3>
+            <p><b>NumControlo:</b> {{$row->NumControlo}}</p>
+            <p><b>Group:</b> {{$row->Group}}</p>
+            <p><b>Division:</b> {{$row->Division}}</p>
+            <p><b>Family:</b> {{$row->Family}}</p>
+            <p><b>Scientific Name:</b> {{$row->ScientificName}}</p>
+            <p><b>Common Name:</b> {{$row->CommonName}}</p>
+            <p><b>Native Distribution:</b> {{$row->NativeDistribution}}</p>
+            <p><b>Conservation Status:</b> {{$row->ConservationStatus}}</p>
+            <p><b>Status Azores:</b> {{$row->StatusAzores}}</p>
+            <p><b>Short Description:</b> {{$row->ShortDescription}}</p>
+            <p><b>Last Updated:</b> {{$row->LastUpdated}}</p>
+            <p><b>Scientific Name Reference: </b>{{$row->Scientific_name_Reference}}</p>
+            <p><b>Scientific Name Link:</b> {{$row->Scientific_name_Link}}</p>
+            <p><b>Common Name Reference:</b> {{$row->Common_name_Reference}}</p>
+            <p><b>Common Name Link:</b> {{$row->Common_name_Link}}</p>
+            <p><b>Native Distribution Reference:</b> {{$row->Native_distribution_Reference}}</p>
+            <p><b>Native Distribution Link: </b>{{$row->Native_distribution_Link}}</p>
+            <p><b>Conservation Status Reference:</b> {{$row->Conservation_status_Reference}}</p>
+            <p><b>Conservation Status Link:</b> {{$row->Conservation_status_Link}}</p>
+            <p><b>Status at Azores References:</b> {{$row->Status_at_Azores_References}}</p>
+            <p><b>Status at Azores Link:</b> {{$row->Status_at_Azores_Link}}</p>
 
-                <tr>
-                    <td>{{$row->id}}</td>
-                    <th>{{$row->NumControlo}}</th>
-                    <th>{{$row->Group}}</th>
-                    <th>{{$row->Division}}</th>
-                    <th>{{$row->Family}}</th>
-                    <th>{{$row->ScientificName}}</th>
-                    <th>{{$row->CommonName}}</th>
-                    <th>{{$row->NativeDistribution}}</th>
-                    <th>{{$row->ConservationStatus}}</th>
-                    <th>{{$row->StatusAzores}}</th>
-                    <th>{{$row->ShortDescription}}</th>
-                    <th>{{$row->LastUpdated}}</th>
-                    <th>{{$row->Scientific_name_Reference}}</th>
-                    <th>{{$row->Scientific_name_Link}}</th>
-                    <th>{{$row->Common_name_Reference}}</th>
-                    <th>{{$row->Common_name_Link}}</th>
-                    <th>{{$row->Native_distribution_Reference}}</th>
-                    <th>{{$row->Native_distribution_Link}}</th>
-                    <th>{{$row->Conservation_status_Reference}}</th>
-                    <th>{{$row->Conservation_status_Link}}</th>
-                    <th>{{$row->Status_at_Azores_References}}</th>
-                    <th>{{$row->Status_at_Azores_Link}}</th>
-                    <th>{{$row->Grupo}}</th>
-                    <th>{{$row->Nome_comum}}</th>
-                    <th>{{$row->Nome_comum_Referencia}}</th>
-                    <th>{{$row->Nome_comum_Link}}</th>
-                    <th>{{$row->Regiao_geografica_de_origem}}</th>
-                    <th>{{$row->Estado_de_conservacao}}</th>
-                    <th>{{$row->Estatuto_na_Regiao_Acores}}</th>
-                    <th>{{$row->Breve_descricao}}</th>
-                    <th>{{$row->Genus}}</th>
-                    <th>{{$row->Growth_habit_USDA_codes_and_definitions}}</th>
-                    <th>{{$row->Foliar_retention}}</th>
-                    <th>{{$row->Sexual_system}}</th>
-                    <th>{{$row->Nativity_status_to_Azores}}</th>
-                    <th>{{$row->Status_of_exotic_species_at_Azores}}</th>
-                    <th>{{$row->Native_distribution_geographical_area}}</th>
-                    <th>{{$row->Cosmopolitan_distribution}}</th>
-                    <th>{{$row->Europe}}</th>
-                    <th>{{$row->Mediterranean_islands}}</th>
-                    <th>{{$row->Atlantic_islands_including_West_Indies}}</th>
-                    <th>{{$row->Africa}}</th>
-                    <th>{{$row->Indian_Ocean_islands}}</th>
-                    <th>{{$row->Asia}}</th>
-                    <th>{{$row->Oceania}}</th>
-                    <th>{{$row->Pacific_islands}}</th>
-                    <th>{{$row->North_America}}</th>
-                    <th>{{$row->Central_America}}</th>
-                    <th>{{$row->South_America}}</th>
-                    <th>{{$row->Plant_origin}}</th>
-                    <th>{{$row->Life_cycle_span}}</th>
-                    <th>{{$row->Name_category}}</th>
-                    <th>{{$row->Name_status_The_Plant_List_2013}}</th>
-                    <th>{{$row->Link_1}}</th>
-                    <th>{{$row->Link_2}}</th>
-                    <th>{{$row->Link_3}}</th>
-                    <th>{{$row->Link_4}}</th>
-                    <th>{{$row->Link_5}}</th>
+            <h3>Ficha Exemplar (Português)</h3>
+            <p><b>Grupo:</b> {{$row->Grupo}}</p>
+            <p><b>Nome Comum:</b> {{$row->Nome_comum}}</p>
+            <p><b>Nome Comum Referência:</b> {{$row->Nome_comum_Referencia}}</p>
+            <p><b>Nome Comum Link:</b> {{$row->Nome_comum_Link}}</p>
+            <p><b>Região Geográfica de Origem:</b> {{$row->Regiao_geografica_de_origem}}</p>
+            <p><b>Estado de Conservação:</b> {{$row->Estado_de_conservacao}}</p>
+            <p><b>Estatuto na Região dos Açores:</b> {{$row->Estatuto_na_Regiao_Acores}}</p>
+            <p><b>Breve Descrição: </b>{{$row->Breve_descricao}}</p>
 
-                </tr>
+            <h3>Pesquisa/Search</h3>
+            <p><b>Genus:</b> {{$row->Genus}}</p>
+            <p><b>Growth Habit USDA codes and Definitions:</b> {{$row->Growth_habit_USDA_codes_and_definitions}}</p>
+            <p><b>Foliar retention:</b> {{$row->Foliar_retention}}</p>
+            <p><b>Sexual System:</b> {{$row->Sexual_system}}</p>
+            <p><b>Nativity Status to Azores:</b> {{$row->Nativity_status_to_Azores}}</p>
+            <p><b>Status of exotic species at Azores:</b> {{$row->Status_of_exotic_species_at_Azores}}</p>
+            <p><b>Native Distribution Geographical Area:</b> {{$row->Native_distribution_geographical_area}}</p>
+            <p><b>Plant Origin:</b> {{$row->Plant_origin}}</p>
+            <p><b>Life cycle:</b> {{$row->Life_cycle_span}}</p>
+            <p><b>Name Category:</b> {{$row->Name_category}}</p>
+            <p><b>Name Status The Plant List 2013: </b>{{$row->Name_status_The_Plant_List_2013}}</p>
 
-            </table>
-        </div>
+            <h3>Hiperligações consultadas: </h3>
+            <p><b>Link 1:</b> {{$row->Link_1}}</p>
+            <p><b>Link 2:</b> {{$row->Link_2}}</p>
+            <p><b>Link 3:</b> {{$row->Link_3}}</p>
+            <p><b>Link 4:</b> {{$row->Link_4}}</p>
+            <p><b>Link 5:</b> {{$row->Link_5}}</p>
     </div>
 </div>
 @endsection

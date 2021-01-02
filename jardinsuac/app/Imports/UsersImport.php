@@ -20,7 +20,7 @@ class UsersImport implements ToCollection
 
         foreach ($rows_no_header as $row)
         {
-            if(count($row) === 59) {
+            if(count($row) >= 59) {
                 if($row->filter()->isNotEmpty())
                 {
                     DB::table('taxas')->insert([
