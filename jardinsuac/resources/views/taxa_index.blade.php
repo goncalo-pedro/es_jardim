@@ -153,8 +153,7 @@
         */
         function renderTaxas () {
 
-            let alreadyShow = new Array(16);
-            alreadyShow.fill(0);
+            let toShow = [];
 
 
             while (listaTaxas.hasChildNodes())
@@ -191,17 +190,16 @@
             for(const taxa of taxas) {
                 if(listaCheckeds.length > 0)
                     for(const checked of listaCheckeds ) {
+                        console.log("lista taxas: ", toShow)
                         if(checked[0] !== 'Native Distribution Geographical Area') {
 
                             if(checked[1] === "Undercultivation") {
                                 checked[1] = "Under cultivation";
                             }
-                            console.log(taxa)
 
                             checked[0] = checked[0].replace(/\s/g, '_');
-                            if(taxa[checked[0]] === checked[1] && alreadyShow[taxa['id'] - 1] === 0) {
-                                alreadyShow[taxa['id'] - 1] = 1;
-                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
+                            if(taxa[checked[0]] === checked[1]) {
+                                toShow.push(taxa);
                             }
                         }else {
                             if(checked[1] === "Mediterranean")
@@ -220,16 +218,51 @@
                                 checked[1] = "Central_America";
                             else if(checked[1] === "SouthAmerica")
                                 checked[1] = "South_America";
-                            console.log(taxa[checked[1]])
-                            if(taxa[checked[1]] && alreadyShow[taxa['id'] - 1] === 0) {
-                                alreadyShow[taxa['id'] - 1] = 1;
-                                createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
+                            if(taxa[checked[1]]) {
+                                toShow.push(taxa);
                             }
                         }
                     }
                 else
                     createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
             }
+
+            showRightTaxa(toShow, listaCheckeds.length)
+        }
+
+        function showRightTaxa(toShow, qtdFiltrosSelecionados) {
+            let alreadyShow = [];
+            let count = 0;
+            for(const taxa of toShow) {
+                let countTaxaIgual = 0;
+                for (const taxaComparar of toShow)
+                    if (taxa['id'] === taxaComparar['id'])
+                        countTaxaIgual++
+
+                if (countTaxaIgual === qtdFiltrosSelecionados) {
+                    let exists = false
+                    for(const taxaVerificar of alreadyShow)
+                        if(taxa['Nome_comum'] === taxaVerificar['Nome_comum'])
+                            exists = true;
+                    if(!exists) {
+                        createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
+                        alreadyShow.push(taxa)
+                        count ++;
+                    }
+                }
+            }
+            if(count === 0)
+                resultsNotFound()
+        }
+
+        function resultsNotFound() {
+            let coluna = createEl("div", ["col"]);
+
+            let notFound = createEl("p", ["texto"]);
+            notFound.innerHTML = "Não foram encontrados resultados.";
+
+            coluna.appendChild(notFound)
+            document.getElementById("listTaxas").appendChild(coluna);
         }
 
         function createCardTaxa(nomeComum, scientificName, breveDescricao, id) {
@@ -295,7 +328,6 @@
 
         function createEl (element, className) {
             let elemento = document.createElement(element);
-            console.log(className)
             for(const classe of className)
                 elemento.classList.add(classe)
             return elemento;
