@@ -44,10 +44,12 @@
                                     @endforeach
                                 </div>
                             </div>
+                            <button class="btn align-middle" onclick="resetFilters()">Reset Filters</button>
                         </div>
-                    </div>
-            </div>
 
+                    </div>
+
+                </div>
             </div>
             <div class="col-md-8">
                 <div id="listTaxas" class="row row-cols-1 row-cols-md-1">
@@ -80,77 +82,6 @@
         var listaChecks = @json($paramLista);
         listaChecks = JSON.parse(JSON.stringify(listaChecks));
 
-            /*{
-                'Genus' : [
-                    'Annona',
-                    'Araucaria',
-                    'Archontophoenix',
-                    'Bambusa',
-                    'Brachychiton',
-                    'Buxus',
-                    'Callistemon',
-                    'Carya',
-                    'Castanospermum'
-                ],
-                'Growth_habit_USDA_codes_and_definitions': [
-                    'Tree',
-                    'Graminoid',
-                    'Shrub'
-                ],
-                'Foliar_retention': [
-                    'Semi-deciduous',
-                    'Evergreen',
-                    'Deciduous'
-                ],
-                'Sexual_system' : [
-                    'Hermaphrodite',
-                    'Monoecious'
-                ],
-                'Nativity_status_to_Azores': [
-                    'Exotic'
-                ],
-                'Status_of_exotic_species_at_Azores': [
-                    'Undercultivation'
-                ],
-                'Geographical': [
-                    "Europe",
-                    "Mediterranean",
-                    "Africa",
-                    "Asia",
-                    "Oceania",
-                    "PacificIslands",
-                    "NorthAmerica",
-                    "SouthAmerica",
-                ],
-                'Plant_origin' : [
-                    "Natural",
-                ],
-                'Life_cycle_span': [
-                    "Perennial",
-                ],
-                'Name_category': [
-                    "Species",
-                ],
-                'Name_status_The_Plant_List_2013': [
-                    "Accepted"
-                ]
-            }*/
-
-        console.log(listaChecks);
-        /*
-            var teste =
-
-
-            teste =
-
-            var lista = [];
-            for(const [key, value] of teste) {
-                for(const param of teste[key])
-                    lista.push(param)
-            }
-
-            console.log(lista)
-        */
         function renderTaxas () {
 
             let toShow = [];
@@ -161,7 +92,6 @@
 
             let listaCheckeds = []
             for(const key in listaChecks) {
-                console.log(key);
                 for(let check of listaChecks[key]) {
                     if(check === "Atlantic Islands including West indies")
                         check = "AtlanticIslandsincludingWestindies";
@@ -183,7 +113,7 @@
                         listaCheckeds.push([key, check])
                 }
             }
-            console.log(listaCheckeds)
+            
             var taxas = @json($taxas);
             taxas = JSON.parse(JSON.stringify(taxas));
 
@@ -263,6 +193,32 @@
 
             coluna.appendChild(notFound)
             document.getElementById("listTaxas").appendChild(coluna);
+        }
+
+        function resetFilters() {
+            for(const key in listaChecks) {
+                for(let check of listaChecks[key]) {
+                    if(check === "Atlantic Islands including West indies")
+                        check = "AtlanticIslandsincludingWestindies";
+                    else if(check === "Indian Ocean Islands")
+                        check = "IndianOceanIslands";
+                    else if(check === "Pacific Islands")
+                        check = "PacificIslands";
+                    else if(check === "North America")
+                        check = "NorthAmerica";
+                    else if(check === "Central America")
+                        check = "CentralAmerica";
+                    else if(check === "South America")
+                        check = "SouthAmerica";
+                    else if(check === "Under cultivation")
+                        check = "Undercultivation"
+
+                    let objCheck = document.getElementById(check);
+                    if(objCheck.checked)
+                        objCheck.checked = false;
+                }
+            }
+            renderTaxas()
         }
 
         function createCardTaxa(nomeComum, scientificName, breveDescricao, id) {
