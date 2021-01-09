@@ -11,6 +11,13 @@
     @yield('content')
 
     <style>
+        .showBox{
+            border-radius:5px;
+            box-shadow: 0px 0px 15px lightgrey;
+            padding: 10px;
+            margin-left:5%;
+            margin-right: 5%;
+        }
         body{
             background-color: #FAFAFA;
         }

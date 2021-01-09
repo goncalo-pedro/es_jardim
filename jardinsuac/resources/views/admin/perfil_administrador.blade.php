@@ -1,6 +1,7 @@
 @extends('admin.master')
 
 @section('content')
+
     <form action='{{ route("administradores.edit", $administrador->id) }}' enctype="multipart/form-data" method="post">
         {{ csrf_field() }}
         @method('GET')

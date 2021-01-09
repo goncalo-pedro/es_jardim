@@ -12,6 +12,14 @@
     @yield('content')
 
 <style>
+    #bannerImage {
+        width: 100%;
+        background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
+        height: 20vh;
+        background-color: purple;
+        background-position: center;
+    }
+
     body{
         background-color: #FAFAFA;
     }
