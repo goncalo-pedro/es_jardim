@@ -24,4 +24,14 @@ class TaxaNomeConservationStatusReference extends Model
         $taxaNomeConservationStatusReference->taxa()->associate($taxa);
         $taxaNomeConservationStatusReference->save();
     }
+
+    public function getConservations()
+    {
+        return TaxaNomeConservationStatusReference::all();
+    }
+
+    public function getTaxaConservations(int $id)
+    {
+        return TaxaNomeConservationStatusReference::where('taxa_id', $id)->get();
+    }
 }

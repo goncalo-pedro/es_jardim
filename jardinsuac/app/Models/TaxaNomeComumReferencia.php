@@ -24,4 +24,14 @@ class TaxaNomeComumReferencia extends Model
         $taxaNomeComumReferencia->taxa()->associate($taxa);
         $taxaNomeComumReferencia->save();
     }
+
+    public function getNomes()
+    {
+        return TaxaNomeComumReferencia::all();
+    }
+
+    public function getTaxaNomes(int $id)
+    {
+        return TaxaNomeComumReferencia::where('taxa_id', $id)->get();
+    }
 }

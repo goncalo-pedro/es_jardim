@@ -23,4 +23,14 @@ class TaxaNomeComum extends Model
         $taxaNomeComum->taxa()->associate($taxa);
         $taxaNomeComum->save();
     }
+
+    function getNomes ()
+    {
+        return TaxaNomeComum::all();
+    }
+
+    public function getTaxaNomes(int $id)
+    {
+        return TaxaNomeComum::where('taxa_id', $id)->get();
+    }
 }
