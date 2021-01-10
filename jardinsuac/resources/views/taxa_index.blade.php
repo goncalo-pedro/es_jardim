@@ -83,7 +83,7 @@
         listaChecks = JSON.parse(JSON.stringify(listaChecks));
 
         function renderTaxas () {
-            
+
             let toShow = [];
 
 
