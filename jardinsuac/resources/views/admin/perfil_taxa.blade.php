@@ -13,20 +13,28 @@
             <p><b>Division:</b> {{$row->Division}}</p>
             <p><b>Family:</b> {{$row->Family}}</p>
             <p><b>Scientific Name:</b> {{$row->ScientificName}}</p>
-            <p><b>Common Name:</b> {{$row->CommonName}}</p>
+            @foreach($nomes as $nome)
+                <p><b>Common Name:</b> {{$nome->common_name}}</p>
+            @endforeach
             <p><b>Native Distribution:</b> {{$row->NativeDistribution}}</p>
-            <p><b>Conservation Status:</b> {{$row->ConservationStatus}}</p>
+            @foreach($conservations as $conservation)
+                <p><b>Conservation Status:</b> {{$conservation->conservation_status}}</p>
+            @endforeach
             <p><b>Status Azores:</b> {{$row->StatusAzores}}</p>
             <p><b>Short Description:</b> {{$row->ShortDescription}}</p>
             <p><b>Last Updated:</b> {{$row->LastUpdated}}</p>
             <p><b>Scientific Name Reference: </b>{{$row->Scientific_name_Reference}}</p>
             <p><b>Scientific Name Link:</b> {{$row->Scientific_name_Link}}</p>
-            <p><b>Common Name Reference:</b> {{$row->Common_name_Reference}}</p>
-            <p><b>Common Name Link:</b> {{$row->Common_name_Link}}</p>
+            @foreach($commonNames as $commonName)
+                <p><b>Common Name Reference:</b> {{$commonName->common_name_reference}}</p>
+                <p><b>Common Name Link:</b> {{$commonName->common_name_link}}</p>
+            @endforeach
             <p><b>Native Distribution Reference:</b> {{$row->Native_distribution_Reference}}</p>
             <p><b>Native Distribution Link: </b>{{$row->Native_distribution_Link}}</p>
-            <p><b>Conservation Status Reference:</b> {{$row->Conservation_status_Reference}}</p>
-            <p><b>Conservation Status Link:</b> {{$row->Conservation_status_Link}}</p>
+            @foreach($conservationsStatus as $conservationStatus)
+                <p><b>Conservation Status Reference:</b> {{$conservationStatus->conservation_status_reference}}</p>
+                <p><b>Conservation Status Link:</b> {{$conservationStatus->conservation_status_link}}</p>
+            @endforeach
             <p><b>Status at Azores References:</b> {{$row->Status_at_Azores_References}}</p>
             <p><b>Status at Azores Link:</b> {{$row->Status_at_Azores_Link}}</p>
 

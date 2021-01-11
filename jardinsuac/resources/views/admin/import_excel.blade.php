@@ -24,7 +24,15 @@
                         <td>{{ $row->Division }}</td>
                         <td>{{ $row->Family }}</td>
                         <td>{{ $row->ScientificName }}</td>
-                        <td>{{ $row->CommonName }}</td>
+                        {{$sentinel = false}}
+                        <td>
+                            @foreach($nomes as $nome)
+                                @if($nome->taxa_id == $row->id && !$sentinel)
+                                    <p style="display:none">{{$sentinel = true}}</p>
+                                    {{ $nome->common_name }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td>
                             <form action='{{ route("taxas.show", $row->id) }}' enctype="multipart/form-data" method="post">
                                 {{ csrf_field() }}

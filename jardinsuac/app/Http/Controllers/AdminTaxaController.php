@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Taxa;
+use App\Models\TaxaNomeComum;
+use App\Models\TaxaNomeComumReferencia;
+use App\Models\TaxaNomeConservationStatus;
+use App\Models\TaxaNomeConservationStatusReference;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -24,6 +28,7 @@ class AdminTaxaController extends Controller
         return view('admin.import_excel',
             [
                 "rows" => $taxa->getTaxas(),
+                'nomes' => (new TaxaNomeComum)->getNomes(),
                 'master' => Auth::user()->getAdminMaster(),
                 'user' => Auth::user(),
             ]
@@ -41,6 +46,10 @@ class AdminTaxaController extends Controller
     {
         return view('admin.perfil_taxa', [
             "row" => (new Taxa)->getTaxa($id),
+            "nomes" => (new TaxaNomeComum)->getTaxaNomes($id),
+            "conservationsStatus" => (new TaxaNomeConservationStatusReference())->getTaxaConservations($id),
+            "commonNames" => (new TaxaNomeComumReferencia())->getTaxaNomes($id),
+            "conservations" => (new TaxaNomeConservationStatus())->getTaxaConservations($id),
             'master' => Auth::user()->getAdminMaster(),
             'user' => Auth::user(),
         ]);
@@ -50,6 +59,7 @@ class AdminTaxaController extends Controller
         return view('admin.home',
             [
                 "rows" => $taxa->getTaxas(),
+                'nomes' => (new TaxaNomeComum)->getNomes(),
                 'admins' => User::all(),
                 'user' => Auth::user(),
             ]);

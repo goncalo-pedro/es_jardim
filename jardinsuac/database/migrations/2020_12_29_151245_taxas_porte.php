@@ -33,71 +33,71 @@ class TaxasPorte extends Migration
             ["NumControlo"=>"9","Group"=>"Dicotyledon","Division"=>"Magnoliophyta","Family"=>"Juglandaceae","ScientificName"=>"Carya illinoinensis (Wangenh.) K.Koch","CommonName"=>"Pecan","NativeDistribution"=>"Central and South Eastern USA and Mexico","ConservationStatus"=>"Least Concern (IUCN)","StatusAzores"=>"Exotic under cultivation","ShortDescription"=>null,"LastUpdated"=>"2020-06-03 00=>00=>00","Scientific_name_Reference"=>"The Plant Lista0(2013). Version 1.1. Published on the Internet=> http=>\/\/www.theplantlist.org\/tpl1.1\/record\/kew-2701784 [accessed on 3 June 2020]","Scientific_name_Link"=>"http=>\/\/www.theplantlist.org\/tpl1.1\/record\/kew-2701784","Common_name_Reference"=>"USDA, NRCS (2020). Published on the Internet=> https=>\/\/plants.usda.gov\/plantguide\/pdf\/pg_cail2.pdf [accessed on 3 June 2020]","Common_name_Link"=>"https=>\/\/plants.usda.gov\/plantguide\/pdf\/pg_cail2.pdf","Native_distribution_Reference"=>"Plants of the World Online (n.d.). Published on the Internet=> http=>\/\/www.plantsoftheworldonline.org\/taxon\/urn=>lsid=>ipni.org=>names=>442167-1#distribution-map [accessed on 3 June 2020]","Native_distribution_Link"=>"http=>\/\/www.plantsoftheworldonline.org\/taxon\/urn=>lsid=>ipni.org=>names=>442167-1#distribution-map","Conservation_status_Reference"=>"Barstow, M. 2018. Carya illinoinensis. The IUCN Red List of Threatened Species 2018=> e.T62019622A62019624. https=>\/\/dx.doi.org\/10.2305\/IUCN.UK.2018-2.RLTS.T62019622A62019624.en. [accessed on 3 June 2020]","Conservation_status_Link"=>"https=>\/\/www.iucnredlist.org\/species\/62019622\/62019624","Status_at_Azores_References"=>"Pereira, M.J.; Quintal, R.; Costa, C.; Albergaria, I. (2018). Floristic Composition and Species diversity on Azores\u2019 Historical Gardens. FloraMac 2018, 12-15 September 2018, Funchal, Madeira Island, Oral presentation. Abstract Book=> 33.","Status_at_Azores_Link"=>"-","Grupo"=>"Dicotiledf3nea","Nome_comum"=>"Pecan; nogueira-pecan","Nome_comum_Referencia"=>"Fernandes, F. & Carvalho, L. (2003). Portugal Bote2nico de A a Z. Lidel Ed.","Nome_comum_Link"=>"-","Regiao_geografica_de_origem"=>null,"Estado_de_conservacao"=>"Pouco Preocupante (IUCN)","Estatuto_na_Regiao_Acores"=>null,"Breve_descricao"=>null,"Genus"=>"Carya","Growth_habit_USDA_codes_and_definitions"=>"Tree","Foliar_retention"=>"Deciduous","Sexual_system"=>"Monoecious","Nativity_status_to_Azores"=>"Exotic","Status_of_exotic_species_at_Azores"=>"Under cultivation","Native_distribution_geographical_area"=>"North America","Cosmopolitan_distribution"=>null,"Europe"=>null,"Mediterranean_islands"=>null,"Atlantic_islands_including_West_Indies"=>null,"Africa"=>null,"Indian_Ocean_islands"=>null,"Asia"=>null,"Oceania"=>null,"Pacific_islands"=>null,"North_America"=>"1","Central_America"=>null,"South_America"=>null,"Plant_origin"=>"Natural","Life_cycle_span"=>"Perennial","Name_category"=>"Species","Name_status_The_Plant_List_2013"=>"Accepted","Link_1"=>"https=>\/\/www.wildflower.org\/plants\/result.php?id_plant=cail2","Link_2"=>"http=>\/\/www.worldfloraonline.org\/taxon\/wfo-0000588763","Link_3"=>"http=>\/\/www.plantsoftheworldonline.org\/taxon\/urn=>lsid=>ipni.org=>names=>442167-1#distribution-map","Link_4"=>"https=>\/\/www.wildflower.org\/plants\/result.php?id_plant=cail2","Link_5"=>null,"created_at"=>null,"updated_at"=>null],
             ["NumControlo"=>"10","Group"=>"Dicotyledon","Division"=>"Magnoliophyta","Family"=>"Fabaceae","ScientificName"=>"Castanospermum australe A.Cunn. & C.Fraser","CommonName"=>"Moreton bay chestnut; bean tree ","NativeDistribution"=>"Australia (New South Wales, Queensland) and Vanuatu","ConservationStatus"=>"Least Concern (NCA)","StatusAzores"=>"Exotic under cultivation","ShortDescription"=>null,"LastUpdated"=>"2020-06-03 00=>00=>00","Scientific_name_Reference"=>"The Plant Lista0(2013). Version 1.1. Published on the Internet=> http=>\/\/www.theplantlist.org\/tpl1.1\/record\/ild-7146 [accessed on 3 June 2020]","Scientific_name_Link"=>"http=>\/\/www.theplantlist.org\/tpl1.1\/record\/ild-7146","Common_name_Reference"=>"Atlas of Living Australia (2008). Published on the Internet=> https=>\/\/bie.ala.org.au\/species\/https=>\/\/id.biodiversity.org.au\/node\/apni\/2894943 [accessed on 3 June 2020]","Common_name_Link"=>"https=>\/\/bie.ala.org.au\/species\/https=>\/\/id.biodiversity.org.au\/node\/apni\/2894943","Native_distribution_Reference"=>"Plants of the World Online (n.d.). Published on the Internet=> http=>\/\/www.plantsoftheworldonline.org\/taxon\/urn=>lsid=>ipni.org=>names=>960752-1#distribution-map [accessed on 3 June 2020]","Native_distribution_Link"=>"http=>\/\/www.plantsoftheworldonline.org\/taxon\/urn=>lsid=>ipni.org=>names=>960752-1#distribution-map","Conservation_status_Reference"=>"Atlas of Living Australia (2008). Published on the Internet=> https=>\/\/bie.ala.org.au\/species\/https=>\/\/id.biodiversity.org.au\/node\/apni\/2894943 [accessed on 3 June 2020]","Conservation_status_Link"=>"https=>\/\/bie.ala.org.au\/species\/https=>\/\/id.biodiversity.org.au\/node\/apni\/2894943","Status_at_Azores_References"=>"Pereira, M.J.; Quintal, R.; Costa, C.; Albergaria, I. (2018). Floristic Composition and Species diversity on Azores\u2019 Historical Gardens. FloraMac 2018, 12-15 September 2018, Funchal, Madeira Island, Oral presentation. Abstract Book=> 33.","Status_at_Azores_Link"=>"-","Grupo"=>"Dicotiledf3nea","Nome_comum"=>"Castanheiro-da-austre1lia","Nome_comum_Referencia"=>"Fernandes, F. & Carvalho, L. (2003). Portugal Bote2nico de A a Z. Lidel Ed.","Nome_comum_Link"=>"-","Regiao_geografica_de_origem"=>null,"Estado_de_conservacao"=>"Pouco Preocupante (NCA)","Estatuto_na_Regiao_Acores"=>null,"Breve_descricao"=>null,"Genus"=>"Castanospermum","Growth_habit_USDA_codes_and_definitions"=>"Tree","Foliar_retention"=>"Evergreen","Sexual_system"=>"Hermaphrodite","Nativity_status_to_Azores"=>"Exotic","Status_of_exotic_species_at_Azores"=>"Under cultivation","Native_distribution_geographical_area"=>"Oceania and Pacific islands","Cosmopolitan_distribution"=>null,"Europe"=>null,"Mediterranean_islands"=>null,"Atlantic_islands_including_West_Indies"=>null,"Africa"=>null,"Indian_Ocean_islands"=>null,"Asia"=>null,"Oceania"=>"1","Pacific_islands"=>"1","North_America"=>null,"Central_America"=>null,"South_America"=>null,"Plant_origin"=>"Natural","Life_cycle_span"=>"Perennial","Name_category"=>"Species","Name_status_The_Plant_List_2013"=>"Accepted","Link_1"=>"https=>\/\/garden.org\/plants\/view\/113709\/Moreton-Bay-Chestnut-Castanospermum-australe\/","Link_2"=>"http=>\/\/www.worldfloraonline.org\/taxon\/wfo-0000212067","Link_3"=>"https=>\/\/selectree.calpoly.edu\/tree-detail\/castanospermum-australe","Link_4"=>"https=>\/\/plantpono.org\/wp-content\/uploads\/Castanospermum-australe.pdf","Link_5"=>"http=>\/\/tropical.theferns.info\/viewtropical.php?id=Castanospermum+australe","created_at"=>null,"updated_at"=>null]
         ];
+        /*
+                foreach ($taxas_porte as $taxa) {
+                    $t = new Taxa;
 
-        foreach ($taxas_porte as $taxa) {
-            $t = new Taxa;
 
+                    $t->NumControlo = $taxa["NumControlo"];
+                    $t->Group =  $taxa["Group"];
+                    $t->Division =  $taxa["Group"];
+                    $t->Family =  $taxa["Family"];
+                    $t->ScientificName =  $taxa["ScientificName"];
+                    $t->CommonName =  $taxa["CommonName"];
+                    $t->NativeDistribution =  $taxa["NativeDistribution"];
+                    $t->ConservationStatus =  $taxa["ConservationStatus"];
+                    $t->StatusAzores =  $taxa["StatusAzores"];
+                    $t->ShortDescription =  $taxa["ShortDescription"];
+                    $t->LastUpdated = $taxa["LastUpdated"];
+                    $t->Scientific_name_Reference =  $taxa["Scientific_name_Reference"];
+                    $t->Scientific_name_Link =  $taxa["Scientific_name_Link"];
+                    $t->Common_name_Reference =  $taxa["Common_name_Reference"];
+                    $t->Common_name_Link =  $taxa["Common_name_Link"];
+                    $t->Native_distribution_Reference =  $taxa["Native_distribution_Reference"];
+                    $t->Native_distribution_Link =  $taxa["Native_distribution_Link"];
+                    $t->Conservation_status_Reference =  $taxa["Conservation_status_Reference"];
+                    $t->Conservation_status_Link =  $taxa["Conservation_status_Link"];
+                    $t->Status_at_Azores_References =  $taxa["Status_at_Azores_References"];
+                    $t->Status_at_Azores_Link =  $taxa["Status_at_Azores_Link"];
+                    $t->Grupo =  $taxa["Grupo"];
+                    $t->Nome_comum =  $taxa["Nome_comum"];
+                    $t->Nome_comum_Referencia =  $taxa["Nome_comum_Referencia"];
+                    $t->Nome_comum_Link =  $taxa["Nome_comum_Link"];
+                    $t->Regiao_geografica_de_origem =  $taxa["Regiao_geografica_de_origem"];
+                    $t->Estado_de_conservacao =  $taxa["Estado_de_conservacao"];
+                    $t->Estatuto_na_Regiao_Acores =  $taxa["Estatuto_na_Regiao_Acores"];
+                    $t->Breve_descricao =  $taxa["Breve_descricao"];
+                    $t->Genus =  $taxa["Genus"];
+                    $t->Growth_habit_USDA_codes_and_definitions =  $taxa["Growth_habit_USDA_codes_and_definitions"];
+                    $t->Foliar_retention =  $taxa["Foliar_retention"];
+                    $t->Sexual_system =  $taxa["Sexual_system"];
+                    $t->Nativity_status_to_Azores =  $taxa["Nativity_status_to_Azores"];
+                    $t->Status_of_exotic_species_at_Azores =  $taxa["Status_of_exotic_species_at_Azores"];
+                    $t->Native_distribution_geographical_area =  $taxa["Native_distribution_geographical_area"];
+                    $t->Cosmopolitan_distribution =  $taxa["Cosmopolitan_distribution"];
+                    $t->Europe =  $taxa["Europe"];
+                    $t->Mediterranean_islands =  $taxa["Mediterranean_islands"];
+                    $t->Atlantic_islands_including_West_Indies =  $taxa["Atlantic_islands_including_West_Indies"];
+                    $t->Africa =  $taxa["Africa"];
+                    $t->Indian_Ocean_islands =  $taxa["Indian_Ocean_islands"];
+                    $t->Asia =  $taxa["Asia"];
+                    $t->Oceania =  $taxa["Oceania"];
+                    $t->Pacific_islands =  $taxa["Pacific_islands"];
+                    $t->North_America =  $taxa["North_America"];
+                    $t->Central_America =  $taxa["Central_America"];
+                    $t->South_America =  $taxa["South_America"];
+                    $t->Plant_origin =  $taxa["Plant_origin"];
+                    $t->Life_cycle_span =  $taxa["Life_cycle_span"];
+                    $t->Name_category =  $taxa["Name_category"];
+                    $t->Name_status_The_Plant_List_2013 =  $taxa["Name_status_The_Plant_List_2013"];
+                    $t->Link_1 =  $taxa["Link_1"];
+                    $t->Link_2 =  $taxa["Link_2"];
+                    $t->Link_3 =  $taxa["Link_3"];
+                    $t->Link_4 =  $taxa["Link_4"];
+                    $t->Link_5 =  $taxa["Link_5"];
 
-            $t->NumControlo = $taxa["NumControlo"];
-            $t->Group =  $taxa["Group"];
-            $t->Division =  $taxa["Group"];
-            $t->Family =  $taxa["Family"];
-            $t->ScientificName =  $taxa["ScientificName"];
-            $t->CommonName =  $taxa["CommonName"];
-            $t->NativeDistribution =  $taxa["NativeDistribution"];
-            $t->ConservationStatus =  $taxa["ConservationStatus"];
-            $t->StatusAzores =  $taxa["StatusAzores"];
-            $t->ShortDescription =  $taxa["ShortDescription"];
-            $t->LastUpdated = $taxa["LastUpdated"];
-            $t->Scientific_name_Reference =  $taxa["Scientific_name_Reference"];
-            $t->Scientific_name_Link =  $taxa["Scientific_name_Link"];
-            $t->Common_name_Reference =  $taxa["Common_name_Reference"];
-            $t->Common_name_Link =  $taxa["Common_name_Link"];
-            $t->Native_distribution_Reference =  $taxa["Native_distribution_Reference"];
-            $t->Native_distribution_Link =  $taxa["Native_distribution_Link"];
-            $t->Conservation_status_Reference =  $taxa["Conservation_status_Reference"];
-            $t->Conservation_status_Link =  $taxa["Conservation_status_Link"];
-            $t->Status_at_Azores_References =  $taxa["Status_at_Azores_References"];
-            $t->Status_at_Azores_Link =  $taxa["Status_at_Azores_Link"];
-            $t->Grupo =  $taxa["Grupo"];
-            $t->Nome_comum =  $taxa["Nome_comum"];
-            $t->Nome_comum_Referencia =  $taxa["Nome_comum_Referencia"];
-            $t->Nome_comum_Link =  $taxa["Nome_comum_Link"];
-            $t->Regiao_geografica_de_origem =  $taxa["Regiao_geografica_de_origem"];
-            $t->Estado_de_conservacao =  $taxa["Estado_de_conservacao"];
-            $t->Estatuto_na_Regiao_Acores =  $taxa["Estatuto_na_Regiao_Acores"];
-            $t->Breve_descricao =  $taxa["Breve_descricao"];
-            $t->Genus =  $taxa["Genus"];
-            $t->Growth_habit_USDA_codes_and_definitions =  $taxa["Growth_habit_USDA_codes_and_definitions"];
-            $t->Foliar_retention =  $taxa["Foliar_retention"];
-            $t->Sexual_system =  $taxa["Sexual_system"];
-            $t->Nativity_status_to_Azores =  $taxa["Nativity_status_to_Azores"];
-            $t->Status_of_exotic_species_at_Azores =  $taxa["Status_of_exotic_species_at_Azores"];
-            $t->Native_distribution_geographical_area =  $taxa["Native_distribution_geographical_area"];
-            $t->Cosmopolitan_distribution =  $taxa["Cosmopolitan_distribution"];
-            $t->Europe =  $taxa["Europe"];
-            $t->Mediterranean_islands =  $taxa["Mediterranean_islands"];
-            $t->Atlantic_islands_including_West_Indies =  $taxa["Atlantic_islands_including_West_Indies"];
-            $t->Africa =  $taxa["Africa"];
-            $t->Indian_Ocean_islands =  $taxa["Indian_Ocean_islands"];
-            $t->Asia =  $taxa["Asia"];
-            $t->Oceania =  $taxa["Oceania"];
-            $t->Pacific_islands =  $taxa["Pacific_islands"];
-            $t->North_America =  $taxa["North_America"];
-            $t->Central_America =  $taxa["Central_America"];
-            $t->South_America =  $taxa["South_America"];
-            $t->Plant_origin =  $taxa["Plant_origin"];
-            $t->Life_cycle_span =  $taxa["Life_cycle_span"];
-            $t->Name_category =  $taxa["Name_category"];
-            $t->Name_status_The_Plant_List_2013 =  $taxa["Name_status_The_Plant_List_2013"];
-            $t->Link_1 =  $taxa["Link_1"];
-            $t->Link_2 =  $taxa["Link_2"];
-            $t->Link_3 =  $taxa["Link_3"];
-            $t->Link_4 =  $taxa["Link_4"];
-            $t->Link_5 =  $taxa["Link_5"];
-
-            $t->save();
-        }
+                    $t->save();
+        }*/
 
     }
 

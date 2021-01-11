@@ -183,7 +183,7 @@
                     }
                 }
             }
-            if(count === 0)
+            if(count === 0 && qtdFiltrosSelecionados > 0)
                 resultsNotFound()
         }
 
@@ -198,6 +198,7 @@
         }
 
         function resetFilters() {
+
             for(const key in listaChecks) {
                 for(let check of listaChecks[key]) {
                     if(check === "Atlantic Islands including West indies")
