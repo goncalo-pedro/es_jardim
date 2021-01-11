@@ -3,7 +3,11 @@
 @section('content')
 
     <div class="row" style="margin: 10px">
+        @if($user->admin_master == 0)
+        <div class="col-md-12">
+        @else
         <div class="col-md-8">
+        @endif
             <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
                 <div class="card-header">
                     Gerir Base de Dados
@@ -62,14 +66,10 @@
                             @endforeach
                         </table>
                     </div>
-
-
-
-
-
                 </div>
             </div>
         </div>
+
         @if($user->admin_master == 1)
             <div class="col-md-4">
                 <div class="card" style="box-shadow: 3px 2px 5px lightgrey">
@@ -78,6 +78,7 @@
                     </div>
                     <div class="card-body">
                         <a  href="{{ route("administradores.create") }}" class="btn">Resgistar novo Administrador</a>
+                        <hr>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped" id="table-import">
                                 <tr>
@@ -97,6 +98,9 @@
             </div>
         @endif
     </div>
+    <script type="text/javascript">
+        asdfasdf
+    </script>
 
 @endsection
         <script>

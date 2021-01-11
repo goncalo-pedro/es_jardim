@@ -44,7 +44,9 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <button class="btn align-middle" onclick="resetFilters()">Reset Filters</button>
+
+                                  <button class="btn align-middle" onclick="resetFilters()">Reset Filters</button>
+
                         </div>
 
                     </div>
@@ -113,7 +115,7 @@
                         listaCheckeds.push([key, check])
                 }
             }
-            
+
             var taxas = @json($taxas);
             taxas = JSON.parse(JSON.stringify(taxas));
 
