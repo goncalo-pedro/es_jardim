@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-use App\Exceptions\EmailException;
+use App\Exceptions\EliminarInvalidoException;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
@@ -74,13 +75,13 @@ class User extends Authenticatable
 
     /**
      * @param $email
-     * @throws EmailException
+     * @throws EliminarInvalidoException
      */
     public function updateEmail($email)
     {
         $u_email = User::where('email', $email)->first();
         if($u_email != null)
-            throw new EmailException("Email já existente.");
+            throw new EliminarInvalidoException("Email já existente.");
         $this->email = $email;
         $this->save();
     }
@@ -113,6 +114,22 @@ class User extends Authenticatable
         $this->admin_master = 0;
 
         $this->save();
+    }
+
+    /**
+     * @param $id
+     * @throws EliminarInvalidoException
+     */
+    public function apagarUser($id)
+    {
+        $adminsAN = DB::table('users')->where("admin_master", 1)->count();
+        if($adminsAN == 1)
+            throw new EliminarInvalidoException("Erro ao eliminar utilizador de alto nível.");
+        $u = $this->where("id", $id);
+        foreach(DB::table("sessions")->where("user_id", $id)->get() as $session) {
+            $session->delete();
+        };
+        $u->delete();
 
     }
 }

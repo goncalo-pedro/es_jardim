@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Fortify\PasswordValidationRules;
+use App\Exceptions\EliminarInvalidoException;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -130,10 +131,15 @@ class AdministradoresController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function destroy($id)
     {
-        //
+        try {
+        (new User)->apagarUser($id);
+        return redirect("admin/administradores");
+        } catch (EliminarInvalidoException $e) {
+            return redirect("admin/administradores")->withErrors(["adminError" => $e->getMessage()]);
+        }
     }
 }

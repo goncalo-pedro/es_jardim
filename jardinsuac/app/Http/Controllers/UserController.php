@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Fortify\PasswordValidationRules;
-use App\Exceptions\EmailException;
+use App\Exceptions\EliminarInvalidoException;
 use App\Models\User;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -81,7 +81,7 @@ class UserController extends Controller
             return redirect('admin/perfil')->withInput()->withErrors(['alteracaoConcluida' => 'Os dados foram alterados com sucesso']);
         } catch (ValidationException $e) {
             return redirect('admin/perfil')->withInput()->withErrors(['dadosIncorretos' => $e->getMessage()]);
-        } catch (EmailException $e) {
+        } catch (EliminarInvalidoException $e) {
             return redirect('admin/perfil')->withInput()->withErrors(['emailExistente' => $e->getMessage()]);
         }
     }
