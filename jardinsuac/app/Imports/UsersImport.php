@@ -81,21 +81,23 @@ class UsersImport implements ToCollection
                             'Link_4'=> $row[57],
                             'Link_5'=> $row[58]
                         ]);
-                    if($row[5] !== null) {
-                        $taxaNomeComum = new TaxaNomeComum();
-                        $taxaNomeComum->addNomeComumTaxa($row[5], $row[0]);
-                    }
-                    if($row[13] !== null && $row[14] !== null) {
-                        $taxaNomeComumReferencia = new TaxaNomeComumReferencia();
-                        $taxaNomeComumReferencia->addNomeComumReferencia($row[13], $row[14], $row[0]);
-                    }
-                    if($row[17] !== null && $row[18] !== null) {
-                        $taxaNomeConservationStatusReference = new TaxaNomeConservationStatusReference();
-                        $taxaNomeConservationStatusReference->addNomeConservationStatusReference($row[17], $row[18], $row[0]);
-                    }
-                    if($row[7] !== null) {
-                        $taxaNomeConservationStatus = new TaxaNomeConservationStatus();
-                        $taxaNomeConservationStatus->addNomeConservationStatus($row[7], $row[0]);
+                    if($row[0] !== null) {
+                        if($row[5] !== null) {
+                            $taxaNomeComum = new TaxaNomeComum();
+                            $taxaNomeComum->addNomeComumTaxa($row[5], $row[0]);
+                        }
+                        if($row[13] !== null && $row[14] !== null) {
+                            $taxaNomeComumReferencia = new TaxaNomeComumReferencia();
+                            $taxaNomeComumReferencia->addNomeComumReferencia($row[13], $row[14], $row[0]);
+                        }
+                        if($row[17] !== null && $row[18] !== null) {
+                            $taxaNomeConservationStatusReference = new TaxaNomeConservationStatusReference();
+                            $taxaNomeConservationStatusReference->addNomeConservationStatusReference($row[17], $row[18], $row[0]);
+                        }
+                        if($row[7] !== null) {
+                            $taxaNomeConservationStatus = new TaxaNomeConservationStatus();
+                            $taxaNomeConservationStatus->addNomeConservationStatus($row[7], $row[0]);
+                        }
                     }
                 }
 

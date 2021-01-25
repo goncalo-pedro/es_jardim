@@ -30,6 +30,8 @@ Route::get('549321054/register', function (){
     return view('admin.criar_users');
 })->name("549321054/register");
 
+Route::get('memorias', [\App\Http\Controllers\MemoriaUserController::class, 'memorias'])->name('user.memorias');
+
 Route::resource("taxa",TaxaController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
@@ -46,6 +48,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/export_excel', [App\Http\Controllers\ExcelController::class, 'showExport'])->name('excel.export_file');
     Route::post('/export', [App\Http\Controllers\ExcelController::class, 'export'])->name('excel.export');
 
+    Route::resource("memorias", \App\Http\Controllers\MemoriaController::class);
     Route::resource("taxas", AdminTaxaController::class);
     Route::resource("excel",ExcelController::class);
     Route::resource('administradores', \App\Http\Controllers\AdministradoresController::class);
