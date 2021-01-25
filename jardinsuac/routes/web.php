@@ -30,7 +30,12 @@ Route::get('549321054/register', function (){
     return view('admin.criar_users');
 })->name("549321054/register");
 
+
 Route::get('memorias', [\App\Http\Controllers\MemoriaUserController::class, 'memorias'])->name('user.memorias');
+
+Route::get("historia",function(){
+    return view("historia");
+});
 
 Route::resource("taxa",TaxaController::class);
 
