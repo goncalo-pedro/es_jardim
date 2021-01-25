@@ -33,9 +33,9 @@ Route::get('549321054/register', function (){
 
 Route::get('memorias', [\App\Http\Controllers\MemoriaUserController::class, 'memorias'])->name('user.memorias');
 
-Route::get("historia",function(){
+Route::get("/historia", function(){
     return view("historia");
-});
+})->name("historia");
 
 Route::resource("taxa",TaxaController::class);
 
