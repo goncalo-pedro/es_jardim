@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\TaxaController;
-use App\Http\Controllers\Dashboard;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,8 +29,9 @@ Route::get('549321054/register', function (){
     return view('admin.criar_users');
 })->name("549321054/register");
 
-
-Route::get('memorias', [\App\Http\Controllers\MemoriaUserController::class, 'memorias'])->name('user.memorias');
+Route::get('memorias', [\App\Http\Controllers\MemoriaUserController::class, 'homeMemoria'])->name('home.memoria');
+Route::get('memorias/criar', [\App\Http\Controllers\MemoriaUserController::class, 'criarMemoria'])->name('criar.memoria');
+Route::get('memorias/testemunhos', [\App\Http\Controllers\MemoriaUserController::class, 'storeMemorias'])->name('store.memoria');
 
 Route::get("/historia", function(){
     return view("historia");

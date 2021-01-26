@@ -13,7 +13,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route("taxa.index") }}">Taxas Listagem</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route("historia") }}">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route("home.memoria") }}">Testemunhos</a>
                 </li>
             </ul>
 
