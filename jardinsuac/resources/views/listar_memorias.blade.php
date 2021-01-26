@@ -1,9 +1,9 @@
 @extends('master')
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Vários testemunhos</h3>
+    <div >
+        <div >
+            <h1 class="text-primary text-center">Testemunhos feitos por clientes</h1>
         </div>
         <div id="errors">
             @if($errors->any())
@@ -16,28 +16,25 @@
                 </ul>
             @endif
         </div>
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped" id="table-import">
-                    <tr>
-                        <th>Numero</th>
-                        <th>Nome</th>
-                        <th>Faixa Etária</th>
-                        <td>Estatuto</td>
-                        <th>Classificação</th>
-                    </tr>
-                    @foreach($memorias as $memoria)
-                        <tr>
-                            <td><a href="{{route('detalhes.testemunhos', $memoria->id)}}">Testemunho {{$memoria->id}}</a></td>
-                            <td>{{$memoria->nome_visitante}}</td>
-                            <td>{{$memoria->faixa_etaria}}</td>
-                            <td>{{$memoria->estatuto}}</td>
-                            <td>{{$memoria->classificacao}}</td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
+        <a class="btn btn-primary" href="{{route("criar.testemunhos")}}" role="button">Partilhar Testemunho</a>
+
+        <div class="row">
+            @foreach($memorias as $memoria)
+                <div class="col-md-5 border border-primary">
+                    <a href="{{route('detalhes.testemunhos', $memoria->id)}}">Testemunho {{$memoria->id}}</a>
+                    <div >
+                        {{$memoria->nome_visitante}}
+                    </div>
+                    <div >
+                        Avaliação: {{$memoria->classificacao}}/5<img style="width: 3%" src="{{asset('images/star.png')}}"/>
+                    </div>
+                        {{$memoria->created_at}}
+                </div>
+            @endforeach
+            </table>
         </div>
+
     </div>
-    <a href="{{route("criar.testemunhos")}}">Partilhar Testemunho</a>
+
+
 @endsection
