@@ -6,8 +6,11 @@ use App\Models\Memoria;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Auth;
 
 class MemoriaController extends Controller
 {
@@ -19,7 +22,12 @@ class MemoriaController extends Controller
     public function index()
     {
         $memoria = new Memoria();
-        return view("listar_memorias", $memoria->getMemorias());
+        return view("admin.listar_memorias",
+            [
+                "memorias" => $memoria->getMemorias(),
+                'user' => Auth::user(),
+            ]
+        );
     }
 
     /**
@@ -49,9 +57,14 @@ class MemoriaController extends Controller
      * @param Memoria $memoria
      * @return Application|Factory|View|Response
      */
-    public function show(int $id, Memoria $memoria)
+    public function show(int $id)
     {
-        return view("detalhes_memoria", $memoria->getMemoria($id));
+        return view("admin.detalhes_memoria",
+            [
+                "memoria" => (new Memoria)->getMemoria($id),
+                'user' => Auth::user(),
+            ]
+        );
     }
 
     /**
@@ -81,10 +94,11 @@ class MemoriaController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Memoria $memoria
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function destroy(Memoria $memoria)
+    public function destroy(int $id)
     {
-        //
+        (new Memoria)->deleteMemoria($id);
+        return redirect("admin/memorias");
     }
 }

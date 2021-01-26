@@ -18,6 +18,7 @@ class CreateMemoriasTable extends Migration
             $table->string("nome_visitante");
             $table->string("faixa_etaria");
             $table->string("estatuto");
+            $table->boolean("foto_edificado");
             $table->string("condicoes_partilha_campus")->nullable();
             $table->string("foto1_campus")->nullable();
             $table->string("foto2_campus")->nullable();
@@ -33,11 +34,11 @@ class CreateMemoriasTable extends Migration
             $table->string("testemunho_fotos_campus")->nullable();
             $table->boolean("recordar_planta");
             $table->string("nome_plantas_recordar")->nullable();
-            $table->boolean("planta_existe");
+            $table->boolean("planta_existe")->nullable();
             $table->boolean("local_planta")->nullable();
-            $table->string("planta_existe_removida");
+            $table->string("planta_existe_removida")->nullable();
             $table->string("acontecimento_desaprecimento")->nullable();
-            $table->boolean("fotografia_video_planta");
+            $table->boolean("fotografia_video_planta")->nullable();
             $table->string("condicoes_partilha_planta")->nullable();
             $table->string("foto1_planta")->nullable();
             $table->string("foto2_planta")->nullable();

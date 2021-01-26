@@ -18,12 +18,6 @@
     @yield('content')
 
 <style>
-    .rating-header {
-        margin-top: -10px;
-        margin-bottom: 10px;
-    }
-
-
     #bannerImage {
         width: 100%;
         background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);

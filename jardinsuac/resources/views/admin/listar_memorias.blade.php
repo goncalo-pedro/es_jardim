@@ -21,11 +21,29 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="table-import">
                     <tr>
+                        <th></th>
                         <th>Nome</th>
                         <th>Faixa Etária</th>
                         <td>Estatuto</td>
                         <th>Classificação</th>
+                        <th>Eliminar</th>
                     </tr>
+                    @foreach($memorias as $memoria)
+                        <tr>
+                            <td><a href="{{route('memorias.show', $memoria->id)}}">{{$memoria->id}}</a></td>
+                            <td>{{$memoria->nome_visitante}}</td>
+                            <td>{{$memoria->faixa_etaria}}</td>
+                            <td>{{$memoria->estatuto}}</td>
+                            <td>{{$memoria->classificacao}}</td>
+                            <td>
+                                <form action="{{route("memorias.destroy", $memoria->id)}}" enctype="multipart/form-data" method="post">
+                                    {{csrf_field()}}
+                                    @method('DELETE')
+                                    <button type="submit" class="btn"><i class="fa fa-trash-o"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

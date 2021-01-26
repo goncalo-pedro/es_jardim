@@ -32,7 +32,7 @@
                         <h3>Informação Pessoal</h3>
                         <div>
                             <h6><label class="form-label" for="name">Nome:</label></h6>
-                            <input class="form-control" type="text" id="name" value="{{old('name')}}">
+                            <input class="form-control" type="text" id="name" name="nome" value="{{old('name')}}">
                         </div>
                         <br>
                         <div>
@@ -68,8 +68,6 @@
                         <hr>
 
 
-
-
                         <h3>Memória do Espaço e de Eventos</h3>
                         <div>
                             <h6>Possui alguma fotografia ou vídeo do atual campus universitário que deseje partilhar?</h6>
@@ -79,25 +77,25 @@
                             <label>Não</label><br>
                         </div>
                         <br>
-                        <div>
-                            <h6>Possui alguma fotografia ou vídeo do atual campus universitário que deseje partilhar?</h6>
-                            <input class="form-check-input" type="radio" id="sim" name="permissao_edificado" value="sim">
+                        <div id="permissao" style="display:none">
+                            <h6>Se sim, em que condições aceita partilhar a fotografia/video?</h6>
+                            <input class="form-check-input" type="radio" id="sim" name="permissao_edificado" value="Como documento de estudo guardado em arquivo como prova, com acesso restrito e não publicável">
                             <label>Como documento de estudo guardado em arquivo como prova, com acesso restrito e não publicável</label><br>
-                            <input class="form-check-input" type="radio" id="nao" name="permissao_edificado" value="nao">
+                            <input class="form-check-input" type="radio" id="nao" name="permissao_edificado" value="Como documento de estudo guardado em arquivo como prova, com acesso restrito e não publicável">
                             <label>Como documento de estudo, com acesso restrito a investigadores e publicável apenas em trabalhos científicos</label><br>
-                            <input class="form-check-input" type="radio" id="sim" name="permissao_edificado" value="sim">
+                            <input class="form-check-input" type="radio" id="sim" name="permissao_edificado" value="Como documento de estudo, com acesso restrito a investigadores e publicável apenas em trabalhos científicos">
                             <label>Como documento de estudo e divulgação publicável em trabalhos científicos e na página eletrónica da Universidade dos Açores</label><br>
-                            <input class="form-check-input" type="radio" id="nao" name="permissao_edificado" value="nao">
+                            <input class="form-check-input" type="radio" id="nao" name="permissao_edificado" value="Como documento de estudo e divulgação publicável em trabalhos científicos e na página eletrónica da Universidade dos Açores">
                             <label>Como documento de estudo e divulgação publicável e com indicação de utilização livre desde que devidamente referenciada</label><br>
                         </div>
                         <br>
-                        <div class="custom-file">
+                        <div id="ficheiro_edificado" class="custom-file" style="display:none">
                             <h6>Fotos do Espaço e Eventos (Ex: vistia, cerimónia académica, sessão fotográfica de noivos, convívio diário, aulas)</h6>
-                            <input type="file" class="custom-file-input" id="validatedCustomFile">
-                            <label class="custom-file-label" for="validatedCustomFile">Escolha o Ficheiro...</label>
+                            <input type="file" class="custom-file-input" name="ficheiro_edificado"id="ficheiro_edificado">
+                            <label class="custom-file-label" for="ficheiro_edificado">Escolha o Ficheiro...</label>
                         </div>
                         <br>
-                        <div >
+                        <div id="data_edifi" style="display:none">
                             <h6><label class="form-label" for="data_edificado">Data em que as fotos/vídeos foram tiradas (Exemplo: 24/03/2003 ou 2010-2012)</label></h6>
                             <input class="form-control" type="text" id="data_edificado" value="{{old('data_edificado')}}">
                         </div>
@@ -121,7 +119,7 @@
                         </div>
                         <br>
                         <div>
-                            <h6><label for="planta_qual">Sem sim, qual/quais?</label></h6>
+                            <h6><label for="planta_qual">Se sim, qual/quais?</label></h6>
                             <textarea class="form-control" id="planta_qual" rows="4"></textarea>
                         </div>
                         <br>
@@ -134,18 +132,18 @@
                         </div>
                         <br>
                         <div>
-                            <h6><label for="planta_local">Sem sim, qual/quais?</label></h6>
-                            <textarea class="form-control" id="planta_local" rows="4"></textarea>
+                            <h6><label for="planta_local">Em que local do jardim estava a planta</label></h6>
+                            <textarea class="form-control" id="planta_local" name="planta_local" rows="4"></textarea>
                         </div>
                         <br>
                         <div>
                             <h6><label class="form-label" for="ano_planta">Em que ano essa planta foi plantada ou já existia no jardim? Em que ano morreu ou foi removida?</label></h6>
-                            <input class="form-control" type="text" id="ano_planta" value="{{old('ano_planta')}}">
+                            <input class="form-control" type="text" id="ano_planta" name="ano_planta" value="{{old('ano_planta')}}">
                         </div>
                         <br>
                         <div>
                             <h6><label for="planta_razao_remocao">Se a planta já não existe no jardim, recorda-se da causa do seu desaparecimento? (Exemplos: Dano por tempestado, praga, doença, morte natural, osbtrução de entrada/estrada)</label></h6>
-                            <textarea class="form-control" id="planta_razao_remocao" rows="4"></textarea>
+                            <textarea class="form-control" id="planta_razao_remocao" name="planta_razao_remocao" rows="4"></textarea>
                         </div>
                         <br>
                         <div>
@@ -157,7 +155,7 @@
                         </div>
                         <br>
                         <div>
-                            <h6>Possui alguma fotografia ou vídeo do atual campus universitário que deseje partilhar?</h6>
+                            <h6>Sem si, em que condições aceita partilhar a fotografia/video=</h6>
                             <input class="form-check-input" type="radio" id="sim" name="permissao_planta">
                             <label>Como documento de estudo guardado em arquivo como prova, com acesso restrito e não publicável</label><br>
                             <input class="form-check-input" type="radio" id="nao" name="permissao_planta">
@@ -169,22 +167,21 @@
                         </div>
                         <br>
                         <div>
-                            <h6>Fotos do Espaço e Eventos (Ex: vistia, cerimónia académica, sessão fotográfica de noivos, convívio diário, aulas)</h6>
+                            <h6>Fotos das plantas</h6>
                             <input type="file" class="custom-file-input" id="validatedCustomFile">
-                            <label class="custom-file-label" for="validatedCustomFile">Escolha o Ficheiro...</label>
+                            <label class="custom-file-label" for="validatedCustomFile" name="ficheiro_plantas">Escolha o Ficheiro...</label>
                         </div>
                         <br>
                         <div class="custom-file">
                             <h6><label class="form-label" for="data_edificado">Data em que as fotos/vídeos foram tiradas (Exemplo: 24/03/2003 ou 2010-2012)</label></h6>
-                            <input class="form-control" type="text" id="data_planta" value="{{old('data_edificado')}}">
+                            <input class="form-control" type="text" id="data_planta" name="data_planta" value="{{old('data_edificado')}}">
                         </div>
                         <br>
                         <div>
                             <h6><label for="testemunho_planta">Gostaria de adicionar um testemunho escrito à(s) memória(s) adicionada(s)?</label></h6>
-                            <textarea class="form-control" id="testemunho_planta" rows="4"></textarea>
+                            <textarea class="form-control" id="testemunho_planta" name="testemunho_planta" rows="4"></textarea>
                         </div>
                         <br>
-
                         <hr>
                         <h3>Notas/Observações</h3>
                         <div>
@@ -217,14 +214,14 @@
                         <div>
                             <div>
                                 <h6><label for="mudar_jardim">O que acha que se pode mudar no jardim?</label></h6>
-                                <textarea class="form-control" id="mudar_jardim" rows="4"></textarea>
+                                <textarea class="form-control" id="mudar_jardim" name="mudar_jardim" rows="4"></textarea>
                             </div>
                         </div>
 
                         <div>
                             <div>
                                 <h6><label for="observacoes">Outras observações</label></h6>
-                                <textarea class="form-control" id="observacoes" rows="4"></textarea>
+                                <textarea class="form-control" id="observacoes" name="observacoes" rows="4"></textarea>
                             </div>
                         </div>
                         <br>
