@@ -59,9 +59,9 @@ class MemoriaUserController extends Controller
                 request(self::planta_recordar),
                 request(self::selected_rating)
             );
-            return redirect('memorias');
+            return redirect('testemunhos');
         } catch (\Dotenv\Exception\ValidationException $e) {
-            return redirect("memorias/criar")->withInput()->withErrors(["userCreateError" => $e->getMessage()]);
+            return redirect("testemunhos/criar")->withInput()->withErrors(["userCreateError" => $e->getMessage()]);
         }
     }
 
@@ -76,5 +76,16 @@ class MemoriaUserController extends Controller
 
     public function criarMemoria () {
         return view("criar_memoria");
+    }
+
+    public function showMemoria(int $id)
+    {
+        return view("detalhes_memoria",
+            [
+                "memoria" => (new Memoria())->getMemoria($id)
+            ]
+
+        );
+
     }
 }

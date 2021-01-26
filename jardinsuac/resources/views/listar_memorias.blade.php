@@ -28,7 +28,7 @@
                     </tr>
                     @foreach($memorias as $memoria)
                         <tr>
-                            <td><a href="{{route('memorias.show', $memoria->id)}}">Testemunho {{$memoria->id}}</a></td>
+                            <td><a href="{{route('detalhes.testemunhos', $memoria->id)}}">Testemunho {{$memoria->id}}</a></td>
                             <td>{{$memoria->nome_visitante}}</td>
                             <td>{{$memoria->faixa_etaria}}</td>
                             <td>{{$memoria->estatuto}}</td>
@@ -39,5 +39,5 @@
             </div>
         </div>
     </div>
-    <a href="{{route("criar.memoria")}}">Partilhar Testemunho</a>
+    <a href="{{route("criar.testemunhos")}}">Partilhar Testemunho</a>
 @endsection

@@ -7,7 +7,7 @@
         <div class="row d-flex  justify-content-center">
 
             <div class="col-md-11 showBox" style="padding: 25px;">
-                <form action="{{ route('store.memoria') }}" enctype="multipart/form-data" method="post">
+                <form action="{{ route('store.testemunhos') }}" enctype="multipart/form-data" method="post">
                     {{csrf_field()}}
                     <div>
                         <h1>Criar Memória</h1>
