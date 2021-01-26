@@ -22,6 +22,14 @@
                     </div>
                 </div>
 
+                <div id="Testemunhos" class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Testemunhos
+                    </a>
+                    <div class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ route("memorias.index") }}">Listar Testemunhos</a>
+                    </div>
+                </div>
                 @if($user->admin_master == 1)
                     <div class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
