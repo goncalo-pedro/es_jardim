@@ -36,7 +36,9 @@ Route::get('memorias', [\App\Http\Controllers\MemoriaUserController::class, 'mem
 Route::get("/historia", function(){
     return view("historia");
 })->name("historia");
-
+Route::get("/geologia", function(){
+    return view("geologia");
+})->name("geologia");
 Route::resource("taxa",TaxaController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
