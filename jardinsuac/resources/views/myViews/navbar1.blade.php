@@ -18,6 +18,9 @@
                     <a class="nav-link" href="{{ route("historia") }}">Historia</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route("geologia") }}">Geologia</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route("home.memoria") }}">Testemunhos</a>
                 </li>
             </ul>

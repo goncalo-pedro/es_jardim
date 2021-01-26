@@ -76,6 +76,7 @@
                     <figcaption class="figure-caption" style="width:71%; font-weight: bold;text-align: center ">Espelho de água – PM</figcaption>
                 </figure>
             </div>
+            <h3 class="text-center" style=" text-decoration: underline; font-weight: bold">Uma Breve Perspectiva Histórica</h3>
             <div class="row">
 
                 <div class="col-md-5 offset-md-2" ><h6 style="text-align: justify;text-justify: inter-word">edifícios da instituição universitária. É o

@@ -6,110 +6,153 @@
         <h6 class="text-center">António Neves Trota</h6>
         <div class="paragraphs">
             <div class="row">
-
-                <div class="col-md-5 offset-md-2" ><h6 style="text-align: justify;text-justify: inter-word">O jardim do actual pólo universitário de
-                        Ponta Delgada foi mandado construir no
-                        !nal do século XIX pelo 2.º Visconde do Porto
-                        Formoso, Jacinto Fernandes Gil (1874-1937),
-                        para parque privado do seu palacete. Em 1924
-                        seria vendido a João Maria Berquó de Aguiar
-                        (1889-1954), permanecendo nas mãos dessa
-                        família até inícios dos anos de 1970, altura em
-                        que foi adquirido pela Junta Geral do Distrito.
-                        No palacete Porto Formoso/ Berquó d´Aguiar
-                        funcionou uma escola do Magistério Primário
-                        durante alguns anos até que, em 1976, passou
-                        para a posse do Instituto Universitário dos
-                        Açores (mais tarde Universidade dos Açores).
-                        O jardim foi instalado numa estreita e
-                        comprida faixa de terra que condiciona o
-                        traçado e a composição dos seus vários
-                        elementos, conferindo-lhe, simultaneamente, </h6></div>
+                <figure class="col-md-10 offset-md-2 offset-md-2" >
+                    <img style="width: 71%" src="{{asset('images/img7.png')}}"/>
+                    <figcaption class="figure-caption" style="width:71%; font-weight: bold; text-align: center">A!oramento rochoso no topo Norte do antigo campo de ‘croquet’. – MJ</figcaption>
+                </figure>
+            </div>
+            <div class="row">
+                <div class="col-md-5 offset-md-2" ><h6 style="text-align: justify;text-justify: inter-word">Situada na zona de fronteira entre as placas
+                        da Eurásia e da Nubia, a ilha de S. Miguel foi
+                        edi!cada através da emissão de produtos
+                        vulcânicos resultantes da actividade explosiva
+                        e efusiva de aparelhos mono e poligenéticos. O
+                        campus universitário de Ponta Delgada inserese, sob o ponto de vista geomorfológico, na
+                        denominada ‘Região dos Picos’, a região mais
+                        jovem da ilha de S. Miguel, encaixada entre os
+                        vulcões poligenéticos das Sete Cidades e do
+                        Fogo. O modelado da Região dos Picos resultou
+                        da actividade de aparelhos monogenéticos
+                        (predominantemente cones de escórias e
+                        de spatter), dispostos segundo o eixo maior
+                        da ilha, com emissão de escoadas basálticas
+                        e produtos piroclásticos (s.l.), intercalados
+                        com piroclastos de queda provenientes dos
+                        centros emissores das Sete Cidades e do Fogo.
+                        O cone de escórias/spatter da Mãe de Deus,
+                        com idade superior a 10000 anos, constitui
+                        o exemplo mais próximo dessa actividade</h6></div>
                 <figure class="col-md-5">
-                    <img class="figure-img img-fluid rounded" style="width:40%" src="{{asset('images/jacinto.png')}}"/>
-                    <figcaption class="figure-caption" style="width:40%">Jacinto Fernandes Gil, Segundo Visconde
-                        do Porto Formoso (1874-1937).</figcaption>
+                    <img class="figure-img img-fluid rounded" style="width:40%" src="{{asset('images/img8.png')}}"/>
+                    <figcaption class="figure-caption" style="width:40%">Bloco de rocha basáltica na entrada do actual Edifício
+                        da Administração. – MJ</figcaption>
+                </figure>
+            </div>
+
+            <h3 class="text-center" style=" text-decoration: underline; font-weight: bold">O Jardim Romântico da Universidade dos Açores</h3>
+            <div class="row">
+                <figure class="col-md-10 offset-md-2 offset-md-2" >
+                    <img style="width: 78%" src="{{asset('images/img9.png')}}"/>
+                    <figcaption class="figure-caption" style="width:71%; font-weight: bold ;text-align: center ">Gruta armada sob exemplar de bela-sombra – MJ</figcaption>
+                </figure>
+                <div class="row">
+
+                    <div class="col-md-5 offset-md-2" ><h6 style="text-align: justify;text-justify: inter-word">vulcânica, de carácter predominante efusiva,
+                            da Região dos Picos. O local da erupção mais
+                            recente da ilha de S. Miguel, ocorrida em 1652
+                            nos Picos do Fogo I e II, dista cerca de 8 km a
+                            NE do campus universitário.
+                            A maior parte do campus universitário está
+                            actualmente coberta por edifícios, estruturas
+                            e jardim, inviabilizando a observação de a"oramentos rochosos. No entanto, a SW dos Serviços de Acção Social, no topo N do antigo campo
+                            de ‘croquet’, é possível observar o topo de uma
+                            escoada basáltica pahoehoe, vulgarmente
+                            designada sob o ponto de vista geotécnico por clincker. O topo desta escoada, com
+                            idade holocénica, foi identi!cado a pequena
+                            profundidade (1 a 2 metros) em trabalhos de
+                            prospecção realizados no âmbito da caracterização geotécnica dos terrenos de fundação
+                            dos edifícios existentes no campus. A maior
+                            parte dos edifícios do campus deve ter fundações sobre a escoada basáltica. Nesta, aquando da execução das fundações do Complexo </h6></div>
+                    <figure class="col-md-5">
+                        <img class="figure-img img-fluid rounded" style="width:40%" src="{{asset('images/img10.png')}}"/>
+                        <figcaption class="figure-caption" style="width:40%">Reitoria da Universidade dos Açores. A entrada
+                            está ladeada por dois exemplares masculinos
+                            de Cycas revoluta (ramo-bento). – MJ
+                        </figcaption>
+                    </figure>
+                    </div>
+            </div>
+            <h3 class="text-center" style=" text-decoration: underline; font-weight: bold">Enquadramento Geológico do Campus Universitário</h3>
+            <div class="row">
+                <figure class="col-md-10 offset-md-2 offset-md-2" >
+                    <img style="width: 78%" src="{{asset('images/img11.png')}}"/>
+                    <figcaption class="figure-caption" style="width:71%; font-weight: bold ;text-align: center ">Entrada do edifício da Administração, com um exemplar de pinheiro-manso (Pinus pinea L.)
+                        uma espécie nativa da região mediterrânica. – MJ</figcaption>
+                </figure>
+            </div>
+            <div class="row">
+                <figure class="col-md-6">
+                    <img class="figure-img img-fluid rounded" style="width:60%;float: right;" src="{{asset('images/img12.png')}}"/>
+                    <figcaption class="figure-caption" style="width:60%;float:right">Complexo das Ciências Humanas e Sociais com
+                        uma latada de glicínias de origem asiática (Wisteria
+                        sinensis Sweet); em primeiro plano um feto-arbóreo
+                        (Sphaeropteris cooperi (Hook. & Muell.) Tryon). – MJ</figcaption>
+                </figure>
+                <div class="col-md-4 " ><h6 style="float:left;text-align: justify;text-justify: inter-word">das Ciências Sociais, foram identi!cadas algumas cavidades vulcânicas de pequena dimensão. Os trabalhos de prospecção geotécnica também permitiram identi!car, sobre a
+                        escoada, produtos vulcânicos de natureza
+                        traquítica, com espessuras inferiores a 2 metros, provenientes provavelmente da actividade explosiva dos vulcões das Furnas e das Sete
+                        Cidades, para além de aterros e solos vegetais.
+                        No jardim do campus universitário observamse ainda alguns exemplares rochosos de
+                        carácter decorativo. Na entrada das instalações
+                        do actual Edifício da Administração foi colocado
+                        um bloco de rocha basáltica (s.l.). Nas traseiras
+                        desse edifício está exposta uma laje basáltica
+                        (s.l.), cujo topo evidencia um belo exemplar de
+                        lavas encordoadas. No topo Sul do campus,
+                        junto ao portão, foi colocada uma escultura
+                        concebida sobre um exemplar de traquito e
+                        apresentada no ‘1º Simpósio Internacional de
+                        Escultura em Pedra dos Açores’, que decorreu
+                    </h6>
+                </div>
+            </div>
+            <div class="row">
+                <figure class="col-md-10 offset-md-2 offset-md-2" >
+                    <img style="width: 78%" src="{{asset('images/img13.png')}}"/>
+                    <figcaption class="figure-caption" style="width:71%; font-weight: bold ;text-align: center ">Laje basáltica (s.l.) exibindo lavas encordoadas, nas traseiras do actual Edifício da Administração. – MJ</figcaption>
                 </figure>
             </div>
             <div class="row">
                 <figure class="col-md-10 offset-md-2 offset-md-2" >
-                    <img style="width: 71%" src="{{asset('images/img2.png')}}"/>
-                    <figcaption class="figure-caption" style="width:71%; font-weight: bold ">Jardim do Visconde de Porto Formoso fotografado pelo Coronel Afonso Chaves em 1901
-                        (Cortesia do Museu Carlos Machado). Em primeiro plano observa-se a Araucaria columnaris que ainda existe
-                        no Jardim com a copa em seta característica dos exemplares jovens e ao fundo o palacete
-                        onde está actualmente instalada a reitoria da Universidade dos Açores.</figcaption>
-                </figure>
-            </div>
-            <h3 class="text-center" style=" text-decoration: underline; font-weight: bold">O Jardim Romântico da Universidade dos Açores</h3>
-            <div class="row">
-                <figure class="col-md-5">
-                    <img class="figure-img img-fluid rounded" style="width:65%;float: right;" src="{{asset('images/img3.png')}}"/>
-                    <figcaption class="figure-caption" style="width:60%;float:right">Espelho de água fotografado por Eduardo Wallenstein
-                        nos anos 50 (colecção privada).</figcaption>
-                </figure>
-                <div class="col-md-5 " ><h6 style="float:left;text-align: justify;text-justify: inter-word">um per!l muito característico. A serpentina
-                        constitui o principal elemento da composição,
-                        colocada a eixo e iniciando-se na área mais
-                        baixa e mais distante do edifício, com um
-                        amplo espelho de água que progressivamente
-                        vai adoptando uma forma longilínea e
-                        tortuosa, à medida que nos aproximamos do
-                        edifício da actual Reitoria da Universidade.
-                        Na sequência de outros parques botânicos
-                        de Ponta Delgada, o jardim adopta o !gurino
-                        pitoresco, com a sua "ora exótica, abundante
-                        de espécies arbóreas e arbustivas, a que não
-                        falta a gruta armada em pedra vulcânica
-                        vermelha, associada ao plano de água. Na sua
-                        morfologia a serpentina assemelha-se, aliás, a
-                        outras peças de água muito conhecidas nos
-                        jardins da ilha, como é o caso do lago grande do Jardim António Borges, construído quarenta
-                        anos antes ou ainda, mais remotamente, à serpentina do parque Terra Nostra (Furnas). A
-                        disposição dos arruamentos principais, traçados simetricamente pela periferia do recinto e
-                        unindo-se no terreiro da habitação, repete uma solução que foi criada no jardim de Santana
-                        e que seria muito seguida noutros espaços verdes da ilha. Para trás da casa !cavam as zonas
-                        mais reservadas, de apoio à cozinha e o campo de ‘croquet’; para cima, a quinta com árvores
-                        de espinho. Hoje, essa área está ocupada com um amplo parque de estacionamento e outros
-                    </h6></div>
-                <figure class="col-md-10 offset-md-2" >
-                    <img style="width: 80%" src="{{asset('images/img4.png')}}"/>
-                    <figcaption class="figure-caption" style="width:71%; font-weight: bold;text-align: center ">Espelho de água – PM</figcaption>
+                    <img style="width: 78%" src="{{asset('images/img14.png')}}"/>
+                    <figcaption class="figure-caption" style="width:71%; font-weight: bold ;text-align: center ">Escultura concebida sobre um exemplar de traquito, no topo Sul do Campus Universitário. – MJ</figcaption>
                 </figure>
             </div>
             <div class="row">
-
-                <div class="col-md-5 offset-md-2" ><h6 style="text-align: justify;text-justify: inter-word">edifícios da instituição universitária. É o
-                        modelo de Santana que serve o plano geral
-                        do jardim, trazendo-o embora para uma
-                        escala mais modesta e eliminando os traçados
-                        rigorosamente formais e geométricos que
-                        caracterizam o grande ‘parterre’ fronteiro de
-                        Santana.
-                        Na madrugada de 12 de Junho de 1989 um
-                        violento incêndio destruiu por completo o
-                        palacete Porto Formoso e com ele a preciosa
-                        documentação entretanto compilada pelos
-                        Serviços de Documentação da Universidade. Felizmente, o jardim pouco sofreu
-                        com o desastre, muito embora as novas
-                        valências e usos inerentes ao funcionamento
-                        universitário tenham produzido, ao longo dos
-                        anos, alterações signi!cativas na distribuição
-                        das plantas e no traçado dos arruamentos,
-                        modi!cando a variação entre zonas abertas e
-                        fechadas e os ritmos da composição original.
-                        Nos últimos anos, a edi!cação de novos
-                        equipamentos de grandes dimensões, veio acrescentar qualidade arquitectónica ao espaço do
-                        jardim, não deixando de interferir com a disposição geral do espaço.</h6></div>
-                <figure class="col-md-5">
-                    <img class="figure-img img-fluid rounded" style="width:50%" src="{{asset('images/img5.png')}}"/>
-                    <figcaption class="figure-caption" style="width:50%">Topo norte da serpentina – MJ</figcaption>
-                </figure>
-                <div class="row">
-                    <figure class="col-md-10 offset-md-2 offset-md-2" >
-                        <img style="width: 78%" src="{{asset('images/img6.png')}}"/>
-                        <figcaption class="figure-caption" style="width:71%; font-weight: bold ;text-align: center ">Gruta armada sob exemplar de bela-sombra – MJ</figcaption>
-                    </figure>
+                <div class="col-md-5 offset-md-2" ><h6 style="text-align: justify;text-justify: inter-word">em Ponta Delgada em Agosto de 1985. A gruta
+                        romântica do jardim, edi!cada nos primórdios
+                        do jardim, foi construída com blocos de rocha
+                        basáltica (clincker), provavelmente obtidos do
+                        topo da escoada a"orante no campus.
+                        Quanto aos edifícios que actualmente se
+                        encontram no campus podemos dizer que a 9
+                        de Março de 1895, o diário ‘Açoriano Oriental’
+                        noticiava o início dos trabalhos de construção
+                        do Palacete Porto Formoso, actual Reitoria
+                        da Universidade dos Açores. Após a constituição do Instituto Universitário dos Açores
+                        (1976), são construídos os actuais edifícios
+                        dos Serviços de Acção Social (1980) e da
+                        Administração (1983).
+                        Até ao !nal do séc. XX seriam construídos
+                        no campus a Escola Superior de Enfermagem
+                        (1982), o An!teatro C (1991), o Edifício das
+                        Ciências Exactas (1991), o Complexo das Ciências Humanas e Sociais (1995) e o Pavilhão Desportivo (1998).
+                        Pertencem já ao século XXI os Edifícios do Complexo Cientí!co (2001), do Corpo de An!teatros
+                        e da Biblioteca Central ambos inaugurados em 2003.</h6>
                 </div>
+                <figure class="col-md-5">
+                    <img class="figure-img img-fluid rounded" style="width:55%" src="{{asset('images/img15.png')}}"/>
+                    <figcaption class="figure-caption" style="width:40%">Complexo Cientí"co – MJ</figcaption>
+                </figure>
+            </div>
+            <div class="row">
+                <figure class="col-md-10 offset-md-2 offset-md-2" >
+                    <img style="width: 78%" src="{{asset('images/img16.png')}}"/>
+                    <figcaption class="figure-caption" style="width:71%; font-weight: bold ;text-align: center ">Monumento simbolizando a Universidade dos Açores e a sua tripolaridade insular; como pano de fundo
+                        é visível o edifício da Biblioteca atrás de uma cortina verde iniciada por um salgueiro (Salix babylonica L.),
+                        continuada por choupos negros (Populus nigra L.) e terminada por um exemplar de casuarina
+                        (Casuarina equisetifolia L.). – FC</figcaption>
+                </figure>
             </div>
         </div>
     </div>

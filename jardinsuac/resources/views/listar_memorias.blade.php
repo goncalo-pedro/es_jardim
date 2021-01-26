@@ -21,8 +21,6 @@
                 <table class="table table-bordered table-striped" id="table-import">
                     <tr>
                         <th>Nome</th>
-                        <th>Faixa Etária</th>
-                        <td>Estatuto</td>
                         <th>Classificação</th>
                     </tr>
                 </table>
