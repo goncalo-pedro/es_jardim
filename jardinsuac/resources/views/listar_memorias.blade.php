@@ -20,9 +20,21 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="table-import">
                     <tr>
+                        <th>Numero</th>
                         <th>Nome</th>
+                        <th>Faixa Etária</th>
+                        <td>Estatuto</td>
                         <th>Classificação</th>
                     </tr>
+                    @foreach($memorias as $memoria)
+                        <tr>
+                            <td><a href="{{route('memorias.show', $memoria->id)}}">Testemunho {{$memoria->id}}</a></td>
+                            <td>{{$memoria->nome_visitante}}</td>
+                            <td>{{$memoria->faixa_etaria}}</td>
+                            <td>{{$memoria->estatuto}}</td>
+                            <td>{{$memoria->classificacao}}</td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
