@@ -157,13 +157,13 @@
                         <br>
                         <div id="permissao_plant" style="display:none" class="form-control ">
                             <h6>Se si, em que condições aceita partilhar a fotografia/video=</h6>
-                            <input class="form-check-input" type="radio" id="sim" name="permissao_planta">
+                            <input class="form-check-input" type="radio" id="sim" name="permissao_planta" value="Como documento de estudo guardado em arquivo como prova, com acesso restrito e não publicável">
                             <label>Como documento de estudo guardado em arquivo como prova, com acesso restrito e não publicável</label><br>
-                            <input class="form-check-input" type="radio" id="nao" name="permissao_planta">
+                            <input class="form-check-input" type="radio" id="nao" name="permissao_planta" value="Como documento de estudo, com acesso restrito a investigadores e publicável apenas em trabalhos científicos">
                             <label>Como documento de estudo, com acesso restrito a investigadores e publicável apenas em trabalhos científicos</label><br>
-                            <input class="form-check-input" type="radio" id="sim" name="permissao_planta">
+                            <input class="form-check-input" type="radio" id="sim" name="permissao_planta" value="Como documento de estudo e divulgação publicável em trabalhos científicos e na página eletrónica da Universidade dos Açores">
                             <label>Como documento de estudo e divulgação publicável em trabalhos científicos e na página eletrónica da Universidade dos Açores</label><br>
-                            <input class="form-check-input" type="radio" id="nao" name="permissao_planta">
+                            <input class="form-check-input" type="radio" id="nao" name="permissao_planta" value="Como documento de estudo e divulgação publicável e com indicação de utilização livre desde que devidamente referenciada">
                             <label>Como documento de estudo e divulgação publicável e com indicação de utilização livre desde que devidamente referenciada</label><br>
                         </div>
                         <br>

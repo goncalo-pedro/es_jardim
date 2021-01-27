@@ -15,6 +15,8 @@ class CreateTaxasTable extends Migration
     {
         Schema::create('taxas', function (Blueprint $table) {
             $table->id();
+            $table->string("imagemEnquadramento")->nullable();
+            $table->string("imagemTaxa")->nullable();
             $table->Integer('NumControlo')->nullable();
             $table->String('Group')->nullable();
             $table->String('Division')->nullable();

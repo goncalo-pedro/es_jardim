@@ -155,4 +155,22 @@ class Taxa extends Model
         );
     }
 
+    public function updateTaxa($id, string $pathEnquadramento, string $pathTaxa)
+    {
+        $taxa = Taxa::findOrFail($id);
+
+        if($pathEnquadramento != "")
+            $taxa->imagemEnquadramento = $pathEnquadramento;
+        else if($taxa->imagemEnquadramento == null)
+            $taxa->imagemEnquadramento = $pathEnquadramento;
+
+        if($pathTaxa != "")
+            $taxa->imagemTaxa = $pathTaxa;
+        else if($taxa->imagemTaxa == null)
+            $taxa->imagemTaxa = $pathTaxa;
+
+
+        $taxa->save();
+    }
+
 }

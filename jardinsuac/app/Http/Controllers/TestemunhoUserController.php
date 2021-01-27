@@ -103,6 +103,76 @@ class TestemunhoUserController extends Controller
                 }
             }
 
+            if(request(self::permissao_edificado) == null)
+                $permissaoEdificado = "";
+            else
+                $permissaoEdificado = request(self::permissao_edificado);
+
+            if(request(self::data_edificado) == null)
+                $dataEdificado = "";
+            else
+                $dataEdificado = request(self::data_edificado);
+
+            if(request(self::testemunho_edificado) == null)
+                $testemunhoEdificado = "";
+            else
+                $testemunhoEdificado = request(self::testemunho_edificado);
+
+            if(request(self::planta_qual) == null)
+                $plantaQual = "";
+            else
+                $plantaQual = request(self::planta_qual);
+
+            if(request(self::planta_exist) == null)
+                $plantaExist = "";
+            else
+                $plantaExist = request(self::planta_exist);
+
+            if(request(self::planta_local) == null)
+                $plantaLocal = "";
+            else
+                $plantaLocal = request(self::planta_local);
+
+            if(request(self::ano_planta) == null)
+                $anoPlanta = "";
+            else
+                $anoPlanta = request(self::ano_planta);
+
+            if(request(self::planta_razao_remocao) == null)
+                $plantaRazaoRemocao = "";
+            else
+                $plantaRazaoRemocao = request(self::planta_razao_remocao);
+
+            if(request(self::planta_foto) == null)
+                $plantaFoto = "";
+            else
+                $plantaFoto = request(self::planta_foto);
+
+            if(request(self::permissao_planta) == null)
+                $permissaoPlanta = "";
+            else
+                $permissaoPlanta = request(self::permissao_planta);
+
+            if(request(self::data_planta) == null)
+                $dataPlanta = "";
+            else
+                $dataPlanta = request(self::data_planta);
+
+            if(request(self::testemunho_planta) == null)
+                $testemunhoPlanta = "";
+            else
+                $testemunhoPlanta = request(self::testemunho_planta);
+
+            if(request(self::mudar_jardim) == "")
+                $mudarJardim = "";
+            else
+                $mudarJardim = request(self::mudar_jardim);
+
+            if(request(self::observacoes) == "")
+                $observacoes = "";
+            else
+                $observacoes = request(self::observacoes);
+
             $memoria->addMemoria(
                 request(self::nome),
                 request(self::idade),
@@ -110,20 +180,20 @@ class TestemunhoUserController extends Controller
                 request(self::foto_edificado),
                 request(self::planta_recordar),
                 request(self::selected_rating),
-                request(self::permissao_edificado),
-                request(self::data_edificado),
-                request(self::testemunho_edificado),
-                request(self::planta_qual),
-                request(self::planta_exist),
-                request(self::planta_local),
-                request(self::ano_planta),
-                request(self::planta_razao_remocao),
-                request(self::planta_foto),
-                request(self::permissao_planta),
-                request(self::data_planta),
-                request(self::testemunho_planta),
-                request(self::mudar_jardim),
-                request(self::observacoes),
+                $permissaoEdificado,
+                $dataEdificado,
+                $testemunhoEdificado,
+                $plantaQual,
+                $plantaExist,
+                $plantaLocal,
+                $anoPlanta,
+                $plantaRazaoRemocao,
+                $plantaFoto,
+                $permissaoPlanta,
+                $dataPlanta,
+                $testemunhoPlanta,
+                $mudarJardim,
+                $observacoes,
                 $pathsEdificados,
                 $pathsPlantas
             );
