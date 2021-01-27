@@ -21,7 +21,7 @@
                     <a class="nav-link" href="{{ route("geologia") }}">Geologia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("home.testemunhos") }}">Testemunhos</a>
+                    <a class="nav-link" href="{{ route("testemunhos.index") }}">Testemunhos</a>
                 </li>
             </ul>
 

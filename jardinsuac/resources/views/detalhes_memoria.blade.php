@@ -10,4 +10,11 @@
     <p>
         {{$memoria->faixa_etaria}}
     </p>
+    <p>
+        <img src="{{ asset($memoria->foto1_planta) }}" alt="ola">
+    </p>
+
+    <p>
+        <img src="{{ asset($memoria->foto2_planta) }}" alt="ola">
+    </p>
 @endsection
