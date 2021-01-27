@@ -102,12 +102,12 @@
                         <br>
                         <div id="data_edifi" style="display:none" class="form-control ">
                             <h6><label class="form-label" for="data_edificado">Data em que as fotos/vídeos foram tiradas (Exemplo: 24/03/2003 ou 2010-2012)</label></h6>
-                            <input class="form-control" type="text" id="data_edificado" value="{{old('data_edificado')}}">
+                            <input class="form-control" type="text" id="data_edificado" name="data_edificado" value="{{old('data_edificado')}}">
                         </div>
                         <br>
                         <div id="testemunho_id" style="display:none" class="form-control ">
                             <h6><label for="testemunho_edificado">Gostaria de adicionar um testemunho escrito à(s) memória(s) adicionada(s)?</label></h6>
-                            <textarea class="form-control" id="testemunho_edificado" rows="4"></textarea>
+                            <textarea class="form-control" id="testemunho_edificado" name="testemunho_edificado" rows="4"></textarea>
                         </div>
                         <hr>
                         <h3>Memória das Plantas</h3>
@@ -121,7 +121,7 @@
                         <br>
                         <div id="planta_quais" style="display:none" class="form-control ">
                             <h6><label for="planta_qual">Se sim, qual/quais?</label></h6>
-                            <textarea class="form-control" id="planta_qual" rows="4"></textarea>
+                            <textarea class="form-control" id="planta_qual" name="planta_qual" rows="4"></textarea>
                         </div>
                         <br>
                         <div id="planta_existe" style="display:none" class="form-control ">
@@ -179,8 +179,8 @@
                         </div>
                         <br>
                         <div class="custom-file" id="data_plant" style="display:none" class="form-control">
-                            <h6><label class="form-label" for="data_edificado">Data em que as fotos/vídeos foram tiradas (Exemplo: 24/03/2003 ou 2010-2012)</label></h6>
-                            <input class="form-control" type="text" id="data_planta" name="data_planta" value="{{old('data_edificado')}}">
+                            <h6><label class="form-label" for="data_planta">Data em que as fotos/vídeos foram tiradas (Exemplo: 24/03/2003 ou 2010-2012)</label></h6>
+                            <input class="form-control" type="text" id="data_planta" name="data_planta" value="{{old('data_planta')}}">
                             <br>
                         </div>
                         <br>

@@ -18,7 +18,6 @@ class TestemunhoUserController extends Controller
     const estatuto = "estatuto";
     const foto_edificado = "foto_edificado";
     const permissao_edificado = "permissao_edificado";
-    const ficheiro_edificado = "ficheiro_edificado";
     const data_edificado = "data_edificado";
     const testemunho_edificado = "testemunho_edificado";
     const planta_recordar = "planta_recordar";
@@ -29,7 +28,6 @@ class TestemunhoUserController extends Controller
     const planta_razao_remocao = "planta_razao_remocao";
     const planta_foto = "planta_foto";
     const permissao_planta = "permissao_planta";
-    const ficheiro_plantas = "ficheiro_plantas";
     const data_planta = "data_planta";
     const testemunho_planta = "testemunho_planta";
     const selected_rating = "selected_rating";
@@ -112,6 +110,20 @@ class TestemunhoUserController extends Controller
                 request(self::foto_edificado),
                 request(self::planta_recordar),
                 request(self::selected_rating),
+                request(self::permissao_edificado),
+                request(self::data_edificado),
+                request(self::testemunho_edificado),
+                request(self::planta_qual),
+                request(self::planta_exist),
+                request(self::planta_local),
+                request(self::ano_planta),
+                request(self::planta_razao_remocao),
+                request(self::planta_foto),
+                request(self::permissao_planta),
+                request(self::data_planta),
+                request(self::testemunho_planta),
+                request(self::mudar_jardim),
+                request(self::observacoes),
                 $pathsEdificados,
                 $pathsPlantas
             );

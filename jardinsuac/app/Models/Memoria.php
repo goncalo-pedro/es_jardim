@@ -20,7 +20,29 @@ class Memoria extends Model
         return Memoria::findOrFail($id);
     }
 
-    public function addMemoria(string $nome, string $idade, string $estatuto, string $fotoEdificado, string $plantaRecordar, string $rating, array $fotosEdificado, array $fotosPlantas)
+    public function addMemoria(
+        string $nome,
+        string $idade,
+        string $estatuto,
+        string $fotoEdificado,
+        string $plantaRecordar,
+        string $rating,
+        string $permissaoEdificado,
+        string $dataEdficiado,
+        string $testemunhoEdificado,
+        string $plantaQual,
+        string $plantaExist,
+        string $plantaLocal,
+        string $anoPlanta,
+        string $plantaRazaoRemocao,
+        string $plantaFoto,
+        string $permissaoPlanta,
+        string $dataPlanta,
+        string $testemunhoPlanta,
+        string $mudarJardim,
+        string $observacoes,
+        array $fotosEdificado,
+        array $fotosPlantas)
     {
         $memoria = new Memoria();
         $memoria->nome_visitante = $nome;
@@ -31,12 +53,38 @@ class Memoria extends Model
             $memoria->foto_edificado = 1;
         else
             $memoria->foto_edificado = 0;
+
         if($plantaRecordar == "sim")
             $memoria->recordar_planta = 1;
         else
             $memoria->recordar_planta = 0;
 
         $memoria->classificacao = $rating;
+
+        $memoria->condicoes_partilha_campus = $permissaoEdificado;
+        $memoria->data_fotos_campus = $dataEdficiado;
+        $memoria->testemunho_fotos_campus = $testemunhoEdificado;
+        $memoria->nome_plantas_recordar = $plantaQual;
+
+        if($plantaExist == "sim")
+            $memoria->planta_existe = 1;
+        else
+            $memoria->planta_existe = 0;
+
+        $memoria->local_planta = $plantaLocal;
+        $memoria->planta_existe_removida = $anoPlanta;
+        $memoria->acontecimento_desaprecimento = $plantaRazaoRemocao;
+
+        $memoria->fotografia_video_planta = $plantaFoto;
+
+        if($permissaoPlanta == "sim")
+            $memoria->condicoes_partilha_planta = 1;
+        else
+            $memoria->condicoes_partilha_planta = 0;
+        $memoria->data_fotos_planta = $dataPlanta;
+        $memoria->testemunho_fotos_planta = $testemunhoPlanta;
+        $memoria->opiniao_jardim = $mudarJardim;
+        $memoria->outras_observacoes = $observacoes;
 
         for($i = 1; $i <= 12; $i++){
             if($i == 1){

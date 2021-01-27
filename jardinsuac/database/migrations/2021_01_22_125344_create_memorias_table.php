@@ -35,7 +35,7 @@ class CreateMemoriasTable extends Migration
             $table->boolean("recordar_planta");
             $table->string("nome_plantas_recordar")->nullable();
             $table->boolean("planta_existe")->nullable();
-            $table->boolean("local_planta")->nullable();
+            $table->string("local_planta")->nullable();
             $table->string("planta_existe_removida")->nullable();
             $table->string("acontecimento_desaprecimento")->nullable();
             $table->boolean("fotografia_video_planta")->nullable();
