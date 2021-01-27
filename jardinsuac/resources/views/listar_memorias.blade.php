@@ -20,7 +20,7 @@
 
         <div class="row">
             @foreach($memorias as $memoria)
-                <div class="col-md-5 border border-primary">
+                <div class="col-md-3 ">
                     <a href="{{route('detalhes.testemunhos', $memoria->id)}}">Testemunho {{$memoria->id}}</a>
                     <div >
                         {{$memoria->nome_visitante}}
