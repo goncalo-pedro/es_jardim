@@ -29,10 +29,6 @@ Route::get('549321054/register', function (){
     return view('admin.criar_users');
 })->name("549321054/register");
 
-Route::get('testemunhos', [\App\Http\Controllers\MemoriaUserController::class, 'homeMemoria'])->name('home.testemunhos');
-Route::get('testemunhos/criar', [\App\Http\Controllers\MemoriaUserController::class, 'criarMemoria'])->name('criar.testemunhos');
-Route::post('testemunhos/testemunhos', [\App\Http\Controllers\MemoriaUserController::class, 'storeMemorias'])->name('store.testemunhos');
-Route::get('testemunhos/{id}', [\App\Http\Controllers\MemoriaUserController::class, 'showMemoria'])->name('detalhes.testemunhos');
 Route::get("/historia", function(){
     return view("historia");
 })->name("historia");
@@ -40,6 +36,7 @@ Route::get("/geologia", function(){
     return view("geologia");
 })->name("geologia");
 Route::resource("taxa",TaxaController::class);
+Route::resource("testemunhos", \App\Http\Controllers\TestemunhoUserController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/home', [AdminTaxaController::class,'home'])->name("admin.home");

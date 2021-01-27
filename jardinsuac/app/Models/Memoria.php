@@ -20,7 +20,7 @@ class Memoria extends Model
         return Memoria::findOrFail($id);
     }
 
-    public function addMemoria(string $nome, string $idade, string $estatuto, string $fotoEdificado, string $plantaRecordar, string $rating)
+    public function addMemoria(string $nome, string $idade, string $estatuto, string $fotoEdificado, string $plantaRecordar, string $rating, array $fotosEdificado, array $fotosPlantas)
     {
         $memoria = new Memoria();
         $memoria->nome_visitante = $nome;
@@ -37,6 +37,54 @@ class Memoria extends Model
             $memoria->recordar_planta = 0;
 
         $memoria->classificacao = $rating;
+
+        for($i = 1; $i <= 12; $i++){
+            if($i == 1){
+                $memoria->foto1_campus = $fotosEdificado[$i - 1];
+            } else if($i == 2){
+                $memoria->foto2_campus = $fotosEdificado[$i - 1];
+            } else if($i == 3){
+                $memoria->foto3_campus = $fotosEdificado[$i - 1];
+            } else if($i == 4){
+                $memoria->foto4_campus = $fotosEdificado[$i - 1];
+            } else if($i == 5){
+                $memoria->foto5_campus = $fotosEdificado[$i - 1];
+            } else if($i == 6){
+                $memoria->foto6_campus = $fotosEdificado[$i - 1];
+            } else if($i == 7){
+                $memoria->foto7_campus = $fotosEdificado[$i - 1];
+            } else if($i == 8){
+                $memoria->foto8_campus = $fotosEdificado[$i - 1];
+            } else if($i == 9){
+                $memoria->foto9_campus = $fotosEdificado[$i - 1];
+            } else if($i == 10) {
+                $memoria->foto10_campus = $fotosEdificado[$i - 1];
+            }
+        }
+
+        for($i = 1; $i <= 12; $i++){
+            if($i == 1){
+                $memoria->foto1_planta = $fotosPlantas[$i - 1];
+            } else if($i == 2){
+                $memoria->foto2_planta = $fotosPlantas[$i - 1];
+            } else if($i == 3){
+                $memoria->foto3_planta = $fotosPlantas[$i - 1];
+            } else if($i == 4){
+                $memoria->foto4_planta = $fotosPlantas[$i - 1];
+            } else if($i == 5){
+                $memoria->foto5_planta = $fotosPlantas[$i - 1];
+            } else if($i == 6){
+                $memoria->foto6_planta = $fotosPlantas[$i - 1];
+            } else if($i == 7){
+                $memoria->foto7_planta = $fotosPlantas[$i - 1];
+            } else if($i == 8){
+                $memoria->foto8_planta = $fotosPlantas[$i - 1];
+            } else if($i == 9){
+                $memoria->foto9_planta = $fotosPlantas[$i - 1];
+            } else if($i == 10){
+                $memoria->foto10_planta = $fotosPlantas[$i - 1];
+            }
+        }
         $memoria->save();
     }
 
