@@ -75,12 +75,13 @@ class Memoria extends Model
         $memoria->planta_existe_removida = $anoPlanta;
         $memoria->acontecimento_desaprecimento = $plantaRazaoRemocao;
 
-        $memoria->fotografia_video_planta = $plantaFoto;
 
-        if($permissaoPlanta == "sim")
-            $memoria->condicoes_partilha_planta = 1;
+
+        if($plantaFoto == "sim")
+            $memoria->fotografia_video_planta = 1;
         else
-            $memoria->condicoes_partilha_planta = 0;
+            $memoria->fotografia_video_planta = 0;
+        $memoria->condicoes_partilha_planta = $permissaoPlanta;
         $memoria->data_fotos_planta = $dataPlanta;
         $memoria->testemunho_fotos_planta = $testemunhoPlanta;
         $memoria->opiniao_jardim = $mudarJardim;
