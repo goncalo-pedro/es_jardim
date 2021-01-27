@@ -16,12 +16,12 @@
                 </ul>
             @endif
         </div>
-        <a class="btn btn-primary" href="{{route("testemunhos.create")}}" role="button">Partilhar Testemunho</a>
+        <a class="btn btn-primary" href="{{route("testemunhos.create")}}" role="button" style="margin-left: 40%">Partilhar Testemunho</a>
 
         <div class="row">
             @foreach($memorias as $memoria)
-                <div class="col-md-5 border border-primary">
-                    <a href="{{route('testemunhos.show', $memoria->id)}}">Testemunho {{$memoria->id}}</a>
+                <div class="col-md-3 offset-md-1">
+                    <a href="{{route('testemunhos.show', $memoria->id)}}" style="text-decoration: none; font-weight: bold;">Testemunho {{$memoria->id}}</a>
                     <div >
                         {{$memoria->nome_visitante}}
                     </div>

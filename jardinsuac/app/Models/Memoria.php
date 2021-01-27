@@ -75,6 +75,7 @@ class Memoria extends Model
         $memoria->planta_existe_removida = $anoPlanta;
         $memoria->acontecimento_desaprecimento = $plantaRazaoRemocao;
 
+
         if($plantaFoto == "sim")
             $memoria->fotografia_video_planta = 1;
         else
