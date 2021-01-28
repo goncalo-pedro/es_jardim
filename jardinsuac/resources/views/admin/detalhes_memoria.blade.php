@@ -29,89 +29,96 @@
                         <p>Sim</p>
                     <br>
                 </div>
-                @if($memoria->foto1_campus != "")
-                <div class="col">
-                    <h6>Fotos do Espaço e Eventos</h6>
+                @if($memoria->condicoes_partilha_campus != "")
+                    <div class="col">
+                        <h6>Fotos do Espaço e Eventos</h6>
                         <img style="max-width: 100%" src="{{ asset($memoria->foto1_campus) }}">
-                    <br>
-                </div>
+                        <br>
+                    </div>
+                @endif
+                @if($memoria->foto1_campus != "")
+                    <div class="col">
+                        <h6>Fotos do Espaço e Eventos</h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto1_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto2_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto2_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto2_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto3_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto3_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto3_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto4_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto4_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto4_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto5_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto5_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto5_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto6_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto6_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto6_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto7_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto7_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto7_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto8_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto8_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto8_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto9_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto9_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto9_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->foto10_campus != "")
-                <div class="col">
-                    <h6></h6>
-                        <img style="max-width: 100%" src="{{ asset($memoria->foto10_campus) }}">
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6></h6>
+                            <img style="max-width: 100%" src="{{ asset($memoria->foto10_campus) }}">
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->data_fotos_campus != "")
-                <div class="col">
-                    <h6>Data quando as fotos foram tiradas</h6>
-                        <p>{{$memoria->data_fotos_campus}}</p>
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6>Data quando as fotos foram tiradas</h6>
+                            <p>{{$memoria->data_fotos_campus}}</p>
+                        <br>
+                    </div>
                 @endif
                 @if($memoria->testemunho_fotos_campus != "")
-                <div class="col">
-                    <h6>Gostaria de adicionar algum testemunho?</h6>
-                        <p>{{$memoria->testemunho_fotos_campus}}</p>
-                    <br>
-                </div>
+                    <div class="col">
+                        <h6>Gostaria de adicionar algum testemunho?</h6>
+                            <p>{{$memoria->testemunho_fotos_campus}}</p>
+                        <br>
+                    </div>
                 @endif
             @endif
             @if($memoria->recordar_planta == 1)
@@ -155,7 +162,7 @@
                         <br>
                     </div>
                 @endif
-                @if($memoria->acontecimento_desaprecimento == 1)
+                @if($memoria->fotografia_video_planta == 1)
                     <div class="col">
                         <h6>Tem alguma foto ou vídeo da planta?</h6>
                             <p>Sim</p>
@@ -235,6 +242,20 @@
                         <div class="col">
                             <h6></h6>
                                 <img style="max-width: 100%" src="{{ asset($memoria->foto10_planta) }}">
+                            <br>
+                        </div>
+                    @endif
+                    @if($memoria->data_fotos_planta != "")
+                        <div class="col">
+                            <h6>Data das fotos</h6>
+                            <p>{{$memoria->data_fotos_planta}}</p>
+                            <br>
+                        </div>
+                    @endif
+                    @if($memoria->testemunho_fotos_planta != "")
+                        <div class="col">
+                            <h6>Testemunho</h6>
+                            <p>{{$memoria->testemunho_fotos_planta}}</p>
                             <br>
                         </div>
                     @endif
