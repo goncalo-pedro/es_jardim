@@ -47,6 +47,7 @@ class AdminTaxaController extends Controller
         $row = (new Taxa)->getTaxa($id);
 
         return view('admin.perfil_taxa', [
+            "id" => $id,
             "row" => $row,
             'caractIng'=> array(
                 "Num Controlo" =>$row->NumControlo,

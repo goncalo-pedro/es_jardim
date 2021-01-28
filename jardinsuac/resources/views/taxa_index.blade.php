@@ -59,13 +59,17 @@
                         <div class="col">
                             <div class="card mb-3 " style="margin: 5px">
                                 <div class="row g-0">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{$taxa->Nome_comum}}</h5>
-                                        <h6 class="card-subtitle">{{$taxa->ScientificName}}</h6>
-                                        <p class="card-text">{{$taxa->Breve_descricao}}</p>
+                                    <div class="col-md-4">
+                                        <img src="{{$taxa->imagemTaxa}}" alt="" style="max-width: 100%; max-height: 100%">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{$taxa->Nome_comum}}</h5>
+                                            <h6 class="card-subtitle">{{$taxa->ScientificName}}</h6>
 
-                                        <button type="button" class="btn" onclick="location.href='/taxa/{{$taxa->id}}'" >Saber Mais</button>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            <button type="button" class="btn" onclick="location.href='/taxa/{{$taxa->id}}'" >Saber Mais</button>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +160,7 @@
                         }
                     }
                 else
-                    createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
+                    createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['id'], taxa['imagemTaxa'])
             }
 
             showRightTaxa(toShow, listaCheckeds.length)
@@ -177,7 +181,7 @@
                         if(taxa['Nome_comum'] === taxaVerificar['Nome_comum'])
                             exists = true;
                     if(!exists) {
-                        createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['Breve_descricao'], taxa['id'])
+                        createCardTaxa(taxa['Nome_comum'], taxa['ScientificName'], taxa['id'], taxa['imagemTaxa'])
                         alreadyShow.push(taxa)
                         count ++;
                     }
@@ -224,7 +228,7 @@
             renderTaxas()
         }
 
-        function createCardTaxa(nomeComum, scientificName, breveDescricao, id) {
+        function createCardTaxa(nomeComum, scientificName, id, imagemTaxa) {
             let coluna = createEl("div", ["col"]);
 
             let form = createEl("form", ["a"]);
@@ -259,8 +263,6 @@
             let subtitleCard = createEl("h6", ["card-subtitle"]);
             subtitleCard.innerHTML = scientificName;
 
-            let textCard = createEl("p", ["card-text"]);
-            textCard.innerHTML = breveDescricao;
             let botaoSaberMais = createEl("button", ["btn"]);
             botaoSaberMais.innerHTML = "Saber Mais";
 
@@ -268,11 +270,16 @@
             let textFooter = createEl("small", ["text-muted"]);
             textFooter.innerHTML = "Last updated 3 mins ago";
 
+            let img = createEl("img", ["y"]);
+            img.src = imagemTaxa;
+            img.alt = "";
+            img.style.maxWidth = "25%";
+            console.log(imagemTaxa);
             footerCard.appendChild(textFooter)
 
+            bodyCard.appendChild(img);
             bodyCard.appendChild(titleCard);
             bodyCard.appendChild(subtitleCard);
-            bodyCard.appendChild(textCard);
             bodyCard.appendChild(botaoSaberMais);
             bodyCard.appendChild(footerCard);
 

@@ -22,7 +22,10 @@
             </div>
             <button type="submit" class="btn">Adicionar Imagens</button>
         </form>
+        <br>
         <br><br><br><br>
+        <hr>
+        <br>
         <div class="row">
             <h4>Ficha de Exemplar (Inglês)</h4>
         </div>
